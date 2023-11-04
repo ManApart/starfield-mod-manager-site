@@ -16,6 +16,10 @@ body {
     font-size: large;
     background-color: var(--background-blue);
     font-family: Grotesk;
+    width: 90%;
+    margin: auto;
+    margin-top: 20px;
+    max-width: 1000px;
 }
 
 ::-webkit-scrollbar {
@@ -42,6 +46,7 @@ body {
 
 h1, h2, h3, h4 {
     font-family: Architekt;
+    text-align: center;
 }
 
 h2 {
@@ -53,7 +58,8 @@ td {
     vertical-align: top;
 }
 
-button {
+.a-button {
+    display: inline-block;
     color: white;
     background-size: 200% 100%;
     background-image: linear-gradient(to right, var(--background-blue) 50%, var(--menu-gray) 50%);
@@ -65,58 +71,19 @@ button {
 	cursor: pointer;
 	font-family: Architekt;
     transition: 1s;
-}
-
-button:hover{
-    background-position: -100% 0%;
-}
-
-.button-pushed{
-    background-position: -100% 0%;
-}
-
-textarea {
-    color: white;
-    background-color: var(--background-blue);
-    width: 95%;
-    height: 80px;
-    border: none;
-    outline: none;
-}
-
-input {
-    color: white;
-    background-color: var(--background-blue);
-    border: 1px solid gray;
-    height: 30px;
-}
-
-select {
-    color: white;
-    background-color: var(--background-blue);
+    text-decoration: none;
 }
 
 a {
     color: white;
 }
 
-blockquote {
-    background-color: gray;
-    margin-left: 0;
-    padding-left: 1%;
+a:hover{
+    background-position: -100% 0%;
 }
 
-details {
-  user-select: none;
-}
-
-summary {
-  display: block;
-  cursor: pointer;
-}
-
-summary::-webkit-details-marker {
-  display: none;
+.button-pushed{
+    background-position: -100% 0%;
 }
 
 .hidden {
@@ -131,28 +98,7 @@ summary::-webkit-details-marker {
     display: inline-block;
 }
 
-.section-wrapper{
-    display: flex;
-    flex-wrap: wrap;
-    position: relative;
-}
-
-.section-view-box{
-    display: block;
-    border: 1px solid gray;
-    padding: 10px;
-    margin-bottom: 20px;
-    margin-right: 20px;
-    background-color: var(--background-blue);
-    overflow: scroll;
-    overflow-x: hidden;
-    overflow-y: auto;
-    width: 90%;
-    max-width: 600px;
-}
-
 .accent-line {
-    width: 95%;
     height: 30px;
     background-image: linear-gradient(140deg, var(--blue) 10%, var(--red) 10%, var(--red) 13%, var(--orange) 13%, var(--orange) 15%, var(--yellow) 15%, var(--yellow) 16.5%, white 16.5%);
     text-align: center;
@@ -160,14 +106,45 @@ summary::-webkit-details-marker {
     font-family: Architekt;
     font-weight: bold;
     padding-top: 5px;
+    margin-top: 40px;
+    margin-bottom: 10px;
 }
 
-#sections {
-    position: relative;
-    margin-left: 20%;
-    max-width: 75%;
+.section {
 }
 
-#sections .section-view-box {
-    max-width: 900px;
+.links{
+    text-align: center;
+}
+
+.links a {
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+table{
+    width: 100%;
+}
+
+table, th, td {
+    border: 1px solid white;
+    border-collapse: collapse;
+    padding: 10px;
+}
+
+.asci-cast {
+    width: 60%;
+    margin: auto;
+}
+
+.asci-cast div.ap-wrapper {
+    height: unset;
+}
+
+.features-section {
+}
+@media (max-aspect-ratio: 3/4) {
+    .asci-cast {
+        width: 100%;
+    }
 }

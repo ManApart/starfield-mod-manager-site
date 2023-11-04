@@ -11,15 +11,26 @@
     <link href="/assets/asciinema-player.css" rel="stylesheet" type="text/css">
   </head>
   <body>
-    <section style="text-align: center;">
-      <div id="home">
-        <h1 id="home-title">Starfield Mod Manager</h1>
+    <section>
+      <h1>Starfield Mod Manager</h1>
+      <div class="section">
         <div class="accent-line"></div>
-        <div class="container">
-          <div id="asci"></div>
-          <script src="/assets/asciinema-player.min.js"></script>
-          <script>AsciinemaPlayer.create('assets/test.cast', document.getElementById('asci'));</script>
-        </div>
+        <p>A CLI based Starfield Mod Manager for Linux. Requires some technical know-how and familiarity with the CLI, but also provides a thin slice of Vortex capabilities.</p>
+        <p>Currently only fully supports premium members. Non Premium members should be able to add files by zip folder or nexus &quot;download with mod manager links&quot;, but likely won't be able to download mods by pasting in a url or id.</p>
+        <div class="links"><a href="/features.html" class="a-button">Features</a><a href="/setup.html" class="a-button">Setup</a><a href="/manual.html" class="a-button">Manual</a><a href="https://github.com/ManApart/starfield-mod-manager" target="_blank" class="a-button">Source</a></div>
+      </div>
+      <div class="section">
+        <div class="accent-line">Usage</div>
+        <p>Run the app and then use <code>help</code> to see commands. Alternatively you can look at the <a href="/manual">generated man page</a>. You can also look through <a href="/featuress">examples.</a></p>
+        <p>To reduce typing, most commands take the index of the mod, instead of mod id or name. This means the index of a mod can change as mods are added, deleted or sorted. Listing mods will always show their indices, and filtering will retain the index.</p>
+      </div>
+      <div class="section">
+        <div class="accent-line">Alternatives</div>
+        <ul>Don't like this mod manager? Try another one:
+          <li><a href="https://github.com/cyberrumor/ammo" target="_blank">Ammo</a></li>
+          <li><a href="https://github.com/CHollingworth/Lamp" target="_blank">Lamp</a></li>
+          <li><a href="https://github.com/lVlyke/starfield-mod-loader" target="_blank">Starfield Mod Loader</a></li>
+        </ul>
       </div>
     </section>
     <footer></footer>
