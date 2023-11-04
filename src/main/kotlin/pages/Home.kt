@@ -8,8 +8,8 @@ fun BODY.home() {
         h1 {
             +"Starfield Mod Manager"
         }
-        div("accent-line") { }
         div("section") {
+            div("accent-line") { }
             p { +"A CLI based Starfield Mod Manager for Linux. Requires some technical know-how and familiarity with the CLI, but also provides a thin slice of Vortex capabilities." }
             p { +"Currently only fully supports premium members. Non Premium members should be able to add files by zip folder or nexus \"download with mod manager links\", but likely won't be able to download mods by pasting in a url or id." }
             div("links") {
@@ -23,8 +23,8 @@ fun BODY.home() {
                 ) { +"Source" }
             }
         }
-        div("accent-line") { +"Usage" }
         div("section") {
+            div("accent-line") { +"Usage" }
             p {
                 +"Run the app and then use "
                 code { +"help" }
@@ -35,8 +35,8 @@ fun BODY.home() {
             }
             p { +"To reduce typing, most commands take the index of the mod, instead of mod id or name. This means the index of a mod can change as mods are added, deleted or sorted. Listing mods will always show their indices, and filtering will retain the index." }
         }
-        div("accent-line") { +"Alternatives" }
         div("section") {
+            div("accent-line") { +"Alternatives" }
             ul {
                 +"Don't like this mod manager? Try another one:"
                 li { a(href = "https://github.com/cyberrumor/ammo", target = "_blank") { +"Ammo" } }
