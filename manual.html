@@ -1,0 +1,334 @@
+<html lang="en">
+  <head>
+    <title>Starfield Mod Manager</title>
+<base href="/">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="view-transition" content="same-origin">
+    <link href="/assets/images/favicon.png" rel="shortcut icon" type="image/png">
+    <link href="/assets/styles.css" rel="stylesheet">
+    <link href="/assets/styles.css" rel="stylesheet">
+    <link href="/assets/asciinema-player.css" rel="stylesheet" type="text/css">
+  </head>
+  <body>
+    <section>
+      <table>
+        <tr>
+          <td>Command</td>
+          <td>Summary</td>
+          <td>Aliases</td>
+          <td>Usage</td>
+        </tr>
+        <tr>
+          <td>add</td>
+          <td>Add a new mod</td>
+          <td></td>
+          <td>add nexus nxm://starfield/mods/4183/files/12955?key=abc&amp;expires=1697023374&amp;user_id=111
+add https://www.nexusmods.com/starfield/mods/4183?tab=files
+add 4183
+add 4183 4182 4181 - Add multiple by id
+add &lt;path-to-mod-zip&gt; &lt;name-of-mod&gt;*</td>
+        </tr>
+        <tr>
+          <td>config</td>
+          <td>Edit Configuration</td>
+          <td></td>
+          <td>config game-path &lt;path-to-folder&gt; - Sets the path to the folder under steam containing the starfield Data folder and exe
+config ini-path &lt;path-to-folder&gt; - Sets the path to the folder under your documents that contains StarfieldCustom.ini and eventually Plugins.txt. Needed for updating mod load order
+config api-key &lt;key-from-nexus&gt;
+config verbose &lt;true/false&gt; - get additional output (for debugging)
+config use-my-docs &lt;true/false&gt; - deploy mod files under Data to my documents instead of the game folder. (Defaults to false) 
+config categories - download category names from nexus
+If your paths have spaces, make sure to quote them</td>
+        </tr>
+        <tr>
+          <td>enable</td>
+          <td>Enable Mod</td>
+          <td></td>
+          <td>enable &lt;mod index&gt;
+disable &lt;mod index&gt;
+enable 1 2 4
+enable 1-4
+disable all</td>
+        </tr>
+        <tr>
+          <td>disable</td>
+          <td>Disable Mod</td>
+          <td></td>
+          <td>enable &lt;mod index&gt;
+disable &lt;mod index&gt;
+enable 1 2 4
+enable 1-4
+disable all</td>
+        </tr>
+        <tr>
+          <td>endorse</td>
+          <td>Endorse Mod</td>
+          <td></td>
+          <td>endorse &lt;mod index&gt; - endorse a mod on nexus
+abstain &lt;mod index&gt;
+endorse 1 2 4
+endorse 1-4</td>
+        </tr>
+        <tr>
+          <td>abstain</td>
+          <td>Abstain from endorsing Mod</td>
+          <td></td>
+          <td>endorse &lt;mod index&gt; - endorse a mod on nexus
+abstain &lt;mod index&gt;
+endorse 1 2 4
+endorse 1-4</td>
+        </tr>
+        <tr>
+          <td>deploy</td>
+          <td>Deploy enabled mods</td>
+          <td></td>
+          <td>deploy - Applies all mods to the game folder by creating the appropriate symlinks
+deploy dryrun - Per your load order view how files will be deployed</td>
+        </tr>
+        <tr>
+          <td>help</td>
+          <td>Explain commands</td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>fetch</td>
+          <td>Fetch Mod Data</td>
+          <td></td>
+          <td>fetch &lt;mod id&gt; - Add mod metadata without downloading files
+fetch 111 222 333 - Fetch multiple
+Useful for adding NEW mods. To check for updates on existing mods, see update</td>
+        </tr>
+        <tr>
+          <td>list</td>
+          <td>List Mods</td>
+          <td>ls</td>
+          <td>List Mod details
+list 10 30 - List 30 mods, starting with the 10th mod</td>
+        </tr>
+        <tr>
+          <td>detail</td>
+          <td>View all details of mod</td>
+          <td></td>
+          <td>detail &lt;mod id&gt; - View all mod detail</td>
+        </tr>
+        <tr>
+          <td>order</td>
+          <td>Change Load Order</td>
+          <td></td>
+          <td>order 1 first
+order 1 last
+order 1 sooner 5
+order 1 later
+order 1 set 4 - sets to exactly this order in the load. Any mods with a higher number for load order have their number increased
+Mods with a higher load order are loaded later, and override mods loaded earlier. Given mod A has an order 5 and mod B has an order of 1, then A will load AFTER B, and A's files will be used instead of B's in any file conflicts. </td>
+        </tr>
+        <tr>
+          <td>open</td>
+          <td>Open mod on web</td>
+          <td></td>
+          <td>open &lt;mod index&gt; - open on nexus
+local &lt;mod index&gt; - open local folder
+game-path - open local game folder
+ini-path - open local ini folder
+jar-path - open mod manager folder
+open 1 2 4
+open 1-4</td>
+        </tr>
+        <tr>
+          <td>local</td>
+          <td>Open local mod folder</td>
+          <td></td>
+          <td>open &lt;mod index&gt; - open on nexus
+local &lt;mod index&gt; - open local folder
+game-path - open local game folder
+ini-path - open local ini folder
+jar-path - open mod manager folder
+open 1 2 4
+open 1-4</td>
+        </tr>
+        <tr>
+          <td>game-path</td>
+          <td>Open game folder</td>
+          <td>gamepath</td>
+          <td>open &lt;mod index&gt; - open on nexus
+local &lt;mod index&gt; - open local folder
+game-path - open local game folder
+ini-path - open local ini folder
+jar-path - open mod manager folder
+open 1 2 4
+open 1-4</td>
+        </tr>
+        <tr>
+          <td>ini-path</td>
+          <td>Open ini path folder</td>
+          <td>inipath</td>
+          <td>open &lt;mod index&gt; - open on nexus
+local &lt;mod index&gt; - open local folder
+game-path - open local game folder
+ini-path - open local ini folder
+jar-path - open mod manager folder
+open 1 2 4
+open 1-4</td>
+        </tr>
+        <tr>
+          <td>jar-path</td>
+          <td>Open jar path folder</td>
+          <td>jarpath</td>
+          <td>open &lt;mod index&gt; - open on nexus
+local &lt;mod index&gt; - open local folder
+game-path - open local game folder
+ini-path - open local ini folder
+jar-path - open mod manager folder
+open 1 2 4
+open 1-4</td>
+        </tr>
+        <tr>
+          <td>purge</td>
+          <td>Purge all sym links</td>
+          <td></td>
+          <td>purge - delete all symlinks and rename override files
+purge dryrun - view what a purge would do without doing it</td>
+        </tr>
+        <tr>
+          <td>mod</td>
+          <td>Update a mod</td>
+          <td></td>
+          <td>mod &lt;mod index&gt; id 123 - Update mod's id
+mod &lt;mod index&gt; file ~/Downloads/sleepy-time.zip - Delete mod's stage folder and restage from zip
+mod &lt;mod index&gt; name &lt;new name&gt; - renames a mod without changing file paths
+rename &lt;mod index&gt; &lt;new name&gt;</td>
+        </tr>
+        <tr>
+          <td>profile</td>
+          <td>Create and use local mod lists</td>
+          <td></td>
+          <td>profile list
+profile save &lt;name&gt; - create a new profile 
+profile save &lt;index&gt; - save to an existing profile
+profile view &lt;index&gt;
+profile load &lt;index&gt;</td>
+        </tr>
+        <tr>
+          <td>rename</td>
+          <td>Rename a mod</td>
+          <td>mv</td>
+          <td>mod &lt;mod index&gt; id 123 - Update mod's id
+mod &lt;mod index&gt; file ~/Downloads/sleepy-time.zip - Delete mod's stage folder and restage from zip
+mod &lt;mod index&gt; name &lt;new name&gt; - renames a mod without changing file paths
+rename &lt;mod index&gt; &lt;new name&gt;</td>
+        </tr>
+        <tr>
+          <td>refresh</td>
+          <td>Refresh mods by id</td>
+          <td></td>
+          <td>refresh &lt;mod index&gt;
+refresh 1 2 4
+refresh 1-3
+refresh all - For all mods with ids, attempt to redownload (or grab the file from the downloads folder if it exists) and restage.
+refresh empty - Refresh any files without staged data
+refresh staged - Refresh only files that are staged
+refresh enabled - Refresh only files that are enabled
+refresh disabled - Refresh only files that are NOT enabled
+If you're looking to upgrade to a new version, see update and upgrade</td>
+        </tr>
+        <tr>
+          <td>update</td>
+          <td>Check for newer versions</td>
+          <td></td>
+          <td>update - fetches latest metadata for mods, including new versions and endorsement data
+update &lt;mod index&gt;
+update 1 2 4
+update 1-3
+Useful for checking for updates existing mods. To check add new mods, see fetch or add.
+To download updates, see upgrade</td>
+        </tr>
+        <tr>
+          <td>upgrade</td>
+          <td>Upgrade to newer versions</td>
+          <td></td>
+          <td>upgrade &lt;mod index&gt;
+upgrade 1 2 4
+upgrade 1-3
+upgrade all - For all mods with newer versions, attempt to stage the latest version.
+If you want to check for new versions, see update
+If you're looking to just redownload or restage a file at the current version, see refresh</td>
+        </tr>
+        <tr>
+          <td>remove</td>
+          <td>Delete a mod</td>
+          <td>rm</td>
+          <td>remove &lt;mod index&gt;
+rm &lt;mod index&gt;</td>
+        </tr>
+        <tr>
+          <td>search</td>
+          <td>Search Mods</td>
+          <td>grep,awk</td>
+          <td>Search for mods and list them once
+To apply a filter to future lists, see filter
+search &lt;search text&gt; - search the given text (name or category) 
+search 123 - show matching ids
+search enabled - show only enabled mods
+search disabled
+search staged
+search unstaged
+search missing - show missing ids</td>
+        </tr>
+        <tr>
+          <td>filter</td>
+          <td>Apply a filter to Mods</td>
+          <td></td>
+          <td>filter mods that contain the given text (name or category)
+Changes persist across future ls until filter clear or filter all is called
+To do a one time search, see search
+filter &lt;search text&gt; - 
+filter 123 - show matching ids
+filter enabled - show only enabled mods
+filter disabled
+filter staged
+filter unstaged
+filter missing - show missing ids</td>
+        </tr>
+        <tr>
+          <td>sort</td>
+          <td>Sort Mods</td>
+          <td></td>
+          <td>sort the list in various ways. Add reverse to invert the sort
+sort name
+sort id
+sort enabled
+sort category
+sort order
+sort staged</td>
+        </tr>
+        <tr>
+          <td>validate</td>
+          <td>List issues with mods</td>
+          <td></td>
+          <td>validate
+validate &lt;mod index&gt;
+validate 1 2 4
+validate 1-3
+validate staged
+validate enabled
+validate disabled</td>
+        </tr>
+        <tr>
+          <td>start</td>
+          <td>Launch Starfield</td>
+          <td>game</td>
+          <td>start - run the steam game</td>
+        </tr>
+        <tr>
+          <td>exit</td>
+          <td>Exit Program</td>
+          <td></td>
+          <td>Exit the process</td>
+        </tr>
+      </table>
+    </section>
+    <footer></footer>
+  </body>
+</html>
