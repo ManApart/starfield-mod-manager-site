@@ -5,22 +5,47 @@ import kotlinx.html.*
 
 fun BODY.home() {
     section {
-        style = "text-align: center;"
-        div {
-            id = "home"
-
-            h1 {
-                id = "home-title"
-                +"Starfield Mod Manager"
+        h1 {
+            +"Starfield Mod Manager"
+        }
+        div("accent-line") { }
+        div("section") {
+            p { +"A CLI based Starfield Mod Manager for Linux. Requires some technical know-how and familiarity with the CLI, but also provides a thin slice of Vortex capabilities." }
+            p { +"Currently only fully supports premium members. Non Premium members should be able to add files by zip folder or nexus \"download with mod manager links\", but likely won't be able to download mods by pasting in a url or id." }
+            div("links") {
+                a("/features.html", classes = "a-button") { +"Features" }
+                a("/setup.html", classes = "a-button") { +"Setup" }
+                a("/manual.html", classes = "a-button") { +"Manual" }
+                a(
+                    "https://github.com/ManApart/starfield-mod-manager",
+                    classes = "a-button",
+                    target = "_blank"
+                ) { +"Source" }
             }
-            div("accent-line") {  }
-            div("container") {
-                div {
-                    id = "asci"
-                }
-                script { src = "/assets/asciinema-player.min.js" }
-                script {
-                    +"AsciinemaPlayer.create('assets/test.cast', document.getElementById('asci'));"
+        }
+        div("accent-line") { +"Usage" }
+        div("section") {
+            p {
+                +"Run the app and then use "
+                code { +"help" }
+                +" to see commands. Alternatively you can look at the "
+                a(href = "/manual") { +"generated man page" }
+                +". You can also look through "
+                a(href = "/featuress") { +"examples." }
+            }
+            p { +"To reduce typing, most commands take the index of the mod, instead of mod id or name. This means the index of a mod can change as mods are added, deleted or sorted. Listing mods will always show their indices, and filtering will retain the index." }
+        }
+        div("accent-line") { +"Alternatives" }
+        div("section") {
+            ul {
+                +"Don't like this mod manager? Try another one:"
+                li { a(href = "https://github.com/cyberrumor/ammo", target = "_blank") { +"Ammo" } }
+                li { a(href = "https://github.com/CHollingworth/Lamp", target = "_blank") { +"Lamp" } }
+                li {
+                    a(
+                        href = "https://github.com/lVlyke/starfield-mod-loader",
+                        target = "_blank"
+                    ) { +"Starfield Mod Loader" }
                 }
             }
         }

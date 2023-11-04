@@ -1,6 +1,6 @@
 import kotlinx.html.*
 import kotlinx.html.stream.appendHTML
-import pages.examples
+import pages.features
 import pages.home
 import pages.manual
 import pages.setup
@@ -20,7 +20,7 @@ fun main(args: Array<String>) {
 
     createPage("index", BODY::home)
     createPage("manual", BODY::manual)
-    createPage("examples", BODY::examples)
+    createPage("features", BODY::features)
     createPage("setup", BODY::setup)
 
     combineCss()
