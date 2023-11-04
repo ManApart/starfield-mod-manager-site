@@ -16,6 +16,7 @@ val jsonMapper = kotlinx.serialization.json.Json {
 
 fun main(args: Array<String>) {
     File("out/assets").mkdirs()
+    File("out/fonts").mkdirs()
 
     createPage("index", BODY::home)
     createPage("manual", BODY::manual)
@@ -24,6 +25,7 @@ fun main(args: Array<String>) {
 
     combineCss()
     copyFiles(File("src/main/resources/assets"), File("out/assets"))
+    copyFiles(File("src/main/resources/fonts"), File("out/fonts"))
 }
 
 private fun createPage(pageName: String, customizer: BODY.() -> Unit) {
