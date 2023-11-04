@@ -17,7 +17,6 @@ body {
     font-size: large;
     background-color: var(--background-blue);
     font-family: Grotesk;
-
 }
 
 section {
@@ -85,6 +84,10 @@ a {
 
 a:hover{
     background-position: -100% 0%;
+}
+
+code {
+    background-color: var(--blue);
 }
 
 .button-pushed{
