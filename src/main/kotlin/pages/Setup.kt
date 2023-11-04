@@ -7,11 +7,12 @@ fun BODY.setup() {
     section {
         script { src = "/assets/asciinema-player.min.js" }
         h1 { +"Setup" }
+            p { +"Setup is less intimidating than it seems, especially if you're familiar with BGS modding and linux. Half of these instructions exist simply because there are multiple ways you can set up your system." }
+            p { +"Note: This guide assumes a vanilla instance of Starfield is running. This is not a guide on how to run Starfield on linux." }
 
         div("section") {
             div("accent-line") { +"Prerequisites" }
-            p { +"Start here, so you can run the manager." }
-            p { +"Note: This guide assumes a vanilla instance of Starfield is running. This is not a guide on how to run Starfield on linux." }
+            p { +"Make sure you have dependencies installed and a copy of the manager." }
             ul {
                 li { a(href = "https://www.nexusmods.com/users/myaccount?tab=api%20access") { +"Grab a personal API key from Nexus" } }
 
@@ -145,6 +146,26 @@ fun BODY.setup() {
                         href = "https://www.nexusmods.com/starfield/mods/1599",
                         target = "_blank"
                     ) { +"BAKA Disable My Games Folder" }
+                }
+                li {
+                    +"For mods with plugin files, you'll also want to install and enable "
+                    a(
+                        href = "https://www.nexusmods.com/starfield/mods/4157",
+                        target = "_blank"
+                    ) { +"Plugins.txt Enabler" }
+                }
+                li {
+                    +"Make sure to enable mods in your StarfieldCustom.ini (that lives at your ini path). There are many tutorials you can google, but the important part is to create the file if it doesn't exist and add these three lines:"
+                    p {
+                        code {
+                            style = "white-space: pre-line"
+                            +"""
+                    [Archive]
+                    bInvalidateOlderFiles=1
+                    sResourceDataDirsFinal=
+                    """.trimIndent()
+                        }
+                    }
                 }
                 li { +"All features should now work, and mods will be deployed to the game folder" }
             }
