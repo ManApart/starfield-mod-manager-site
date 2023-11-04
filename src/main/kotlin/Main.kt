@@ -78,3 +78,10 @@ private fun copyFiles(source: File, dest: File) {
         }
     }
 }
+
+fun DIV.asciCast(castName: String) {
+    div("asci-cast") { id = castName }
+    script {
+        +"AsciinemaPlayer.create('assets/casts/$castName.cast', document.getElementById('$castName'));"
+    }
+}

@@ -11,9 +11,7 @@ fun BODY.manual() {
     if (manualData.exists()) {
         val allCommands = jsonMapper.decodeFromString<List<CommandJson>>(manualData.readText())
         section {
-            h1 {
-                +"Commands Manual"
-            }
+            h1 { +"Commands Manual" }
             allCommands.groupBy { it.category }.entries.sortedBy { it.key }.forEach { (category, commands) ->
                 div("accent-line") { +category.name.lowercase().capitalize() }
                 table {

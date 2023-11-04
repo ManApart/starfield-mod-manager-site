@@ -1,15 +1,14 @@
 package pages
 
+import asciCast
 import kotlinx.html.*
 
 fun BODY.features() {
     nav()
-    section("features-section") {
+    section {
         script { src = "/assets/asciinema-player.min.js" }
 
-        h1 {
-            +"Features"
-        }
+        h1 { +"Features" }
         div("section") {
             div("accent-line") { +"Flexible Commands can target" }
             ul {
@@ -80,9 +79,3 @@ fun BODY.features() {
     }
 }
 
-private fun DIV.asciCast(castName: String) {
-    div("asci-cast") { id = castName }
-    script {
-        +"AsciinemaPlayer.create('assets/casts/$castName.cast', document.getElementById('$castName'));"
-    }
-}

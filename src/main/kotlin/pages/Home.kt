@@ -5,13 +5,25 @@ import kotlinx.html.*
 
 fun BODY.home() {
     section {
-        h1 {
-            +"Starfield Mod Manager"
-        }
+        h1 { +"Starfield Mod Manager" }
         div("section") {
             div("accent-line") { }
             p { +"A CLI based Starfield Mod Manager for Linux. Requires some technical know-how and familiarity with the CLI, but also provides a thin slice of Vortex capabilities." }
             p { +"Currently only fully supports premium members. Non Premium members should be able to add files by zip folder or nexus \"download with mod manager links\", but likely won't be able to download mods by pasting in a url or id." }
+            p {
+                +"Please report any issues with the "
+                a(
+                    href = "https://github.com/ManApart/starfield-mod-manager/issues",
+                    target = "_blank"
+                ) { +"manager" }
+                +" or "
+                a(
+                    href = "https://github.com/ManApart/starfield-mod-manager-site/issues",
+                    target = "_blank"
+                ) { +"this site" }
+                +" to their respective github issues page."
+            }
+
             div("links") {
                 a("/features.html", classes = "a-button") { +"Features" }
                 a("/setup.html", classes = "a-button") { +"Setup" }
@@ -22,6 +34,8 @@ fun BODY.home() {
                     target = "_blank"
                 ) { +"Source" }
             }
+
+            //TODO - do demo of adding a mod here
         }
         div("section") {
             div("accent-line") { +"Usage" }
@@ -29,9 +43,9 @@ fun BODY.home() {
                 +"Run the app and then use "
                 code { +"help" }
                 +" to see commands. Alternatively you can look at the "
-                a(href = "/manual") { +"generated man page" }
+                a(href = "/manual.html") { +"generated man page" }
                 +". You can also look through "
-                a(href = "/featuress") { +"examples." }
+                a(href = "/features.html") { +"examples." }
             }
             p { +"To reduce typing, most commands take the index of the mod, instead of mod id or name. This means the index of a mod can change as mods are added, deleted or sorted. Listing mods will always show their indices, and filtering will retain the index." }
         }
