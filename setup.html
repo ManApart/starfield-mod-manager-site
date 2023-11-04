@@ -1,17 +1,108 @@
 <html lang="en">
   <head>
     <title>Starfield Mod Manager</title>
-<base href="/">
     <meta content="IE=edge" http-equiv="X-UA-Compatible">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="view-transition" content="same-origin">
-    <link href="/assets/images/favicon.png" rel="shortcut icon" type="image/png">
-    <link href="/assets/styles.css" rel="stylesheet">
-    <link href="/assets/styles.css" rel="stylesheet">
-    <link href="/assets/asciinema-player.css" rel="stylesheet" type="text/css">
+    <link href="sassets/favicon.png" rel="shortcut icon" type="image/png">
+    <link href="assets/styles.css" rel="stylesheet">
+    <link href="assets/styles.css" rel="stylesheet">
+    <link href="assets/asciinema-player.css" rel="stylesheet" type="text/css">
   </head>
-  <body>
-    <section></section>
+  <body><a href="/index.html" class="a-button home-button">Home</a>
+    <section>
+      <script src="/assets/asciinema-player.min.js"></script>
+      <h1>Setup</h1>
+      <p>Setup is less intimidating than it seems, especially if you're familiar with BGS modding and linux. Half of these instructions exist simply because there are multiple ways you can set up your system.</p>
+      <p>Note: This guide assumes a vanilla instance of Starfield is running. This is not a guide on how to run Starfield on linux.</p>
+      <div class="section">
+        <div class="accent-line">Prerequisites</div>
+        <p>Make sure you have dependencies installed and a copy of the manager.</p>
+        <ul>
+          <li><a href="https://www.nexusmods.com/users/myaccount?tab=api%20access">Grab a personal API key from Nexus</a></li>
+          <li>Install dependencies, if you don't have them already. You'll need to <code>sudo apt install</code> them
+            <ul>
+              <li><code>7z</code> for installing 7zip files</li>
+              <li><code>libarchive-tools</code> for installing rar files</li>
+            </ul>
+          </li>
+          <li>Download <code>smm.desktop</code> and <code>starfield-mod-manger.jar</code> from <a href="https://github.com/ManApart/starfield-mod-manager/releases">github</a> or the nexus. Place the jar in a folder where you want to run it from.</li>
+        </ul>
+      </div>
+      <div class="section">
+        <div class="accent-line">Shortcuts and Vortex Links</div>
+        <p>This section lets you more easily run the manager, and use the &quot;Download with Vortex&quot; buttons on Nexus.</p>
+        <ul>
+          <li>Place <code>smm.desktop</code> in <code>~/.local/share/applications/</code></li>
+          <li>Edit the Exec line so it points to your jar install location.
+            <ul>
+              <li>Should look something like: <code>Exec=sh -c &quot;java -jar /home/&lt;user&gt;/games/programs/starfield-mod-manager/starfield-mod-manager.jar %U&quot;</code></li>
+            </ul>
+          </li>
+          <li>Edit the Path line so it points at the folder of your jar
+            <ul>
+              <li>Should look something like: <code>Path=/home/&lt;user&gt;/games/programs/starfield-mod-manager/</code></li>
+            </ul>
+          </li>
+          <li>Update <code>~/.local/share/applications/mimeapps.list</code> by adding a line <code>x-scheme-handler/nxm=smm.desktop</code></li>
+          <li>Make the desktop shortcut the default handler by running: <code>xdg-mime default smm.desktop x-scheme-handler/nxm</code></li>
+          <li>Optional: If you want to run from an existing terminal, add something like <code>alias smm='pushd /home/&lt;user&gt;/games/programs/starfield-mod-manager &amp;&amp; java -jar /home/&lt;user&gt;/games/programs/starfield-mod-manager/starfield-mod-manager.jar; popd'</code> to your bash aliases. This is how I run the manager in the demos on the site</li>
+        </ul>
+      </div>
+      <div class="section">
+        <div class="accent-line">Configure the App</div>
+        <p>Before you can download and deploy mods, you need to configure the app. This config will be saved in <code>config.json</code> in the folder the jar is in. (Mod data will be stored in another file in that folder).</p>
+        <ul>
+          <li>Start the app using one of the methods from the Shortcuts section above</li>
+          <li><code>config game-path &lt;path&gt;</code> to point to your game folder
+            <ul>
+              <li>Should look something like: <code>&lt;...&gt;/SteamLibrary/steamapps/common/Starfield/</code></li>
+            </ul>
+          </li>
+          <li><code>config ini-path &lt;path&gt;</code> to point to your ini (my docs) folder
+            <ul>
+              <li>Should look something like: <code>&lt;...&gt;/SteamLibrary/steamapps/compatdata/1716740/pfx/drive_c/users/steamuser/Documents/My Games/Starfield</code></li>
+            </ul>
+          </li>
+          <li><code>config api-key &lt;key&gt;</code> using the api key you got from the requisites step</li>
+        </ul>
+      </div>
+      <div class="section">
+        <div class="accent-line">Deploy to Game Folder</div>
+        <ul>
+          <li>Uninstall any manually added mod files, or consider doing a clean install of the game</li>
+          <li>Using the app, install and enable <a href="https://www.nexusmods.com/starfield/mods/106" target="_blank">SFSE</a></li>
+          <li>For convenient launching of SFSE, both from steam and from the mod manager add: <code>bash -c 'exec &quot;${@/Starfield.exe/sfse_loader.exe}&quot;' -- %command%</code> to your launch options (in steam &gt; game properties &gt; general)</li>
+          <li>Using the app, install and enable <a href="https://www.nexusmods.com/starfield/mods/1599" target="_blank">BAKA Disable My Games Folder</a></li>
+          <li>For mods with plugin files, you'll also want to install and enable <a href="https://www.nexusmods.com/starfield/mods/4157" target="_blank">Plugins.txt Enabler</a></li>
+          <li>Make sure to enable mods in your StarfieldCustom.ini (that lives at your ini path). There are many tutorials you can google, but the important part is to create the file if it doesn't exist and add these three lines:
+            <p><code style="white-space: pre-line">[Archive]
+bInvalidateOlderFiles=1
+sResourceDataDirsFinal=</code></p>
+          </li>
+          <li>All features should now work, and mods will be deployed to the game folder</li>
+        </ul>
+      </div>
+      <div class="section">
+        <div class="accent-line">Alternative Deploy to Docs Folder</div>
+        <p>If you're unable to install SFSE, you can deploy to the docs folder directly, but please note that this is not recommended as it's more error prone and can cause issues</p>
+        <ul>
+          <li>In the app run <code>config use-my-docs true</code></li>
+          <li>You can always revert the setting later (set it to false) once you have SFSE installed</li>
+        </ul>
+      </div>
+      <div class="section">
+        <div class="accent-line">Installing and Using FOMODs</div>
+        <p>FOMODs are made to be installed with a gui. Because they rely on images and require the parsing of a non-trivial XML structure, it's not worth the time to support through the terminal.</p>
+        <p>Instead, FOMODS are called out when you try to enable them, or run the validate command. Installing them, even without a gui, is still simple to do.</p>
+        <ul>
+          <li>When trying to enable a FOMOD, the manager will warn you and give you the index of the mod</li>
+          <li>Open the mod locally by running  <code>local x</code>, with x being the index of the mod.</li>
+          <li>In the file explorer, look at any pictures under the fomod folder, and pick the files you want from the various folders. Consolidate your choices and delete the other folders and files</li>
+          <li>Once you have properly structured files (starting with the Data folder, and you've deleted the fomod folder, the manager will be able to enable and deploy the mod</li>
+        </ul>
+      </div>
+    </section>
     <footer></footer>
   </body>
 </html>

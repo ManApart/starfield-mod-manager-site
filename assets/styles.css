@@ -12,10 +12,14 @@
 }
 
 body {
+    position: relative;
     color: white;
     font-size: large;
     background-color: var(--background-blue);
     font-family: Grotesk;
+}
+
+section {
     width: 90%;
     margin: auto;
     margin-top: 20px;
@@ -82,6 +86,10 @@ a:hover{
     background-position: -100% 0%;
 }
 
+code {
+    background-color: var(--blue);
+}
+
 .button-pushed{
     background-position: -100% 0%;
 }
@@ -141,7 +149,10 @@ table, th, td {
     height: unset;
 }
 
-.features-section {
+.home-button {
+    position: sticky;
+    top: 20px;
+    left: 20px;
 }
 @media (max-aspect-ratio: 3/4) {
     .asci-cast {
