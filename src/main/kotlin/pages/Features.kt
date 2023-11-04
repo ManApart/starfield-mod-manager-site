@@ -6,7 +6,7 @@ import kotlinx.html.*
 fun BODY.features() {
     nav()
     section {
-        script { src = "/assets/asciinema-player.min.js" }
+        script { src = "assets/asciinema-player.min.js" }
 
         h1 { +"Features" }
         div("section") {

@@ -38,16 +38,16 @@ private fun HTML.htmlWrapper(customizer: BODY.() -> Unit) {
     lang = "en"
     head {
         title("Starfield Mod Manager")
-        base { href = "/" }
+//        base { href = "/starfield-mod-manager-site/" }
 
         meta(content = "IE=edge") { httpEquiv = "X-UA-Compatible" }
         meta("viewport", "width=device-width, initial-scale=1")
         meta("view-transition", "same-origin")
 
-        link("/assets/images/favicon.png", "shortcut icon", "image/png")
-        link("/assets/styles.css", "stylesheet")
-        link("/assets/styles.css", "stylesheet")
-        link("/assets/asciinema-player.css", "stylesheet", type = "text/css")
+        link("sassets/favicon.png", "shortcut icon", "image/png")
+        link("assets/styles.css", "stylesheet")
+        link("assets/styles.css", "stylesheet")
+        link("assets/asciinema-player.css", "stylesheet", type = "text/css")
     }
     body {
         customizer()

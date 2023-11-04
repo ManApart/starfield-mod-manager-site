@@ -1,10 +1,12 @@
 package pages
 
+import asciCast
 import kotlinx.html.*
 
 
 fun BODY.home() {
     section {
+        script { src = "assets/asciinema-player.min.js" }
         h1 { +"Starfield Mod Manager" }
         div("section") {
             div("accent-line") { }
@@ -24,10 +26,13 @@ fun BODY.home() {
                 +" to their respective github issues page."
             }
 
+            //TODO - do demo of adding a mod here
+            asciCast("test")
+
             div("links") {
-                a("/features.html", classes = "a-button") { +"Features" }
-                a("/setup.html", classes = "a-button") { +"Setup" }
-                a("/manual.html", classes = "a-button") { +"Manual" }
+                a("features.html", classes = "a-button") { +"Features" }
+                a("setup.html", classes = "a-button") { +"Setup" }
+                a("manual.html", classes = "a-button") { +"Manual" }
                 a(
                     "https://github.com/ManApart/starfield-mod-manager",
                     classes = "a-button",
@@ -35,7 +40,6 @@ fun BODY.home() {
                 ) { +"Source" }
             }
 
-            //TODO - do demo of adding a mod here
         }
         div("section") {
             div("accent-line") { +"Usage" }
@@ -43,9 +47,9 @@ fun BODY.home() {
                 +"Run the app and then use "
                 code { +"help" }
                 +" to see commands. Alternatively you can look at the "
-                a(href = "/manual.html") { +"generated man page" }
+                a(href = "manual.html") { +"generated man page" }
                 +". You can also look through "
-                a(href = "/features.html") { +"examples." }
+                a(href = "features.html") { +"examples." }
             }
             p { +"To reduce typing, most commands take the index of the mod, instead of mod id or name. This means the index of a mod can change as mods are added, deleted or sorted. Listing mods will always show their indices, and filtering will retain the index." }
         }

@@ -5,7 +5,6 @@ import kotlinx.html.*
 fun BODY.setup() {
     nav()
     section {
-        script { src = "/assets/asciinema-player.min.js" }
         h1 { +"Setup" }
             p { +"Setup is less intimidating than it seems, especially if you're familiar with BGS modding and linux. Half of these instructions exist simply because there are multiple ways you can set up your system." }
             p { +"Note: This guide assumes a vanilla instance of Starfield is running. This is not a guide on how to run Starfield on linux." }
