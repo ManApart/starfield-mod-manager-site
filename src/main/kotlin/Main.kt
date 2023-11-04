@@ -1,29 +1,39 @@
 import kotlinx.html.*
 import kotlinx.html.stream.appendHTML
+import pages.examples
 import pages.home
+import pages.manual
+import pages.setup
 import java.io.File
 import java.nio.file.Files
 import java.nio.file.StandardCopyOption
 import kotlin.io.path.Path
 
+val jsonMapper = kotlinx.serialization.json.Json {
+    ignoreUnknownKeys = true
+    prettyPrint = true
+}
+
 fun main(args: Array<String>) {
     File("out/assets").mkdirs()
 
-    createPage("index", "home", "mainPage", BODY::home)
+    createPage("index", BODY::home)
+    createPage("manual", BODY::manual)
+    createPage("examples", BODY::examples)
+    createPage("setup", BODY::setup)
 
     combineCss()
     copyFiles(File("src/main/resources/assets"), File("out/assets"))
 }
 
-private fun createPage(pageName: String, dataPage: String, bodyClass: String, customizer: BODY.() -> Unit) {
-    createPage(pageName) {
-        htmlWrapper(dataPage, bodyClass, customizer)
+private fun createPage(pageName: String, customizer: BODY.() -> Unit) {
+    createHtmlPage(pageName) {
+        htmlWrapper(customizer)
     }
 }
 
-private fun HTML.htmlWrapper(dataPage: String, bodyClass: String, customizer: BODY.() -> Unit) {
+private fun HTML.htmlWrapper(customizer: BODY.() -> Unit) {
     lang = "en"
-    attributes["data-page"] = dataPage
     head {
         title("Starfield Mod Manager")
         base { href = "/" }
@@ -37,13 +47,13 @@ private fun HTML.htmlWrapper(dataPage: String, bodyClass: String, customizer: BO
         link("/assets/styles.css", "stylesheet")
         link("/assets/asciinema-player.css", "stylesheet", type = "text/css")
     }
-    body(bodyClass) {
+    body {
         customizer()
         footer()
     }
 }
 
-private fun createPage(pageName: String, customizer: HTML.() -> Unit) {
+private fun createHtmlPage(pageName: String, customizer: HTML.() -> Unit) {
     val text = StringBuffer().appendHTML().html {
         customizer()
     }.toString()
