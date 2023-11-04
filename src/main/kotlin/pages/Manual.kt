@@ -6,6 +6,7 @@ import kotlinx.serialization.Serializable
 import java.io.File
 
 fun BODY.manual() {
+    nav()
     val manualData = File("../mod-manager/manual-data.json")
     if (manualData.exists()) {
         val allCommands = jsonMapper.decodeFromString<List<CommandJson>>(manualData.readText())

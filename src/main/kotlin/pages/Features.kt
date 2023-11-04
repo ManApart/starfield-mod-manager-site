@@ -3,6 +3,7 @@ package pages
 import kotlinx.html.*
 
 fun BODY.features() {
+    nav()
     section("features-section") {
         script { src = "/assets/asciinema-player.min.js" }
 

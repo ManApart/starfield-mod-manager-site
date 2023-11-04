@@ -4,5 +4,6 @@ import kotlinx.html.BODY
 import kotlinx.html.section
 
 fun BODY.setup() {
+    nav()
     section {}
 }
