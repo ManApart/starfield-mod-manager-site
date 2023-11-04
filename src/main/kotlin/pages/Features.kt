@@ -76,6 +76,20 @@ fun BODY.features() {
                 li { +"And more" }
             }
         }
+        div("section") {
+            div("accent-line") { +"Alternatives" }
+            ul {
+                +"Don't like this mod manager? Try another one:"
+                li { a(href = "https://github.com/cyberrumor/ammo", target = "_blank") { +"Ammo" } }
+                li { a(href = "https://github.com/CHollingworth/Lamp", target = "_blank") { +"Lamp" } }
+                li {
+                    a(
+                        href = "https://github.com/lVlyke/starfield-mod-loader",
+                        target = "_blank"
+                    ) { +"Starfield Mod Loader" }
+                }
+            }
+        }
     }
 }
 

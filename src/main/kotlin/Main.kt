@@ -38,7 +38,6 @@ private fun HTML.htmlWrapper(customizer: BODY.() -> Unit) {
     lang = "en"
     head {
         title("Starfield Mod Manager")
-//        base { href = "/starfield-mod-manager-site/" }
 
         meta(content = "IE=edge") { httpEquiv = "X-UA-Compatible" }
         meta("viewport", "width=device-width, initial-scale=1")
