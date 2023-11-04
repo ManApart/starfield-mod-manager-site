@@ -1,9 +1,0 @@
-[Desktop Entry]
-Name=Starfield Mod Manager
-Comment=Manage Starfield Mods
-Exec=sh -c "java -jar starfield-mod-manager.jar %U"
-Path=/tmp
-Icon=steam_icon_1716740
-Terminal=true
-Type=Application
-MimeType=x-scheme-handler/nxm;

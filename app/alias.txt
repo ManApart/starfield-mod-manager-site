@@ -1,1 +1,0 @@
-alias smm='pushd <path-to-jar-file-folder> && java -jar <path-to-jar-file-folder>/starfield-mod-manager.jars; popd'
