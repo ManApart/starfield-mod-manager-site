@@ -14,7 +14,7 @@ fun BODY.manual() {
             h1 { +"Commands Manual" }
             allCommands.groupBy { it.category }.entries.sortedBy { it.key }.forEach { (category, commands) ->
                 div("accent-line") { +category.name.lowercase().capitalize() }
-                table("manual-table") {
+                table {
                     tr {
                         td("header-command") {
                             +"Command"
@@ -22,18 +22,17 @@ fun BODY.manual() {
                         td("header-summary") {
                             +"Summary"
                         }
-                        td("header-aliases") {
-                            +"Aliases"
-                        }
                         td("header-usage") {
                             +"Usage"
                         }
                     }
                     commands.forEach { command ->
                         tr {
-                            td { +command.name }
+                            td {
+                                p { +command.name }
+                                p { +command.aliases.joinToString(", ") }
+                            }
                             td { +command.summary }
-                            td { +command.aliases.joinToString(", ") }
                             td { command.usage.split("\n").forEach { p { +it } } }
                         }
                     }
