@@ -27,6 +27,7 @@ fun BODY.features() {
                 li { +"By url" }
                 li { +"By local zip file" }
             }
+            asciCast("add")
         }
         div("section") {
             div("accent-line") { +"Open Mods" }

@@ -86,7 +86,7 @@ fun BODY.setup() {
                 }
                 li {
                     +"Optional: If you want to run from an existing terminal, add something like "
-                    code { +"alias smm='pushd /home/<user>/games/programs/starfield-mod-manager && java -jar /home/<user>/games/programs/starfield-mod-manager/starfield-mod-manager.jar; popd'" }
+                    code { +"alias smm='pushd /home/<user>/games/programs/starfield-mod-manager && java -jar starfield-mod-manager.jar; popd'" }
                     +" to your bash aliases. This is how I run the manager in the demos on the site"
                 }
             }
