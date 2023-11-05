@@ -123,7 +123,7 @@ fun BODY.setup() {
                 }
                 li {
                     code { +"config api-key <key>" }
-                    +" using the api key you got from the requisites step"
+                    +" using the api key you got from the prerequisites step"
                 }
             }
         }
@@ -196,7 +196,7 @@ fun BODY.setup() {
                     +", with x being the index of the mod."
                 }
                 li { +"In the file explorer, look at any pictures under the fomod folder, and pick the files you want from the various folders. Consolidate your choices and delete the other folders and files" }
-                li { +"Once you have properly structured files (starting with the Data folder, and you've deleted the fomod folder, the manager will be able to enable and deploy the mod" }
+                li { +"Once you have properly structured files (starting with the Data folder), and you've deleted the fomod folder, the manager will be able to enable and deploy the mod" }
             }
         }
         div("section") {
