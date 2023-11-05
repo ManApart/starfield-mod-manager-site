@@ -6,8 +6,10 @@ fun BODY.setup() {
     nav()
     section {
         h1 { +"Setup" }
-            p { +"Setup is less intimidating than it seems, especially if you're familiar with BGS modding and linux. Half of these instructions exist simply because there are multiple ways you can set up your system." }
-            p { +"Note: This guide assumes a vanilla instance of Starfield is running. This is not a guide on how to run Starfield on linux." }
+        p { +"Setup is less intimidating than it seems, especially if you're familiar with BGS modding and linux. Half of these instructions exist simply because there are multiple ways you can set up your system." }
+        p { +"Note: This guide assumes a vanilla instance of Starfield is running. This is not a guide on how to run Starfield on linux." }
+
+        p { +"Currently only fully supports premium members. Non Premium members should be able to add files by zip folder or nexus \"download with mod manager links\", but likely won't be able to download mods by pasting in a url or id." }
 
         div("section") {
             div("accent-line") { +"Prerequisites" }
@@ -208,6 +210,20 @@ fun BODY.setup() {
                 a(href = "features.html") { +"examples." }
             }
             p { +"To reduce typing, most commands take the index of the mod, instead of mod id or name. This means the index of a mod can change as mods are added, deleted or sorted. Listing mods will always show their indices, and filtering will retain the index." }
+
+            p {
+                +"Please report any issues with the "
+                a(
+                    href = "https://github.com/ManApart/starfield-mod-manager/issues",
+                    target = "_blank"
+                ) { +"manager" }
+                +" or "
+                a(
+                    href = "https://github.com/ManApart/starfield-mod-manager-site/issues",
+                    target = "_blank"
+                ) { +"this site" }
+                +" to their respective github issues page."
+            }
         }
     }
 }

@@ -43,7 +43,7 @@ private fun HTML.htmlWrapper(customizer: BODY.() -> Unit) {
         meta("viewport", "width=device-width, initial-scale=1")
         meta("view-transition", "same-origin")
 
-        link("sassets/favicon.png", "shortcut icon", "image/png")
+        link("assets/favicon.png", "shortcut icon", "image/png")
         link("assets/styles.css", "stylesheet")
         link("assets/styles.css", "stylesheet")
         link("assets/asciinema-player.css", "stylesheet", type = "text/css")
