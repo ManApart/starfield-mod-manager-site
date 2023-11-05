@@ -46,7 +46,7 @@
           </li>
           <li>Update <code>~/.local/share/applications/mimeapps.list</code> by adding a line <code>x-scheme-handler/nxm=smm.desktop</code></li>
           <li>Make the desktop shortcut the default handler by running: <code>xdg-mime default smm.desktop x-scheme-handler/nxm</code></li>
-          <li>Optional: If you want to run from an existing terminal, add something like <code>alias smm='pushd /home/&lt;user&gt;/games/programs/starfield-mod-manager &amp;&amp; java -jar /home/&lt;user&gt;/games/programs/starfield-mod-manager/starfield-mod-manager.jar; popd'</code> to your bash aliases. This is how I run the manager in the demos on the site</li>
+          <li>Optional: If you want to run from an existing terminal, add something like <code>alias smm='pushd /home/&lt;user&gt;/games/programs/starfield-mod-manager &amp;&amp; java -jar starfield-mod-manager.jar; popd'</code> to your bash aliases. This is how I run the manager in the demos on the site</li>
         </ul>
       </div>
       <div class="section">
@@ -64,7 +64,7 @@
               <li>Should look something like: <code>&lt;...&gt;/SteamLibrary/steamapps/compatdata/1716740/pfx/drive_c/users/steamuser/Documents/My Games/Starfield</code></li>
             </ul>
           </li>
-          <li><code>config api-key &lt;key&gt;</code> using the api key you got from the requisites step</li>
+          <li><code>config api-key &lt;key&gt;</code> using the api key you got from the prerequisites step</li>
         </ul>
       </div>
       <div class="section">
@@ -99,7 +99,7 @@ sResourceDataDirsFinal=</code></p>
           <li>When trying to enable a FOMOD, the manager will warn you and give you the index of the mod</li>
           <li>Open the mod locally by running  <code>local x</code>, with x being the index of the mod.</li>
           <li>In the file explorer, look at any pictures under the fomod folder, and pick the files you want from the various folders. Consolidate your choices and delete the other folders and files</li>
-          <li>Once you have properly structured files (starting with the Data folder, and you've deleted the fomod folder, the manager will be able to enable and deploy the mod</li>
+          <li>Once you have properly structured files (starting with the Data folder), and you've deleted the fomod folder, the manager will be able to enable and deploy the mod</li>
         </ul>
       </div>
       <div class="section">

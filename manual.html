@@ -13,17 +13,18 @@
     <section>
       <h1>Commands Manual</h1>
       <div class="accent-line">Add</div>
-      <table class="manual-table">
+      <table>
         <tr>
           <td class="header-command">Command</td>
           <td class="header-summary">Summary</td>
-          <td class="header-aliases">Aliases</td>
           <td class="header-usage">Usage</td>
         </tr>
         <tr>
-          <td>add</td>
+          <td>
+            <p>add</p>
+            <p></p>
+          </td>
           <td>Add a new mod</td>
-          <td></td>
           <td>
             <p>add nexus nxm://starfield/mods/4183/files/12955?key=abc&amp;expires=1697023374&amp;user_id=111</p>
             <p>add https://www.nexusmods.com/starfield/mods/4183?tab=files</p>
@@ -33,9 +34,11 @@
           </td>
         </tr>
         <tr>
-          <td>fetch</td>
+          <td>
+            <p>fetch</p>
+            <p></p>
+          </td>
           <td>Fetch Mod Data</td>
-          <td></td>
           <td>
             <p>fetch &lt;mod id&gt; - Add mod metadata without downloading files</p>
             <p>fetch 111 222 333 - Fetch multiple</p>
@@ -43,9 +46,11 @@
           </td>
         </tr>
         <tr>
-          <td>remove</td>
+          <td>
+            <p>remove</p>
+            <p>rm</p>
+          </td>
           <td>Delete a mod</td>
-          <td>rm</td>
           <td>
             <p>remove &lt;mod index&gt;</p>
             <p>rm &lt;mod index&gt;</p>
@@ -53,17 +58,18 @@
         </tr>
       </table>
       <div class="accent-line">Deploy</div>
-      <table class="manual-table">
+      <table>
         <tr>
           <td class="header-command">Command</td>
           <td class="header-summary">Summary</td>
-          <td class="header-aliases">Aliases</td>
           <td class="header-usage">Usage</td>
         </tr>
         <tr>
-          <td>enable</td>
+          <td>
+            <p>enable</p>
+            <p></p>
+          </td>
           <td>Enable Mod</td>
-          <td></td>
           <td>
             <p>enable &lt;mod index&gt;</p>
             <p>disable &lt;mod index&gt;</p>
@@ -73,9 +79,11 @@
           </td>
         </tr>
         <tr>
-          <td>disable</td>
+          <td>
+            <p>disable</p>
+            <p></p>
+          </td>
           <td>Disable Mod</td>
-          <td></td>
           <td>
             <p>enable &lt;mod index&gt;</p>
             <p>disable &lt;mod index&gt;</p>
@@ -85,18 +93,22 @@
           </td>
         </tr>
         <tr>
-          <td>deploy</td>
+          <td>
+            <p>deploy</p>
+            <p></p>
+          </td>
           <td>Deploy enabled mods</td>
-          <td></td>
           <td>
             <p>deploy - Applies all mods to the game folder by creating the appropriate symlinks</p>
             <p>deploy dryrun - Per your load order view how files will be deployed</p>
           </td>
         </tr>
         <tr>
-          <td>order</td>
+          <td>
+            <p>order</p>
+            <p></p>
+          </td>
           <td>Change Load Order</td>
-          <td></td>
           <td>
             <p>order 1 first</p>
             <p>order 1 last</p>
@@ -107,18 +119,22 @@
           </td>
         </tr>
         <tr>
-          <td>purge</td>
+          <td>
+            <p>purge</p>
+            <p></p>
+          </td>
           <td>Purge all sym links</td>
-          <td></td>
           <td>
             <p>purge - delete all symlinks and rename override files</p>
             <p>purge dryrun - view what a purge would do without doing it</p>
           </td>
         </tr>
         <tr>
-          <td>profile</td>
+          <td>
+            <p>profile</p>
+            <p></p>
+          </td>
           <td>Create and use local mod lists</td>
-          <td></td>
           <td>
             <p>profile list</p>
             <p>profile save &lt;name&gt; - create a new profile </p>
@@ -128,9 +144,11 @@
           </td>
         </tr>
         <tr>
-          <td>validate</td>
+          <td>
+            <p>validate</p>
+            <p></p>
+          </td>
           <td>List issues with mods</td>
-          <td></td>
           <td>
             <p>validate</p>
             <p>validate &lt;mod index&gt;</p>
@@ -143,34 +161,39 @@
         </tr>
       </table>
       <div class="accent-line">View</div>
-      <table class="manual-table">
+      <table>
         <tr>
           <td class="header-command">Command</td>
           <td class="header-summary">Summary</td>
-          <td class="header-aliases">Aliases</td>
           <td class="header-usage">Usage</td>
         </tr>
         <tr>
-          <td>list</td>
+          <td>
+            <p>list</p>
+            <p>ls</p>
+          </td>
           <td>List Mods</td>
-          <td>ls</td>
           <td>
             <p>List Mod details</p>
             <p>list 10 30 - List 30 mods, starting with the 10th mod</p>
           </td>
         </tr>
         <tr>
-          <td>detail</td>
+          <td>
+            <p>detail</p>
+            <p></p>
+          </td>
           <td>View all details of mod</td>
-          <td></td>
           <td>
             <p>detail &lt;mod id&gt; - View all mod detail</p>
           </td>
         </tr>
         <tr>
-          <td>search</td>
+          <td>
+            <p>search</p>
+            <p>grep, awk</p>
+          </td>
           <td>Search Mods</td>
-          <td>grep, awk</td>
           <td>
             <p>Search for mods and list them once</p>
             <p>To apply a filter to future lists, see filter</p>
@@ -184,9 +207,11 @@
           </td>
         </tr>
         <tr>
-          <td>filter</td>
+          <td>
+            <p>filter</p>
+            <p></p>
+          </td>
           <td>Apply a filter to Mods</td>
-          <td></td>
           <td>
             <p>filter mods that contain the given text (name or category)</p>
             <p>Changes persist across future ls until filter clear or filter all is called</p>
@@ -201,9 +226,11 @@
           </td>
         </tr>
         <tr>
-          <td>sort</td>
+          <td>
+            <p>sort</p>
+            <p></p>
+          </td>
           <td>Sort Mods</td>
-          <td></td>
           <td>
             <p>sort the list in various ways. Add reverse to invert the sort</p>
             <p>sort name</p>
@@ -216,17 +243,18 @@
         </tr>
       </table>
       <div class="accent-line">Edit</div>
-      <table class="manual-table">
+      <table>
         <tr>
           <td class="header-command">Command</td>
           <td class="header-summary">Summary</td>
-          <td class="header-aliases">Aliases</td>
           <td class="header-usage">Usage</td>
         </tr>
         <tr>
-          <td>endorse</td>
+          <td>
+            <p>endorse</p>
+            <p></p>
+          </td>
           <td>Endorse Mod</td>
-          <td></td>
           <td>
             <p>endorse &lt;mod index&gt; - endorse a mod on nexus</p>
             <p>abstain &lt;mod index&gt;</p>
@@ -235,9 +263,11 @@
           </td>
         </tr>
         <tr>
-          <td>abstain</td>
+          <td>
+            <p>abstain</p>
+            <p></p>
+          </td>
           <td>Abstain from endorsing Mod</td>
-          <td></td>
           <td>
             <p>endorse &lt;mod index&gt; - endorse a mod on nexus</p>
             <p>abstain &lt;mod index&gt;</p>
@@ -246,9 +276,11 @@
           </td>
         </tr>
         <tr>
-          <td>mod</td>
+          <td>
+            <p>mod</p>
+            <p></p>
+          </td>
           <td>Update a mod</td>
-          <td></td>
           <td>
             <p>mod &lt;mod index&gt; id 123 - Update mod's id</p>
             <p>mod &lt;mod index&gt; file ~/Downloads/sleepy-time.zip - Delete mod's stage folder and restage from zip</p>
@@ -257,9 +289,11 @@
           </td>
         </tr>
         <tr>
-          <td>rename</td>
+          <td>
+            <p>rename</p>
+            <p>mv</p>
+          </td>
           <td>Rename a mod</td>
-          <td>mv</td>
           <td>
             <p>mod &lt;mod index&gt; id 123 - Update mod's id</p>
             <p>mod &lt;mod index&gt; file ~/Downloads/sleepy-time.zip - Delete mod's stage folder and restage from zip</p>
@@ -269,17 +303,18 @@
         </tr>
       </table>
       <div class="accent-line">Open</div>
-      <table class="manual-table">
+      <table>
         <tr>
           <td class="header-command">Command</td>
           <td class="header-summary">Summary</td>
-          <td class="header-aliases">Aliases</td>
           <td class="header-usage">Usage</td>
         </tr>
         <tr>
-          <td>open</td>
+          <td>
+            <p>open</p>
+            <p></p>
+          </td>
           <td>Open mod on web</td>
-          <td></td>
           <td>
             <p>open &lt;mod index&gt; - open on nexus</p>
             <p>local &lt;mod index&gt; - open local folder</p>
@@ -291,9 +326,11 @@
           </td>
         </tr>
         <tr>
-          <td>local</td>
+          <td>
+            <p>local</p>
+            <p></p>
+          </td>
           <td>Open local mod folder</td>
-          <td></td>
           <td>
             <p>open &lt;mod index&gt; - open on nexus</p>
             <p>local &lt;mod index&gt; - open local folder</p>
@@ -305,9 +342,11 @@
           </td>
         </tr>
         <tr>
-          <td>game-path</td>
+          <td>
+            <p>game-path</p>
+            <p>gamepath</p>
+          </td>
           <td>Open game folder</td>
-          <td>gamepath</td>
           <td>
             <p>open &lt;mod index&gt; - open on nexus</p>
             <p>local &lt;mod index&gt; - open local folder</p>
@@ -319,9 +358,11 @@
           </td>
         </tr>
         <tr>
-          <td>ini-path</td>
+          <td>
+            <p>ini-path</p>
+            <p>inipath</p>
+          </td>
           <td>Open ini path folder</td>
-          <td>inipath</td>
           <td>
             <p>open &lt;mod index&gt; - open on nexus</p>
             <p>local &lt;mod index&gt; - open local folder</p>
@@ -333,9 +374,11 @@
           </td>
         </tr>
         <tr>
-          <td>jar-path</td>
+          <td>
+            <p>jar-path</p>
+            <p>jarpath</p>
+          </td>
           <td>Open jar path folder</td>
-          <td>jarpath</td>
           <td>
             <p>open &lt;mod index&gt; - open on nexus</p>
             <p>local &lt;mod index&gt; - open local folder</p>
@@ -348,17 +391,18 @@
         </tr>
       </table>
       <div class="accent-line">Update</div>
-      <table class="manual-table">
+      <table>
         <tr>
           <td class="header-command">Command</td>
           <td class="header-summary">Summary</td>
-          <td class="header-aliases">Aliases</td>
           <td class="header-usage">Usage</td>
         </tr>
         <tr>
-          <td>refresh</td>
+          <td>
+            <p>refresh</p>
+            <p></p>
+          </td>
           <td>Refresh mods by id</td>
-          <td></td>
           <td>
             <p>refresh &lt;mod index&gt;</p>
             <p>refresh 1 2 4</p>
@@ -372,9 +416,11 @@
           </td>
         </tr>
         <tr>
-          <td>update</td>
+          <td>
+            <p>update</p>
+            <p></p>
+          </td>
           <td>Check for newer versions</td>
-          <td></td>
           <td>
             <p>update - fetches latest metadata for mods, including new versions and endorsement data</p>
             <p>update &lt;mod index&gt;</p>
@@ -385,9 +431,23 @@
           </td>
         </tr>
         <tr>
-          <td>upgrade</td>
+          <td>
+            <p>version</p>
+            <p></p>
+          </td>
+          <td>See current and new version for mod</td>
+          <td>
+            <p>version &lt;mod index&gt; - view the current and latest version of a mod</p>
+            <p>version 1 2 4</p>
+            <p>version 1-3</p>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <p>upgrade</p>
+            <p></p>
+          </td>
           <td>Upgrade to newer versions</td>
-          <td></td>
           <td>
             <p>upgrade &lt;mod index&gt;</p>
             <p>upgrade 1 2 4</p>
@@ -399,17 +459,18 @@
         </tr>
       </table>
       <div class="accent-line">Config</div>
-      <table class="manual-table">
+      <table>
         <tr>
           <td class="header-command">Command</td>
           <td class="header-summary">Summary</td>
-          <td class="header-aliases">Aliases</td>
           <td class="header-usage">Usage</td>
         </tr>
         <tr>
-          <td>config</td>
+          <td>
+            <p>config</p>
+            <p></p>
+          </td>
           <td>Edit Configuration</td>
-          <td></td>
           <td>
             <p>config game-path &lt;path-to-folder&gt; - Sets the path to the folder under steam containing the starfield Data folder and exe</p>
             <p>config ini-path &lt;path-to-folder&gt; - Sets the path to the folder under your documents that contains StarfieldCustom.ini and eventually Plugins.txt. Needed for updating mod load order</p>
@@ -421,25 +482,31 @@
           </td>
         </tr>
         <tr>
-          <td>help</td>
+          <td>
+            <p>help</p>
+            <p></p>
+          </td>
           <td>Explain commands</td>
-          <td></td>
           <td>
             <p></p>
           </td>
         </tr>
         <tr>
-          <td>start</td>
+          <td>
+            <p>start</p>
+            <p>game</p>
+          </td>
           <td>Launch Starfield</td>
-          <td>game</td>
           <td>
             <p>start - run the steam game</p>
           </td>
         </tr>
         <tr>
-          <td>exit</td>
+          <td>
+            <p>exit</p>
+            <p></p>
+          </td>
           <td>Exit Program</td>
-          <td></td>
           <td>
             <p>Exit the process</p>
           </td>
