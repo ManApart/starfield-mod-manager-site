@@ -1,5 +1,28 @@
 @media (max-aspect-ratio: 3/4) {
+    code{
+        word-wrap: break-word;
+    }
     .asci-cast {
         width: 100%;
+    }
+    .links a {
+        margin-left: 1%;
+        margin-right: 1%;
+    }
+
+    .header-command{
+        min-width: 40px;
+    }
+    .header-summary{
+        width: 20%;
+    }
+    .header-aliases{
+        width: 10%;
+    }
+    .header-usage{
+        width: 60%;
+    }
+    .manual-table tbody tr td:nth-child(4) {
+        overflow-wrap: anywhere;
     }
 }

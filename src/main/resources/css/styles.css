@@ -156,3 +156,20 @@ table, th, td {
     top: 20px;
     left: 20px;
 }
+
+#home-summary{
+    text-align: center;
+}
+
+.header-command{
+    width: 10%;
+}
+.header-summary{
+    width: 20%;
+}
+.header-aliases{
+    width: 10%;
+}
+.header-usage{
+    width: 60%;
+}

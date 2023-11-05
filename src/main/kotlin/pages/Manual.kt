@@ -14,22 +14,18 @@ fun BODY.manual() {
             h1 { +"Commands Manual" }
             allCommands.groupBy { it.category }.entries.sortedBy { it.key }.forEach { (category, commands) ->
                 div("accent-line") { +category.name.lowercase().capitalize() }
-                table {
+                table("manual-table") {
                     tr {
-                        td {
-                            style = "width: 10%;"
+                        td("header-command") {
                             +"Command"
                         }
-                        td {
-                            style = "width: 20%;"
+                        td("header-summary") {
                             +"Summary"
                         }
-                        td {
-                            style = "width: 10%;"
+                        td("header-aliases") {
                             +"Aliases"
                         }
-                        td {
-                            style = "width: 60%;"
+                        td("header-usage") {
                             +"Usage"
                         }
                     }

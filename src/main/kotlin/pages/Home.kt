@@ -21,15 +21,14 @@ fun BODY.home() {
         }
 
         div("section") {
-
-            p { +"Native Starfield mod management on Linux" }
+            id = "home-summary"
+            div("accent-line") { +"Linux CLI Mod Manager" }
             p { +"Flexible CLI commands support everything from Nexus download links to bulk updating mods, to maintaining and deploying local mod collections." }
 
             p { +"Check out the demo below and click Features above to discover more functionality." }
             //TODO - do demo of adding a mod here
             asciCast("test")
 
-            div("accent-line") { }
 
         }
 
