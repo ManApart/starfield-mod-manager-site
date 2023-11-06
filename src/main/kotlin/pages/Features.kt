@@ -79,6 +79,7 @@ fun BODY.features() {
                 li { +"By Category" }
                 li { +"And more" }
             }
+            asciCast("sort", rows = 20)
         }
         div("section") {
             div("accent-line") { +"Alternatives" }
