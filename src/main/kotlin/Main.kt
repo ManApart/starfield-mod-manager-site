@@ -78,10 +78,15 @@ private fun copyFiles(source: File, dest: File) {
     }
 }
 
-fun DIV.asciCast(castName: String, startAt: Float = 0f, idleTimeLimit: Float = 1f, rows: Int? = null) {
+fun DIV.asciCast(castName: String, startAt: Float = 0f, idleTimeLimit: Float = 1f, rows: Int? = null, posterTime: String? = null) {
     div("asci-cast") { id = castName }
     script {
         val rowText = rows?.let { ", rows: $it" } ?: ""
-        +"AsciinemaPlayer.create('assets/casts/$castName.cast', document.getElementById('$castName'), {startAt: $startAt, idleTimeLimit: $idleTimeLimit$rowText});"
+        val posterText = posterTime?.let { ", poster: 'npt:$it'" } ?: ""
+        val options = """
+            {preload: true, startAt: $startAt, idleTimeLimit: $idleTimeLimit$rowText$posterText}
+        """.trimIndent()
+
+        +"AsciinemaPlayer.create('assets/casts/$castName.cast', document.getElementById('$castName'), $options);"
     }
 }

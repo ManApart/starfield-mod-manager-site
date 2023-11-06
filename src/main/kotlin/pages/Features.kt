@@ -26,7 +26,7 @@ fun BODY.features() {
                 li { +"By url" }
                 li { +"By local zip file" }
             }
-            asciCast("add", rows = 10)
+            asciCast("add", rows = 10, posterTime = "0:18")
         }
         div("section") {
             div("accent-line") { +"Open Mods" }
@@ -34,7 +34,7 @@ fun BODY.features() {
                 li { +"Locally" }
                 li { +"On Nexus" }
             }
-            asciCast("open", rows = 10)
+            asciCast("open", rows = 10, posterTime = "0:02")
             p { +"(Browser and folder opens outside the terminal, so are not seen in the demo)" }
         }
         div("section") {
@@ -47,7 +47,7 @@ fun BODY.features() {
                 li { +"Redownload or restage files" }
                 li { +"Endorse or Abstain from mods" }
             }
-            asciCast("fetch", rows = 10)
+            asciCast("fetch", rows = 10, posterTime = "0:02")
         }
         div("section") {
             div("accent-line") { +"Enable and Disable Mods" }
@@ -57,7 +57,7 @@ fun BODY.features() {
                 li { +"Save local mod lists (profiles)" }
                 li { +"Purge all symlinks" }
             }
-            asciCast("enable")
+            asciCast("enable", posterTime = "0:02")
         }
         div("section") {
             div("accent-line") { +"Search Mods" }
@@ -69,7 +69,7 @@ fun BODY.features() {
                 li { +"By Staged" }
                 li { +"etc" }
             }
-            asciCast("search")
+            asciCast("search", posterTime = "0:05")
         }
         div("section") {
             div("accent-line") { +"Sort Mods" }
@@ -80,7 +80,7 @@ fun BODY.features() {
                 li { +"By Category" }
                 li { +"And more" }
             }
-            asciCast("sort", rows = 20)
+            asciCast("sort", rows = 20, posterTime = "0:02")
         }
         div("section") {
             div("accent-line") { +"Alternatives" }
