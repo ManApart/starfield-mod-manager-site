@@ -68,6 +68,7 @@ fun BODY.features() {
                 li { +"By Staged" }
                 li { +"etc" }
             }
+            asciCast("search")
         }
         div("section") {
             div("accent-line") { +"Sort Mods" }

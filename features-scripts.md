@@ -28,8 +28,9 @@ purge
 ## Search
 search audio
 search halo
-filter staged
+filter endorsed
 ls 10 20
+find andrej
 
 ## Sort
 sort category
