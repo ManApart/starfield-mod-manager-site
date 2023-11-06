@@ -35,6 +35,8 @@ fun BODY.features() {
                 li { +"Locally" }
                 li { +"On Nexus" }
             }
+            asciCast("open", rows = 10)
+            p{+"(Browser and folder opens outside the terminal, so are not seen in the demo)"}
         }
         div("section") {
             div("accent-line") { +"Fetch Metadata and Updates" }

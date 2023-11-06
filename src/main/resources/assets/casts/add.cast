@@ -1,4 +1,4 @@
-{"version": 2, "width": 140, "height": 20, "timestamp": 1699196757, "env": {"SHELL": "/bin/bash", "TERM": "xterm-256color"}}
+{"version": 2, "width": 110, "height": 20, "timestamp": 1699196757, "env": {"SHELL": "/bin/bash", "TERM": "xterm-256color"}}
 [3.472209, "o", "\u001b[36m\r\nStarfield Mod Manager\u001b[0m\r\n"]
 [3.583893, "o", "\u001b[2J\u001b[3J\u001b[1;1H"]
 [3.587089, "o", "\u001b[36m"]
