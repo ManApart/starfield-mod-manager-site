@@ -57,6 +57,7 @@ fun BODY.features() {
                 li { +"Save local mod lists (profiles)" }
                 li { +"Purge all symlinks" }
             }
+            asciCast("enable")
         }
         div("section") {
             div("accent-line") { +"Search Mods" }

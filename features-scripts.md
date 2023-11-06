@@ -20,10 +20,17 @@ upgrade
 endorse 1
 
 ## Enable
-enable 1
+enable 4
 deploy dryrun
+deploy
+ls
 profile save main
+disable all
 purge
+ls
+profile
+profile load 0
+ls
 
 ## Search
 search audio
