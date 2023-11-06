@@ -203,7 +203,21 @@
             <p>search disabled</p>
             <p>search staged</p>
             <p>search unstaged</p>
+            <p>search endorsed</p>
+            <p>search unendorsed</p>
+            <p>search abstained</p>
             <p>search missing - show missing ids</p>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <p>find</p>
+            <p></p>
+          </td>
+          <td>Find file</td>
+          <td>
+            <p>Find files</p>
+            <p>find &lt;search text&gt; - list all files that have the given text in their path </p>
           </td>
         </tr>
         <tr>
@@ -222,6 +236,9 @@
             <p>filter disabled</p>
             <p>filter staged</p>
             <p>filter unstaged</p>
+            <p>filter endorsed</p>
+            <p>filter unendorsed</p>
+            <p>filter abstained</p>
             <p>filter missing - show missing ids</p>
           </td>
         </tr>
@@ -359,6 +376,22 @@
         </tr>
         <tr>
           <td>
+            <p>appdata-path</p>
+            <p>appdatapath</p>
+          </td>
+          <td>Open ini path folder</td>
+          <td>
+            <p>open &lt;mod index&gt; - open on nexus</p>
+            <p>local &lt;mod index&gt; - open local folder</p>
+            <p>game-path - open local game folder</p>
+            <p>ini-path - open local ini folder</p>
+            <p>jar-path - open mod manager folder</p>
+            <p>open 1 2 4</p>
+            <p>open 1-4</p>
+          </td>
+        </tr>
+        <tr>
+          <td>
             <p>ini-path</p>
             <p>inipath</p>
           </td>
@@ -473,7 +506,8 @@
           <td>Edit Configuration</td>
           <td>
             <p>config game-path &lt;path-to-folder&gt; - Sets the path to the folder under steam containing the starfield Data folder and exe</p>
-            <p>config ini-path &lt;path-to-folder&gt; - Sets the path to the folder under your documents that contains StarfieldCustom.ini and eventually Plugins.txt. Needed for updating mod load order</p>
+            <p>config appdata-path &lt;path-to-folder&gt; - Sets the path to the folder under your appdata that will contain Plugins.txt. Needed for updating mod load order</p>
+            <p>config ini-path &lt;path-to-folder&gt; - Sets the path to the folder under your documents that contains StarfieldCustom.ini. Optionally used to deploy to your my docs folder instead of the game path </p>
             <p>config api-key &lt;key-from-nexus&gt;</p>
             <p>config verbose &lt;true/false&gt; - get additional output (for debugging)</p>
             <p>config use-my-docs &lt;true/false&gt; - deploy mod files under Data to my documents instead of the game folder. (Defaults to false) </p>

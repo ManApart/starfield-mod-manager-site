@@ -54,17 +54,19 @@
         <p>Before you can download and deploy mods, you need to configure the app. This config will be saved in <code>config.json</code> in the folder the jar is in. (Mod data will be stored in another file in that folder).</p>
         <ul>
           <li>Start the app using one of the methods from the Shortcuts section above</li>
+          <li><code>config api-key &lt;key&gt;</code> using the api key you got from the prerequisites step</li>
           <li><code>config game-path &lt;path&gt;</code> to point to your game folder
             <ul>
               <li>Should look something like: <code>&lt;...&gt;/SteamLibrary/steamapps/common/Starfield/</code></li>
+              <li>This is used as the target to deploy mods to and for launching the game</li>
             </ul>
           </li>
-          <li><code>config ini-path &lt;path&gt;</code> to point to your ini (my docs) folder
+          <li><code>config appdata-path &lt;path&gt;</code> to point to your local appdata folder
             <ul>
-              <li>Should look something like: <code>&lt;...&gt;/SteamLibrary/steamapps/compatdata/1716740/pfx/drive_c/users/steamuser/Documents/My Games/Starfield</code></li>
+              <li>Should look something like: <code>&lt;...&gt;/SteamLibrary/steamapps/compatdata/1716740/pfx/drive_c/users/steamuser/AppData/Local/Starfield/</code></li>
+              <li>This is used to deploy the Plugins.txt in order to enable ESMs etc</li>
             </ul>
           </li>
-          <li><code>config api-key &lt;key&gt;</code> using the api key you got from the prerequisites step</li>
         </ul>
       </div>
       <div class="section">
@@ -87,6 +89,11 @@ sResourceDataDirsFinal=</code></p>
         <div class="accent-line">Alternative Deploy to Docs Folder</div>
         <p>If you're unable to install SFSE, you can deploy to the docs folder directly, but please note that this is not recommended as it's more error prone and can cause issues</p>
         <ul>
+          <li><code>config ini-path &lt;path&gt;</code> to point to your ini (my docs) folder
+            <ul>
+              <li>Should look something like: <code>&lt;...&gt;/SteamLibrary/steamapps/compatdata/1716740/pfx/drive_c/users/steamuser/Documents/My Games/Starfield</code></li>
+            </ul>
+          </li>
           <li>In the app run <code>config use-my-docs true</code></li>
           <li>You can always revert the setting later (set it to false) once you have SFSE installed</li>
         </ul>
