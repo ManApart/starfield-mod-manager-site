@@ -1,5 +1,6 @@
 import kotlinx.html.*
 import kotlinx.html.stream.appendHTML
+import org.w3c.dom.html.HTMLElement
 import pages.features
 import pages.home
 import pages.manual
@@ -69,7 +70,8 @@ private fun combineCss() {
 private fun copyFiles(source: File, dest: File) {
     source.listFiles()!!.filter { !it.name.startsWith(".") }.forEach { file ->
         if (file.isDirectory) {
-            val newDest = File(dest.absolutePath + "/" + file.nameWithoutExtension).also { if (!it.exists()) it.mkdirs() }
+            val newDest =
+                File(dest.absolutePath + "/" + file.nameWithoutExtension).also { if (!it.exists()) it.mkdirs() }
             copyFiles(file, newDest)
         } else {
             val destFile = Path(dest.absolutePath + "/" + file.name)
@@ -78,7 +80,21 @@ private fun copyFiles(source: File, dest: File) {
     }
 }
 
-fun DIV.asciCast(castName: String, startAt: Float = 0f, idleTimeLimit: Float = 1f, rows: Int? = null, posterTime: String? = null) {
+fun SECTION.asciDisclaimer() {
+    p {
+        id = "js-warning"
+        +"Enable javascript to watch demos"
+    }
+    script { +"document.getElementById('js-warning').remove();" }
+}
+
+fun DIV.asciCast(
+    castName: String,
+    startAt: Float = 0f,
+    idleTimeLimit: Float = 1f,
+    rows: Int? = null,
+    posterTime: String? = null
+) {
     div("asci-cast") { id = castName }
     script {
         val rowText = rows?.let { ", rows: $it" } ?: ""

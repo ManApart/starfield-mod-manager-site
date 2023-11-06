@@ -1,6 +1,7 @@
 package pages
 
 import asciCast
+import asciDisclaimer
 import kotlinx.html.*
 
 
@@ -19,6 +20,7 @@ fun BODY.home() {
                 target = "_blank"
             ) { +"Source" }
         }
+        asciDisclaimer()
 
         div("section") {
             id = "home-summary"
@@ -26,10 +28,7 @@ fun BODY.home() {
             p { +"Flexible CLI commands support everything from Nexus download links to bulk updating mods, to maintaining and deploying local mod collections." }
 
             p { +"Check out the demo below and click Features above to discover more functionality." }
-            //TODO - do demo of adding a mod here
-            asciCast("enable")
-
-
+            asciCast("enable", posterTime = "0:02")
         }
 
     }

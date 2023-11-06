@@ -1,6 +1,7 @@
 package pages
 
 import asciCast
+import asciDisclaimer
 import kotlinx.html.*
 
 fun BODY.features() {
@@ -9,6 +10,7 @@ fun BODY.features() {
         script { src = "assets/asciinema-player.min.js" }
 
         h1 { +"Features" }
+        asciDisclaimer()
         div("section") {
             div("accent-line") { +"Flexible Commands can target" }
             ul {
@@ -98,4 +100,5 @@ fun BODY.features() {
         }
     }
 }
+
 

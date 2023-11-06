@@ -1,5 +1,6 @@
 package pages
 
+import asciDisclaimer
 import kotlinx.html.*
 
 fun BODY.setup() {
@@ -10,6 +11,8 @@ fun BODY.setup() {
         p { +"Note: This guide assumes a vanilla instance of Starfield is running. This is not a guide on how to run Starfield on linux." }
 
         p { +"Currently only fully supports premium members. Non Premium members should be able to add files by zip folder or nexus \"download with mod manager links\", but likely won't be able to download mods by pasting in a url or id." }
+
+        asciDisclaimer()
 
         div("section") {
             div("accent-line") { +"Prerequisites" }
