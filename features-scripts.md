@@ -13,10 +13,10 @@ local 1
 open 1
 
 ## Fetch Metadata
-fetch 4183
+fetch 262
 refresh enabled
 update
-upgrade
+upgrade all
 endorse 1
 
 ## Enable

@@ -27,7 +27,7 @@ fun BODY.home() {
 
             p { +"Check out the demo below and click Features above to discover more functionality." }
             //TODO - do demo of adding a mod here
-            asciCast("test")
+            asciCast("enable")
 
 
         }

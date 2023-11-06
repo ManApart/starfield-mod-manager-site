@@ -17,7 +17,6 @@ fun BODY.features() {
                 li { +"A range of mods" }
                 li { +"All mods" }
             }
-            asciCast("test")
         }
         div("section") {
             div("accent-line") { +"Add Mods" }
@@ -36,7 +35,7 @@ fun BODY.features() {
                 li { +"On Nexus" }
             }
             asciCast("open", rows = 10)
-            p{+"(Browser and folder opens outside the terminal, so are not seen in the demo)"}
+            p { +"(Browser and folder opens outside the terminal, so are not seen in the demo)" }
         }
         div("section") {
             div("accent-line") { +"Fetch Metadata and Updates" }
@@ -48,6 +47,7 @@ fun BODY.features() {
                 li { +"Redownload or restage files" }
                 li { +"Endorse or Abstain from mods" }
             }
+            asciCast("fetch", rows = 10)
         }
         div("section") {
             div("accent-line") { +"Enable and Disable Mods" }
