@@ -102,6 +102,10 @@ fun BODY.setup() {
             ul {
                 li { +"Start the app using one of the methods from the Shortcuts section above" }
                 li {
+                    code { +"config api-key <key>" }
+                    +" using the api key you got from the prerequisites step"
+                }
+                li {
                     code { +"config game-path <path>" }
                     +" to point to your game folder"
                     ul {
@@ -109,21 +113,19 @@ fun BODY.setup() {
                             +"Should look something like: "
                             code { +"<...>/SteamLibrary/steamapps/common/Starfield/" }
                         }
+                        li { +"This is used as the target to deploy mods to and for launching the game" }
                     }
                 }
                 li {
-                    code { +"config ini-path <path>" }
-                    +" to point to your ini (my docs) folder"
+                    code { +"config appdata-path <path>" }
+                    +" to point to your local appdata folder"
                     ul {
                         li {
                             +"Should look something like: "
-                            code { +"<...>/SteamLibrary/steamapps/compatdata/1716740/pfx/drive_c/users/steamuser/Documents/My Games/Starfield" }
+                            code { +"<...>/SteamLibrary/steamapps/compatdata/1716740/pfx/drive_c/users/steamuser/AppData/Local/Starfield/" }
                         }
+                        li { +"This is used to deploy the Plugins.txt in order to enable ESMs etc" }
                     }
-                }
-                li {
-                    code { +"config api-key <key>" }
-                    +" using the api key you got from the prerequisites step"
                 }
             }
         }
@@ -176,6 +178,16 @@ fun BODY.setup() {
             div("accent-line") { +"Alternative Deploy to Docs Folder" }
             p { +"If you're unable to install SFSE, you can deploy to the docs folder directly, but please note that this is not recommended as it's more error prone and can cause issues" }
             ul {
+                li {
+                    code { +"config ini-path <path>" }
+                    +" to point to your ini (my docs) folder"
+                    ul {
+                        li {
+                            +"Should look something like: "
+                            code { +"<...>/SteamLibrary/steamapps/compatdata/1716740/pfx/drive_c/users/steamuser/Documents/My Games/Starfield" }
+                        }
+                    }
+                }
                 li {
                     +"In the app run "
                     code { +"config use-my-docs true" }
