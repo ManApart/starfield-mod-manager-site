@@ -44,3 +44,7 @@ sort category
 sort name
 sort enabled
 
+## Setup
+config api-key aabbb
+config game-apth ../SteamLibrary/steamapps/common/Starfield/
+config appdata-path ../SteamLibrary/steamapps/compatdata/1716740/pfx/drive_c/users/steamuser/AppData/Local/Starfield/

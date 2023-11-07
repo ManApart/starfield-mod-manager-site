@@ -1,6 +1,5 @@
 import kotlinx.html.*
 import kotlinx.html.stream.appendHTML
-import org.w3c.dom.html.HTMLElement
 import pages.features
 import pages.home
 import pages.manual
@@ -80,11 +79,12 @@ private fun copyFiles(source: File, dest: File) {
     }
 }
 
-fun SECTION.asciDisclaimer() {
+fun SECTION.asciCastSetup() {
     p {
         id = "js-warning"
         +"Enable javascript to watch demos"
     }
+    script { src = "assets/asciinema-player.min.js" }
     script { +"document.getElementById('js-warning').remove();" }
 }
 

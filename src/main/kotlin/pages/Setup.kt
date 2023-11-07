@@ -1,6 +1,7 @@
 package pages
 
-import asciDisclaimer
+import asciCast
+import asciCastSetup
 import kotlinx.html.*
 
 fun BODY.setup() {
@@ -12,7 +13,7 @@ fun BODY.setup() {
 
         p { +"Currently only fully supports premium members. Non Premium members should be able to add files by zip folder or nexus \"download with mod manager links\", but likely won't be able to download mods by pasting in a url or id." }
 
-        asciDisclaimer()
+        asciCastSetup()
 
         div("section") {
             div("accent-line") { +"Prerequisites" }
@@ -131,6 +132,7 @@ fun BODY.setup() {
                     }
                 }
             }
+            asciCast("config", rows = 10, posterTime = "0:02")
         }
 
         div("section") {

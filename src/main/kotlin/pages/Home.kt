@@ -1,13 +1,12 @@
 package pages
 
 import asciCast
-import asciDisclaimer
+import asciCastSetup
 import kotlinx.html.*
 
 
 fun BODY.home() {
     section {
-        script { src = "assets/asciinema-player.min.js" }
         h1 { +"Starfield Mod Manager" }
 
         div("links") {
@@ -20,7 +19,7 @@ fun BODY.home() {
                 target = "_blank"
             ) { +"Source" }
         }
-        asciDisclaimer()
+        asciCastSetup()
 
         div("section") {
             id = "home-summary"
