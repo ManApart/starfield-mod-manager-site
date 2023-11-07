@@ -53,6 +53,7 @@ fun BODY.features() {
         div("section") {
             div("accent-line") { +"Enable and Disable Mods" }
             ul {
+                li { +"Manage Plugins.txt" }
                 li { +"Change load order" }
                 li { +"Deploy Dry run to see which files will be applied" }
                 li { +"Save local mod lists (profiles)" }
