@@ -16,6 +16,7 @@
       <p>Note: This guide assumes a vanilla instance of Starfield is running. This is not a guide on how to run Starfield on linux.</p>
       <p>Currently only fully supports premium members. Non Premium members should be able to add files by zip folder or nexus &quot;download with mod manager links&quot;, but likely won't be able to download mods by pasting in a url or id.</p>
       <p id="js-warning">Enable javascript to watch demos</p>
+      <script src="assets/asciinema-player.min.js"></script>
       <script>document.getElementById('js-warning').remove();</script>
       <div class="section">
         <div class="accent-line">Prerequisites</div>
@@ -70,6 +71,8 @@
             </ul>
           </li>
         </ul>
+        <div class="asci-cast" id="config"></div>
+        <script>AsciinemaPlayer.create('assets/casts/config.cast', document.getElementById('config'), {preload: true, startAt: 0.0, idleTimeLimit: 1.0, rows: 10, poster: 'npt:0:02'});</script>
       </div>
       <div class="section">
         <div class="accent-line">Deploy to Game Folder</div>

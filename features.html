@@ -11,9 +11,9 @@
   </head>
   <body><a href="index.html" class="a-button home-button">Home</a>
     <section>
-      <script src="assets/asciinema-player.min.js"></script>
       <h1>Features</h1>
       <p id="js-warning">Enable javascript to watch demos</p>
+      <script src="assets/asciinema-player.min.js"></script>
       <script>document.getElementById('js-warning').remove();</script>
       <div class="section">
         <div class="accent-line">Flexible Commands can target</div>
@@ -23,6 +23,8 @@
           <li>A range of mods</li>
           <li>All mods</li>
         </ul>
+        <div class="asci-cast" id="bulk"></div>
+        <script>AsciinemaPlayer.create('assets/casts/bulk.cast', document.getElementById('bulk'), {preload: true, startAt: 0.0, idleTimeLimit: 1.0, rows: 10, poster: 'npt:0:02'});</script>
       </div>
       <div class="section">
         <div class="accent-line">Add Mods</div>
