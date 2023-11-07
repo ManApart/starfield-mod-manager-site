@@ -19,6 +19,7 @@ fun BODY.features() {
                 li { +"A range of mods" }
                 li { +"All mods" }
             }
+            asciCast("bulk", rows = 10, posterTime = "0:02")
         }
         div("section") {
             div("accent-line") { +"Add Mods" }
