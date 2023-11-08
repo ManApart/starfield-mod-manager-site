@@ -1,4 +1,4 @@
-{"version": 2, "width": 160, "height": 50, "timestamp": 1699272730, "env": {"SHELL": "/bin/bash", "TERM": "xterm-256color"}}
+{"version": 2, "width": 155, "height": 40, "timestamp": 1699272730, "env": {"SHELL": "/bin/bash", "TERM": "xterm-256color"}}
 [2.364072, "o", "\u001b[36mId    "]
 [2.364125, "o", " Version     Load "]
 [2.364161, "o", "  Status    "]
