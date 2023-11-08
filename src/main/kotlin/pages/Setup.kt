@@ -43,7 +43,8 @@ fun BODY.setup() {
                     code { +"starfield-mod-manger.jar" }
                     +" from "
                     a(href = "https://github.com/ManApart/starfield-mod-manager/releases") { +"github" }
-                    +" or the nexus. Place the jar in a folder where you want to run it from."
+                    a(href = "https://www.nexusmods.com/starfield/mods/6576") { +" or the nexus." }
+                    +" Place the jar in a folder where you want to run it from."
                 }
             }
         }
