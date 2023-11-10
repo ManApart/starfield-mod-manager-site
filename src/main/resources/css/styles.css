@@ -162,10 +162,18 @@ table, th, td {
 
 .header-command{
     width: 10%;
+    min-width: 50px;
 }
-.header-summary{
-    width: 20%;
-}
+
 .header-usage{
+    width: 20%;
+    min-width: 5s0px;
+}
+
+.header-description{
     width: 60%;
+}
+
+.manual-table {
+    overflow-wrap: anywhere;
 }

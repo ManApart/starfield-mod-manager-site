@@ -14,16 +14,16 @@ fun BODY.manual() {
             h1 { +"Commands Manual" }
             allCommands.groupBy { it.category }.entries.sortedBy { it.key }.forEach { (category, commands) ->
                 div("accent-line") { +category.name.lowercase().capitalize() }
-                table {
+                table("manual-table") {
                     tr {
                         td("header-command") {
                             +"Command"
                         }
-                        td("header-summary") {
-                            +"Summary"
-                        }
                         td("header-usage") {
                             +"Usage"
+                        }
+                        td("header-description") {
+                            +"Description"
                         }
                     }
                     commands.forEach { command ->
@@ -32,8 +32,8 @@ fun BODY.manual() {
                                 p { +command.name }
                                 p { +command.aliases.joinToString(", ") }
                             }
-                            td { +command.summary }
                             td { command.usage.split("\n").forEach { p { +it } } }
+                            td { command.description.split("\n").forEach { p { +it } } }
                         }
                     }
                 }
@@ -49,6 +49,7 @@ private data class CommandJson(
     val name: String,
     val category: Category,
     val summary: String,
-    val aliases: List<String> = listOf(),
-    val usage: String
+    val description: String,
+    val usage: String,
+    val aliases: List<String> = listOf()
 )
