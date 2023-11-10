@@ -1,5 +1,6 @@
 package pages
 
+import accentLine
 import jsonMapper
 import kotlinx.html.*
 import kotlinx.serialization.Serializable
@@ -13,7 +14,7 @@ fun BODY.manual() {
         section {
             h1 { +"Commands Manual" }
             allCommands.groupBy { it.category }.entries.sortedBy { it.key }.forEach { (category, commands) ->
-                div("accent-line") { +category.name.lowercase().capitalize() }
+                accentLine(category.name.lowercase().capitalize())
                 table("manual-table") {
                     tr {
                         td("header-command") {

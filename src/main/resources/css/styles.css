@@ -118,6 +118,14 @@ code {
     margin-bottom: 10px;
 }
 
+.accent-line a {
+    text-align: center;
+    color: black;
+    font-family: Architekt;
+    font-weight: bold;
+    text-decoration: none;
+}
+
 .section {
 }
 

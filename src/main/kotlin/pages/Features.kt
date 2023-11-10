@@ -1,5 +1,6 @@
 package pages
 
+import accentLine
 import asciCast
 import asciCastSetup
 import kotlinx.html.*
@@ -10,7 +11,7 @@ fun BODY.features() {
         h1 { +"Features" }
         asciCastSetup()
         div("section") {
-            div("accent-line") { +"Flexible Commands can target" }
+            accentLine("Flexible Commands can target")
             ul {
                 li { +"A single mod" }
                 li { +"A list of mods" }
@@ -20,7 +21,7 @@ fun BODY.features() {
             asciCast("bulk", rows = 10, posterTime = "0:02")
         }
         div("section") {
-            div("accent-line") { +"Add Mods" }
+            accentLine("Add Mods")
             ul {
                 li { +"By clicking the 'Vortex' download button" }
                 li { +"By id" }
@@ -30,7 +31,7 @@ fun BODY.features() {
             asciCast("add", rows = 10, posterTime = "0:18")
         }
         div("section") {
-            div("accent-line") { +"Open Mods" }
+            accentLine("Open Mods")
             ul {
                 li { +"Locally" }
                 li { +"On Nexus" }
@@ -39,7 +40,7 @@ fun BODY.features() {
             p { +"(Browser and folder opens outside the terminal, so are not seen in the demo)" }
         }
         div("section") {
-            div("accent-line") { +"Fetch Metadata and Updates" }
+            accentLine("Fetch Metadata and Updates")
             ul {
                 li { +"Add a mod without downloading it" }
                 li { +"Refresh existing mods" }
@@ -51,7 +52,7 @@ fun BODY.features() {
             asciCast("fetch", rows = 10, posterTime = "0:02")
         }
         div("section") {
-            div("accent-line") { +"Enable and Disable Mods" }
+            accentLine("Enable and Disable Mods")
             ul {
                 li { +"Manage Plugins.txt" }
                 li { +"Change load order" }
@@ -62,7 +63,7 @@ fun BODY.features() {
             asciCast("enable", posterTime = "0:02")
         }
         div("section") {
-            div("accent-line") { +"Search Mods" }
+            accentLine("Search Mods")
             ul {
                 li { +"Use filter to apply search every time" }
                 li { +"By name " }
@@ -74,7 +75,7 @@ fun BODY.features() {
             asciCast("search", posterTime = "0:05")
         }
         div("section") {
-            div("accent-line") { +"Sort Mods" }
+            accentLine("Sort Mods")
             ul {
                 li { +"By id" }
                 li { +"By name" }
@@ -85,7 +86,7 @@ fun BODY.features() {
             asciCast("sort", rows = 20, posterTime = "0:02")
         }
         div("section") {
-            div("accent-line") { +"Alternatives" }
+            accentLine("Alternatives")
             ul {
                 +"Don't like this mod manager? Try another one:"
                 li { a(href = "https://github.com/cyberrumor/ammo", target = "_blank") { +"Ammo" } }

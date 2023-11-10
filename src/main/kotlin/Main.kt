@@ -106,3 +106,10 @@ fun DIV.asciCast(
         +"AsciinemaPlayer.create('assets/casts/$castName.cast', document.getElementById('$castName'), $options);"
     }
 }
+
+fun HtmlBlockTag.accentLine(message: String){
+    div("accent-line") {
+        id = message
+        a(href = "#$message") { +message }
+    }
+}

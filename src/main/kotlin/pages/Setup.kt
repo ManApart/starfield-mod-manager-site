@@ -1,5 +1,6 @@
 package pages
 
+import accentLine
 import asciCast
 import asciCastSetup
 import kotlinx.html.*
@@ -16,7 +17,7 @@ fun BODY.setup() {
         asciCastSetup()
 
         div("section") {
-            div("accent-line") { +"Prerequisites" }
+            accentLine("Prerequisites")
             p { +"Make sure you have dependencies installed and a copy of the manager." }
             ul {
                 li { a(href = "https://www.nexusmods.com/users/myaccount?tab=api%20access") { +"Grab a personal API key from Nexus" } }
@@ -42,7 +43,10 @@ fun BODY.setup() {
                     +" and "
                     code { +"starfield-mod-manger.jar" }
                     +" from "
-                    a(href = "https://github.com/ManApart/starfield-mod-manager/releases", target = "_blank") { +"github" }
+                    a(
+                        href = "https://github.com/ManApart/starfield-mod-manager/releases",
+                        target = "_blank"
+                    ) { +"github" }
                     +" or "
                     a(href = "https://www.nexusmods.com/starfield/mods/6576", target = "_blank") { +"the nexus." }
                     +" Place the jar in a folder where you want to run it from."
@@ -51,7 +55,7 @@ fun BODY.setup() {
         }
 
         div("section") {
-            div("accent-line") { +"Shortcuts and Vortex Links" }
+            accentLine("Shortcuts and Vortex Links")
 
             p { +"This section lets you more easily run the manager, and use the \"Download with Vortex\" buttons on Nexus." }
 
@@ -99,7 +103,7 @@ fun BODY.setup() {
         }
 
         div("section") {
-            div("accent-line") { +"Configure the App" }
+            accentLine("Configure the App")
             p {
                 +"Before you can download and deploy mods, you need to configure the app. This config will be saved in "
                 code { +"config.json" }
@@ -138,7 +142,7 @@ fun BODY.setup() {
         }
 
         div("section") {
-            div("accent-line") { +"Deploy to Game Folder" }
+            accentLine("Deploy to Game Folder")
             ul {
                 li { +"Uninstall any manually added mod files, or consider doing a clean install of the game" }
                 li {
@@ -182,7 +186,7 @@ fun BODY.setup() {
         }
 
         div("section") {
-            div("accent-line") { +"Alternative Deploy to Docs Folder" }
+            accentLine("Alternative Deploy to Docs Folder")
             p { +"If you're unable to install SFSE, you can deploy to the docs folder directly, but please note that this is not recommended as it's more error prone and can cause issues" }
             ul {
                 li {
@@ -204,7 +208,7 @@ fun BODY.setup() {
         }
 
         div("section") {
-            div("accent-line") { +"Installing and Using FOMODs" }
+            accentLine("Installing and Using FOMODs")
             p { +"FOMODs are made to be installed with a gui. Because they rely on images and require the parsing of a non-trivial XML structure, it's not worth the time to support through the terminal." }
             p { +"Instead, FOMODS are called out when you try to enable them, or run the validate command. Installing them, even without a gui, is still simple to do." }
             ul {
@@ -219,7 +223,7 @@ fun BODY.setup() {
             }
         }
         div("section") {
-            div("accent-line") { +"Usage" }
+            accentLine("Usage")
             p {
                 +"Run the app and then use "
                 code { +"help" }

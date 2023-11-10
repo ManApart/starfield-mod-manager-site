@@ -1,5 +1,6 @@
 package pages
 
+import accentLine
 import asciCast
 import asciCastSetup
 import kotlinx.html.*
@@ -23,7 +24,7 @@ fun BODY.home() {
 
         div("section") {
             id = "home-summary"
-            div("accent-line") { +"Linux CLI Mod Manager" }
+            accentLine("Linux CLI Mod Manager")
             p { +"Flexible CLI commands support everything from Nexus download links to bulk updating mods, to maintaining and deploying local mod collections." }
 
             p { +"Check out the demo below and click Features above to discover more functionality." }
