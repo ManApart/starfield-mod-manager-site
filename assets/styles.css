@@ -118,6 +118,14 @@ code {
     margin-bottom: 10px;
 }
 
+.accent-line a {
+    text-align: center;
+    color: black;
+    font-family: Architekt;
+    font-weight: bold;
+    text-decoration: none;
+}
+
 .section {
 }
 
@@ -162,13 +170,22 @@ table, th, td {
 
 .header-command{
     width: 10%;
+    min-width: 50px;
 }
-.header-summary{
-    width: 20%;
-}
+
 .header-usage{
+    width: 20%;
+    min-width: 5s0px;
+}
+
+.header-description{
     width: 60%;
 }
+
+.manual-table {
+    overflow-wrap: anywhere;
+}
+
 @media (max-aspect-ratio: 3/4) {
     code{
         word-wrap: break-word;
@@ -179,16 +196,6 @@ table, th, td {
     .links a {
         margin-left: 1%;
         margin-right: 1%;
-    }
-
-    .header-command{
-        min-width: 40px;
-    }
-    .header-summary{
-        width: 10%;
-    }
-    .header-usage{
-        width: 60%;
     }
     .manual-table tbody tr td:last-child() {
         overflow-wrap: anywhere;

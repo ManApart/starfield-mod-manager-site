@@ -19,7 +19,7 @@
       <script src="assets/asciinema-player.min.js"></script>
       <script>document.getElementById('js-warning').remove();</script>
       <div class="section">
-        <div class="accent-line">Prerequisites</div>
+        <div class="accent-line" id="Prerequisites"><a href="#Prerequisites">Prerequisites</a></div>
         <p>Make sure you have dependencies installed and a copy of the manager.</p>
         <ul>
           <li><a href="https://www.nexusmods.com/users/myaccount?tab=api%20access">Grab a personal API key from Nexus</a></li>
@@ -33,7 +33,7 @@
         </ul>
       </div>
       <div class="section">
-        <div class="accent-line">Shortcuts and Vortex Links</div>
+        <div class="accent-line" id="Shortcuts and Vortex Links"><a href="#Shortcuts and Vortex Links">Shortcuts and Vortex Links</a></div>
         <p>This section lets you more easily run the manager, and use the &quot;Download with Vortex&quot; buttons on Nexus.</p>
         <ul>
           <li>Place <code>smm.desktop</code> in <code>~/.local/share/applications/</code></li>
@@ -53,7 +53,7 @@
         </ul>
       </div>
       <div class="section">
-        <div class="accent-line">Configure the App</div>
+        <div class="accent-line" id="Configure the App"><a href="#Configure the App">Configure the App</a></div>
         <p>Before you can download and deploy mods, you need to configure the app. This config will be saved in <code>config.json</code> in the folder the jar is in. (Mod data will be stored in another file in that folder).</p>
         <ul>
           <li>Start the app using one of the methods from the Shortcuts section above</li>
@@ -75,7 +75,7 @@
         <script>AsciinemaPlayer.create('assets/casts/config.cast', document.getElementById('config'), {preload: true, startAt: 0.0, idleTimeLimit: 1.0, rows: 10, poster: 'npt:0:02'});</script>
       </div>
       <div class="section">
-        <div class="accent-line">Deploy to Game Folder</div>
+        <div class="accent-line" id="Deploy to Game Folder"><a href="#Deploy to Game Folder">Deploy to Game Folder</a></div>
         <ul>
           <li>Uninstall any manually added mod files, or consider doing a clean install of the game</li>
           <li>Using the app, install and enable <a href="https://www.nexusmods.com/starfield/mods/106" target="_blank">SFSE</a></li>
@@ -91,7 +91,7 @@ sResourceDataDirsFinal=</code></p>
         </ul>
       </div>
       <div class="section">
-        <div class="accent-line">Alternative Deploy to Docs Folder</div>
+        <div class="accent-line" id="Alternative Deploy to Docs Folder"><a href="#Alternative Deploy to Docs Folder">Alternative Deploy to Docs Folder</a></div>
         <p>If you're unable to install SFSE, you can deploy to the docs folder directly, but please note that this is not recommended as it's more error prone and can cause issues</p>
         <ul>
           <li><code>config ini-path &lt;path&gt;</code> to point to your ini (my docs) folder
@@ -104,7 +104,7 @@ sResourceDataDirsFinal=</code></p>
         </ul>
       </div>
       <div class="section">
-        <div class="accent-line">Installing and Using FOMODs</div>
+        <div class="accent-line" id="Installing and Using FOMODs"><a href="#Installing and Using FOMODs">Installing and Using FOMODs</a></div>
         <p>FOMODs are made to be installed with a gui. Because they rely on images and require the parsing of a non-trivial XML structure, it's not worth the time to support through the terminal.</p>
         <p>Instead, FOMODS are called out when you try to enable them, or run the validate command. Installing them, even without a gui, is still simple to do.</p>
         <ul>
@@ -115,7 +115,7 @@ sResourceDataDirsFinal=</code></p>
         </ul>
       </div>
       <div class="section">
-        <div class="accent-line">Usage</div>
+        <div class="accent-line" id="Usage"><a href="#Usage">Usage</a></div>
         <p>Run the app and then use <code>help</code> to see commands. Alternatively you can look at the <a href="manual.html">generated man page</a>. You can also look through <a href="features.html">examples.</a></p>
         <p>To reduce typing, most commands take the index of the mod, instead of mod id or name. This means the index of a mod can change as mods are added, deleted or sorted. Listing mods will always show their indices, and filtering will retain the index.</p>
         <p>Please report any issues with the <a href="https://github.com/ManApart/starfield-mod-manager/issues" target="_blank">manager</a> or <a href="https://github.com/ManApart/starfield-mod-manager-site/issues" target="_blank">this site</a> to their respective github issues page.</p>
