@@ -1,1 +1,0 @@
-cd ./out && browser-sync start -s -f .
