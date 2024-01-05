@@ -119,7 +119,6 @@
             <p>Applies all enabled mods to the game folder by creating the appropriate symlinks</p>
             <p>Overrides shows any mods that conflict with other mods and gives their load order in parenthesis and then the index of the mod</p>
             <p>Dryrun shows a detailed view of how files will be deployed, without deploying them</p>
-            <p></p>
           </td>
         </tr>
         <tr>
@@ -128,6 +127,7 @@
             <p></p>
           </td>
           <td>
+            <p>order 1</p>
             <p>order 1 first</p>
             <p>order 1 last</p>
             <p>order 1 sooner 5</p>
@@ -138,6 +138,31 @@
             <p>Mods with a higher load order are loaded later, and override mods loaded earlier. Given mod A has an order 5 and mod B has an order of 1, then A will load AFTER B, and A's files will be used instead of B's in any file conflicts. </p>
             <p>In these examples the first number is the mod index and the second is the sort order you want</p>
             <p>order 1 set 4 - sets mod with index 1 to load order 4. Any mods with a higher number for load order have their number increased</p>
+            <p>order 1 - view any conflicts mod index 1 has with any other mods</p>
+            <p>To manage load order specifically for plugins, see esps command. The same order number is used for both commands.</p>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <p>esp</p>
+            <p>esps, plugin, plugins</p>
+          </td>
+          <td>
+            <p>esp ls</p>
+            <p>esp 1 first</p>
+            <p>esp 1 last</p>
+            <p>esp 1 sooner 5</p>
+            <p>esp 1 later</p>
+            <p>esp 1 set 4</p>
+          </td>
+          <td>
+            <p>Plugins with a higher load order are loaded later, and override plugins loaded earlier. Given plugin A has an order 5 and plugin B has an order of 1, then A will load AFTER B, and A's records will be used instead of B's in any conflicts. </p>
+            <p>In these examples the first number is the mod index and the second is the sort order you want</p>
+            <p>esp ls - view load order of plugins</p>
+            <p>esp 1 set 4 - sets mod with index 1 to load order 4. Any plugins with a higher number for load order have their number increased</p>
+            <p>esp 1 later - sets the plugin to load after the next plugin (may shift the order number more than one as it shifts until it's after the next plugin).</p>
+            <p>esp 1 later 2 - same as above but shifts down by two plugins</p>
+            <p>For general mod order, see order command. The same order number is used for both commands.</p>
           </td>
         </tr>
         <tr>
