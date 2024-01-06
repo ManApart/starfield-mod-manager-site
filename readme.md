@@ -4,7 +4,7 @@ Site for Starfield Mod Manager
 
 ## Running
 
-For development, continously build gradle and use the run script to view the site locally 
+For development, continuously build gradle and use the run script to view the site locally 
 ```
 gradlew run --continuous
 ./scripts/run.sh
