@@ -12,6 +12,7 @@
   <body><a href="index.html" class="a-button home-button">Home</a>
     <section>
       <h1>Commands Manual</h1>
+      <p>This command reference can also be viewed in app by using the <code>help</code> command. This reference is is for version <code>1.2.0</code>. Download the latest from <a href="https://github.com/ManApart/starfield-mod-manager/releases" target="_blank">github</a> or possibly <a href="https://www.nexusmods.com/starfield/mods/6576" target="_blank">the Nexus</a>. (Nexus may not have bleeding edge versions).</p>
       <div class="accent-line" id="Add"><a href="#Add">Add</a></div>
       <table class="manual-table">
         <tr>
@@ -145,7 +146,7 @@
         <tr>
           <td>
             <p>esp</p>
-            <p>esps, plugin, plugins</p>
+            <p>esps</p>
           </td>
           <td>
             <p>esp ls</p>
@@ -466,6 +467,19 @@
         </tr>
         <tr>
           <td>
+            <p>plugins</p>
+            <p>plugin</p>
+          </td>
+          <td>
+            <p></p>
+          </td>
+          <td>
+            <p>Open various folders and filepaths</p>
+            <p>You can open a mod locally or on the nexus, or open the various config paths</p>
+          </td>
+        </tr>
+        <tr>
+          <td>
             <p>jar-path</p>
             <p>jarpath</p>
           </td>
@@ -574,6 +588,7 @@
             <p>config ini-path &lt;path-to-folder&gt; </p>
             <p>config api-key &lt;key-from-nexus&gt;</p>
             <p>config verbose &lt;true/false&gt;</p>
+            <p>config autodeploy &lt;true/false&gt;</p>
             <p>config use-my-docs &lt;true/false&gt; </p>
             <p>config categories</p>
           </td>
@@ -583,6 +598,7 @@
             <p>appdata-path should be the path to the folder under your appdata that will contain Plugins.txt. Needed for updating mod load order</p>
             <p>ini-path should be the path to the folder under your documents that contains StarfieldCustom.ini. It's optionally used to deploy to your my docs folder instead of the game path</p>
             <p>verbose gives additional output (for debugging) if set to true</p>
+            <p>autodeploy automatically runs deploy when enabling or disabling mods. Defaults to true</p>
             <p>use-my-docs optionally allows deploying mod files under Data to my documents instead of the game folder. (Defaults to false) </p>
             <p>categories is used to download category names from nexus</p>
             <p>If your paths have spaces, make sure to quote them</p>
