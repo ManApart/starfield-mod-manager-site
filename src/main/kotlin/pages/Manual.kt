@@ -11,8 +11,23 @@ fun BODY.manual() {
     val manualData = File("../mod-manager/manual-data.json")
     if (manualData.exists()) {
         val allCommands = jsonMapper.decodeFromString<List<CommandJson>>(manualData.readText())
+        val tag = getLatestTag()
         section {
             h1 { +"Commands Manual" }
+            p {
+                +"This command reference can also be viewed in app by using the "
+                code { +"help" }
+                +" command. This reference is is for version "
+                code { +tag }
+                +". Download the latest from "
+                a(
+                    href = "https://github.com/ManApart/starfield-mod-manager/releases",
+                    target = "_blank"
+                ) { +"github" }
+                +" or possibly "
+                a(href = "https://www.nexusmods.com/starfield/mods/6576", target = "_blank") { +"the Nexus" }
+                +". (Nexus may not have bleeding edge versions)."
+            }
             allCommands.groupBy { it.category }.entries.sortedBy { it.key }.forEach { (category, commands) ->
                 accentLine(category.name.lowercase().capitalize())
                 table("manual-table") {
