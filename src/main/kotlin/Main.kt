@@ -14,7 +14,7 @@ val jsonMapper = kotlinx.serialization.json.Json {
     prettyPrint = true
 }
 
-fun main(args: Array<String>) {
+fun main() {
     File("out/assets").mkdirs()
     File("out/fonts").mkdirs()
 
@@ -85,7 +85,7 @@ fun SECTION.asciCastSetup() {
         +"Enable javascript to watch demos"
     }
     script { src = "assets/asciinema-player.min.js" }
-    script { +"document.getElementById('js-warning').remove();" }
+    script { unsafe { +"document.getElementById('js-warning').remove();" } }
 }
 
 fun DIV.asciCast(
@@ -103,11 +103,11 @@ fun DIV.asciCast(
             {preload: true, startAt: $startAt, idleTimeLimit: $idleTimeLimit$rowText$posterText}
         """.trimIndent()
 
-        +"AsciinemaPlayer.create('assets/casts/$castName.cast', document.getElementById('$castName'), $options);"
+        unsafe { +"AsciinemaPlayer.create('assets/casts/$castName.cast', document.getElementById('$castName'), $options);" }
     }
 }
 
-fun HtmlBlockTag.accentLine(message: String){
+fun HtmlBlockTag.accentLine(message: String) {
     div("accent-line") {
         id = message
         a(href = "#$message") { +message }

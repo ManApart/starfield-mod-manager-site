@@ -19,7 +19,7 @@ dependencies {
     testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:5.8.2")
 }
 
-application.mainClassName = "MainKt"
+application.mainClass.set("MainKt")
 
 tasks.withType<Test>().configureEach {
     useJUnitPlatform()
@@ -28,5 +28,4 @@ tasks.withType<Test>().configureEach {
 val compileKotlin: org.jetbrains.kotlin.gradle.tasks.KotlinCompile by tasks
 compileKotlin.kotlinOptions {
     languageVersion = "1.8"
-    jvmTarget = "17"
 }

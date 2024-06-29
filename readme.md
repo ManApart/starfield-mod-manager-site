@@ -10,4 +10,4 @@ gradlew run --continuous
 ./scripts/run.sh
 ```
 
-For deployment, run `./scripts/run.sh` to copy the files to a repo with the deploy branch checked out
+For deployment, run `./scripts/stage.sh` to copy the files to a repo with the deploy branch checked out
