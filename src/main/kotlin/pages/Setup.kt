@@ -29,7 +29,7 @@ fun BODY.setup() {
                     ul {
                         li {
                             code { +"7z" }
-                            +" for installing 7zip files"
+                            +" for installing zip and 7zip files"
                         }
                         li {
                             code { +"libarchive-tools" }
@@ -224,6 +224,7 @@ fun BODY.setup() {
         }
         div("section") {
             accentLine("Usage")
+            p{+"SMM Works like most mod managers. Each mod is installed to its own private folder that mirrors the game's folder hierarchy. A load order is used to decide plugin precedence and resolve file conflicts. Once mods are enabled, a deployment creates symlinks in the game directory to the individual mod files."}
             p {
                 +"Run the app and then use "
                 code { +"help" }
@@ -246,6 +247,21 @@ fun BODY.setup() {
                     target = "_blank"
                 ) { +"this site" }
                 +" to their respective github issues page."
+            }
+        }
+        div("section") {
+            accentLine("Creations")
+            p {
+                +"Starfield Mod Manager now supports Creations and External Mods. (See the "
+                a(href = "manual.html#Add") { +"manual" }
+                +" for creations)."
+            }
+            p { +"Creations are downloaded directly into your data folder by Starfield, and managed by the game through a ContentCatalog.txt. SMM can identify and manage Creations. This allows you to enable/disable and set the load order for creations." }
+            p { +"External mods are simply plugin files that are in your data folder that you don't want to manage like other mods (get their own data folder), but that should still be managed in plugins.txt. You generally shouldn't need this feature." }
+            p {
+                +"If you've been using SMM prior to the release of creations, you'll need to upgrade your setup. You should be able to run "
+                code { +"validate" }
+                +" to see what commands you'll need to run to get things working with the latest version of SMM."
             }
         }
     }
