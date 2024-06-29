@@ -12,7 +12,7 @@
   <body><a href="index.html" class="a-button home-button">Home</a>
     <section>
       <h1>Commands Manual</h1>
-      <p>This command reference can also be viewed in app by using the <code>help</code> command. This reference is is for version <code>1.2.0</code>. Download the latest from <a href="https://github.com/ManApart/starfield-mod-manager/releases" target="_blank">github</a> or possibly <a href="https://www.nexusmods.com/starfield/mods/6576" target="_blank">the Nexus</a>. (Nexus may not have bleeding edge versions).</p>
+      <p>This command reference can also be viewed in app by using the <code>help</code> command. This reference is is for version <code>1.3.0</code>. Download the latest from <a href="https://github.com/ManApart/starfield-mod-manager/releases" target="_blank">github</a> or possibly <a href="https://www.nexusmods.com/starfield/mods/6576" target="_blank">the Nexus</a>. (Nexus may not have bleeding edge versions).</p>
       <div class="accent-line" id="Add"><a href="#Add">Add</a></div>
       <table class="manual-table">
         <tr>
@@ -26,7 +26,8 @@
             <p></p>
           </td>
           <td>
-            <p>add nexus &lt;nxm://starfield/...&gt;</p>
+            <p>add &lt;nxm://starfield/...&gt;</p>
+            <p>add &lt;creation-id&gt;</p>
             <p>add 4183</p>
             <p>add 4183 4182 4181</p>
             <p>add &lt;path-to-mod-zip&gt; &lt;name-of-mod&gt;*</p>
@@ -37,6 +38,51 @@
             <p>For urls and ids, you can add multiple at once, space separated</p>
             <p>Example nexus mod manager url: nxm://starfield/mods/4183/files/12955?key=abc&amp;expires=1697023374&amp;user_id=111</p>
             <p>Example mod url: https://www.nexusmods.com/starfield/mods/4183?tab=files</p>
+            <p>Example adding a creation: add SFBGS003</p>
+            <p>See also creation</p>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <p>creation</p>
+            <p>creations</p>
+          </td>
+          <td>
+            <p>creation ls</p>
+            <p>creation add &lt;id&gt;</p>
+            <p>creation add all</p>
+            <p>creation rm &lt;index&gt;</p>
+            <p>creation rm all</p>
+            <p>creation refresh &lt;index&gt;</p>
+            <p>creation refresh all</p>
+            <p></p>
+          </td>
+          <td>
+            <p>Tools for managing creations just like other mods</p>
+            <p>creation ls - lists unmanaged creations by examining your game content catalog</p>
+            <p>creation add - adds a single creation by its mod file id (like SFBGS021) or content id (like TM_31ccf130-4852-417b-842a-9d82672028e4). Also see add mod</p>
+            <p>creation add all - Attempts to add _all_ unmanaged creations found in the content catalog</p>
+            <p>creation rm - unmanage this creation, dumping the files back into the data directory (deletes the &quot;mod&quot; but unmanages the files)</p>
+            <p>creation refresh - copy any creation related files from the data directory, overriding existing mod files. Used to update a creation if there are new files</p>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <p>external</p>
+            <p></p>
+          </td>
+          <td>
+            <p>external ls</p>
+            <p>external add &lt;id&gt;</p>
+            <p>external add all</p>
+          </td>
+          <td>
+            <p>Tools for managing external plugins</p>
+            <p>external ls - lists unmanaged plugins by examining your game data folder</p>
+            <p>external add - adds a single plugin by its id (like SFBGS003). Also see add mod</p>
+            <p>external add all - Attempts to add _all_ unmanaged plugins found in the data folder</p>
+            <p>To remove an external plugin, just use the normal remove commands. The empty mod folder will be deleted but since there are no mod files there won't be other changes</p>
+            <p></p>
           </td>
         </tr>
         <tr>
@@ -150,11 +196,14 @@
           </td>
           <td>
             <p>esp ls</p>
+            <p>esp refresh</p>
+            <p>esp refresh 1</p>
             <p>esp 1 first</p>
             <p>esp 1 last</p>
             <p>esp 1 sooner 5</p>
             <p>esp 1 later</p>
             <p>esp 1 set 4</p>
+            <p>esp 1 sub 1 set 0</p>
           </td>
           <td>
             <p>Plugins with a higher load order are loaded later, and override plugins loaded earlier. Given plugin A has an order 5 and plugin B has an order of 1, then A will load AFTER B, and A's records will be used instead of B's in any conflicts. </p>
@@ -163,6 +212,7 @@
             <p>esp 1 set 4 - sets mod with index 1 to load order 4. Any plugins with a higher number for load order have their number increased</p>
             <p>esp 1 later - sets the plugin to load after the next plugin (may shift the order number more than one as it shifts until it's after the next plugin).</p>
             <p>esp 1 later 2 - same as above but shifts down by two plugins</p>
+            <p>esp 1 sub 2 set 0 - Used to re-order plugins within a single mod. Finds the plugin of mod 1 that is in sub load order 2 and sets it to sub load order 0.</p>
             <p>For general mod order, see order command. The same order number is used for both commands.</p>
           </td>
         </tr>
@@ -193,11 +243,13 @@
             <p>profile save &lt;index&gt;</p>
             <p>profile view &lt;index&gt;</p>
             <p>profile load &lt;index&gt;</p>
+            <p>profile compare &lt;index&gt;</p>
           </td>
           <td>
             <p>Allows you to create new profiles, and then view, save, or load them by index.</p>
             <p>Profiles are like local mod collections and save all of the enabled / disabled mods.</p>
             <p>This should let you quickly bulk enable / disable mods for different scenarios.</p>
+            <p>Compare profile allows you to see what the difference is between your currently enabled mods and the profile's mods</p>
           </td>
         </tr>
         <tr>
@@ -260,6 +312,10 @@
           </td>
           <td>
             <p>search &lt;search text&gt; </p>
+            <p>search &lt;tag&gt;</p>
+            <p>search tag &lt;tag&gt; </p>
+            <p>search name &lt;name&gt;</p>
+            <p>search category &lt;category&gt;</p>
             <p>search &lt;mod id&gt;</p>
             <p>search enabled</p>
             <p>search disabled</p>
@@ -273,7 +329,10 @@
           <td>
             <p>Search for mods and list them once</p>
             <p>To apply a filter to future lists, see filter</p>
-            <p>Search the given text (name or category), by ids, by mods missing ids, and by status  </p>
+            <p>Search the given text (name or category), by ids, by mods missing ids, and by status</p>
+            <p>Searching a string will search name, category, and tags.</p>
+            <p>To search ONLY tags, use search tag &lt;tagName&gt;.</p>
+            <p>The same can be done to search by category or name as well</p>
           </td>
         </tr>
         <tr>
@@ -295,8 +354,10 @@
             <p></p>
           </td>
           <td>
-            <p>filter &lt;search text&gt; - </p>
-            <p>filter 123 </p>
+            <p>filter &lt;search text&gt;</p>
+            <p>filter tag</p>
+            <p>filter tag &lt;tag&gt;</p>
+            <p>filter 123</p>
             <p>filter enabled</p>
             <p>filter disabled</p>
             <p>filter staged</p>
@@ -382,6 +443,24 @@
         </tr>
         <tr>
           <td>
+            <p>tag</p>
+            <p></p>
+          </td>
+          <td>
+            <p>tag 1 add essential</p>
+            <p>tag 1 rm essential</p>
+            <p>tag 1 rm 0</p>
+          </td>
+          <td>
+            <p>Tools for managing external plugins</p>
+            <p>external ls - lists unmanaged plugins by examining your game data folder</p>
+            <p>external add - adds a single plugin by its id (like SFBGS003). Also see add mod</p>
+            <p>external add all - Attempts to add _all_ unmanaged plugins found in the data folder</p>
+            <p></p>
+          </td>
+        </tr>
+        <tr>
+          <td>
             <p>rename</p>
             <p>mv</p>
           </td>
@@ -411,6 +490,7 @@
           <td>
             <p>Open various folders and filepaths</p>
             <p>You can open a mod locally or on the nexus, or open the various config paths</p>
+            <p>If you pass 'cli' it will open in terminal instead of local folder</p>
           </td>
         </tr>
         <tr>
@@ -419,11 +499,26 @@
             <p></p>
           </td>
           <td>
-            <p>local &lt;index&gt;</p>
+            <p>local &lt;index&gt; *&lt;cli&gt;</p>
           </td>
           <td>
             <p>Open various folders and filepaths</p>
             <p>You can open a mod locally or on the nexus, or open the various config paths</p>
+            <p>If you pass 'cli' it will open in terminal instead of local folder</p>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <p>cli</p>
+            <p></p>
+          </td>
+          <td>
+            <p>cli &lt;index&gt;</p>
+          </td>
+          <td>
+            <p>Open various folders and filepaths</p>
+            <p>You can open a mod locally or on the nexus, or open the various config paths</p>
+            <p>If you pass 'cli' it will open in terminal instead of local folder</p>
           </td>
         </tr>
         <tr>
@@ -437,6 +532,7 @@
           <td>
             <p>Open various folders and filepaths</p>
             <p>You can open a mod locally or on the nexus, or open the various config paths</p>
+            <p>If you pass 'cli' it will open in terminal instead of local folder</p>
           </td>
         </tr>
         <tr>
@@ -450,6 +546,7 @@
           <td>
             <p>Open various folders and filepaths</p>
             <p>You can open a mod locally or on the nexus, or open the various config paths</p>
+            <p>If you pass 'cli' it will open in terminal instead of local folder</p>
           </td>
         </tr>
         <tr>
@@ -463,6 +560,7 @@
           <td>
             <p>Open various folders and filepaths</p>
             <p>You can open a mod locally or on the nexus, or open the various config paths</p>
+            <p>If you pass 'cli' it will open in terminal instead of local folder</p>
           </td>
         </tr>
         <tr>
@@ -476,6 +574,7 @@
           <td>
             <p>Open various folders and filepaths</p>
             <p>You can open a mod locally or on the nexus, or open the various config paths</p>
+            <p>If you pass 'cli' it will open in terminal instead of local folder</p>
           </td>
         </tr>
         <tr>
@@ -489,6 +588,63 @@
           <td>
             <p>Open various folders and filepaths</p>
             <p>You can open a mod locally or on the nexus, or open the various config paths</p>
+            <p>If you pass 'cli' it will open in terminal instead of local folder</p>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <p>manual</p>
+            <p></p>
+          </td>
+          <td>
+            <p></p>
+          </td>
+          <td>
+            <p>Open various folders and filepaths</p>
+            <p>You can open a mod locally or on the nexus, or open the various config paths</p>
+            <p>If you pass 'cli' it will open in terminal instead of local folder</p>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <p>site</p>
+            <p></p>
+          </td>
+          <td>
+            <p></p>
+          </td>
+          <td>
+            <p>Open various folders and filepaths</p>
+            <p>You can open a mod locally or on the nexus, or open the various config paths</p>
+            <p>If you pass 'cli' it will open in terminal instead of local folder</p>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <p>source</p>
+            <p></p>
+          </td>
+          <td>
+            <p></p>
+          </td>
+          <td>
+            <p>Open various folders and filepaths</p>
+            <p>You can open a mod locally or on the nexus, or open the various config paths</p>
+            <p>If you pass 'cli' it will open in terminal instead of local folder</p>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <p>nexus</p>
+            <p></p>
+          </td>
+          <td>
+            <p></p>
+          </td>
+          <td>
+            <p>Open various folders and filepaths</p>
+            <p>You can open a mod locally or on the nexus, or open the various config paths</p>
+            <p>If you pass 'cli' it will open in terminal instead of local folder</p>
           </td>
         </tr>
       </table>
@@ -547,9 +703,11 @@
             <p>version &lt;index&gt;</p>
             <p>version 1 2 4</p>
             <p>version 1-3</p>
+            <p>version &lt;index&gt; set &lt;new-version&gt;</p>
           </td>
           <td>
             <p>View the current and latest version of a mod</p>
+            <p>Use version set to manually tell the manager that mode is at a given version</p>
           </td>
         </tr>
         <tr>
@@ -587,21 +745,25 @@
             <p>config appdata-path &lt;path-to-folder&gt;</p>
             <p>config ini-path &lt;path-to-folder&gt; </p>
             <p>config api-key &lt;key-from-nexus&gt;</p>
+            <p>config open-in-terminal-command &lt;path-to-folder&gt; </p>
             <p>config verbose &lt;true/false&gt;</p>
             <p>config autodeploy &lt;true/false&gt;</p>
             <p>config use-my-docs &lt;true/false&gt; </p>
             <p>config categories</p>
+            <p>config version</p>
           </td>
           <td>
             <p>Used to configure the mod manager itself. Saved in the config.json file located next to the jar</p>
             <p>game-path should be the path to the folder under steam containing the starfield Data folder and exe</p>
             <p>appdata-path should be the path to the folder under your appdata that will contain Plugins.txt. Needed for updating mod load order</p>
             <p>ini-path should be the path to the folder under your documents that contains StarfieldCustom.ini. It's optionally used to deploy to your my docs folder instead of the game path</p>
+            <p>open-in-terminal-command is optional and only needed if you don't use `gnome-terminal`. This value will be used as the command when opening folders in the terminal. Will be run in the relevant folder, but if you need to specify the directory in the command, you can use `{pwd}` and it will be replaced by the relevant path.</p>
             <p>verbose gives additional output (for debugging) if set to true</p>
             <p>autodeploy automatically runs deploy when enabling or disabling mods. Defaults to true</p>
             <p>use-my-docs optionally allows deploying mod files under Data to my documents instead of the game folder. (Defaults to false) </p>
             <p>categories is used to download category names from nexus</p>
             <p>If your paths have spaces, make sure to quote them</p>
+            <p>version gives the commit that the app was built from</p>
           </td>
         </tr>
         <tr>

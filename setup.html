@@ -25,7 +25,7 @@
           <li><a href="https://www.nexusmods.com/users/myaccount?tab=api%20access">Grab a personal API key from Nexus</a></li>
           <li>Install dependencies, if you don't have them already. You'll need to <code>sudo apt install</code> them
             <ul>
-              <li><code>7z</code> for installing 7zip files</li>
+              <li><code>7z</code> for installing zip and 7zip files</li>
               <li><code>libarchive-tools</code> for installing rar files</li>
             </ul>
           </li>
@@ -116,9 +116,17 @@ sResourceDataDirsFinal=</code></p>
       </div>
       <div class="section">
         <div class="accent-line" id="Usage"><a href="#Usage">Usage</a></div>
+        <p>SMM Works like most mod managers. Each mod is installed to its own private folder that mirrors the game's folder hierarchy. A load order is used to decide plugin precedence and resolve file conflicts. Once mods are enabled, a deployment creates symlinks in the game directory to the individual mod files.</p>
         <p>Run the app and then use <code>help</code> to see commands. Alternatively you can look at the <a href="manual.html">generated man page</a>. You can also look through <a href="features.html">examples.</a></p>
         <p>To reduce typing, most commands take the index of the mod, instead of mod id or name. This means the index of a mod can change as mods are added, deleted or sorted. Listing mods will always show their indices, and filtering will retain the index.</p>
         <p>Please report any issues with the <a href="https://github.com/ManApart/starfield-mod-manager/issues" target="_blank">manager</a> or <a href="https://github.com/ManApart/starfield-mod-manager-site/issues" target="_blank">this site</a> to their respective github issues page.</p>
+      </div>
+      <div class="section">
+        <div class="accent-line" id="Creations"><a href="#Creations">Creations</a></div>
+        <p>Starfield Mod Manager now supports Creations and External Mods. (See the <a href="manual.html#Add">manual</a> for creations).</p>
+        <p>Creations are downloaded directly into your data folder by Starfield, and managed by the game through a ContentCatalog.txt. SMM can identify and manage Creations. This allows you to enable/disable and set the load order for creations.</p>
+        <p>External mods are simply plugin files that are in your data folder that you don't want to manage like other mods (get their own data folder), but that should still be managed in plugins.txt. You generally shouldn't need this feature.</p>
+        <p>If you've been using SMM prior to the release of creations, you'll need to upgrade your setup. You should be able to run <code>validate</code> to see what commands you'll need to run to get things working with the latest version of SMM.</p>
       </div>
     </section>
     <footer></footer>
