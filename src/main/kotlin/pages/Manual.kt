@@ -46,7 +46,7 @@ fun BODY.manual() {
                         tr {
                             td {
                                 p { +command.name }
-                                p { +command.aliases.joinToString(", ") }
+                                command.aliases.forEach { alias -> p { +alias } }
                             }
                             td { command.usage.split("\n").forEach { p { +it } } }
                             td { command.description.split("\n").forEach { p { +it } } }
