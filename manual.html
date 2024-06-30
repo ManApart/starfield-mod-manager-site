@@ -12,7 +12,7 @@
   <body><a href="index.html" class="a-button home-button">Home</a>
     <section>
       <h1>Commands Manual</h1>
-      <p>This command reference can also be viewed in app by using the <code>help</code> command. This reference is is for version <code>1.3.0</code>. Download the latest from <a href="https://github.com/ManApart/starfield-mod-manager/releases" target="_blank">github</a> or possibly <a href="https://www.nexusmods.com/starfield/mods/6576" target="_blank">the Nexus</a>. (Nexus may not have bleeding edge versions).</p>
+      <p>This command reference can also be viewed in app by using the <code>help</code> command. This reference is is for version <code>1.3.1</code>. Download the latest from <a href="https://github.com/ManApart/starfield-mod-manager/releases" target="_blank">github</a> or possibly <a href="https://www.nexusmods.com/starfield/mods/6576" target="_blank">the Nexus</a>. (Nexus may not have bleeding edge versions).</p>
       <div class="accent-line" id="Add"><a href="#Add">Add</a></div>
       <table class="manual-table">
         <tr>
@@ -23,7 +23,7 @@
         <tr>
           <td>
             <p>add</p>
-            <p></p>
+            <p>a</p>
           </td>
           <td>
             <p>add &lt;nxm://starfield/...&gt;</p>
@@ -46,6 +46,7 @@
           <td>
             <p>creation</p>
             <p>creations</p>
+            <p>cr</p>
           </td>
           <td>
             <p>creation ls</p>
@@ -69,7 +70,7 @@
         <tr>
           <td>
             <p>external</p>
-            <p></p>
+            <p>ex</p>
           </td>
           <td>
             <p>external ls</p>
@@ -88,7 +89,7 @@
         <tr>
           <td>
             <p>fetch</p>
-            <p></p>
+            <p>f</p>
           </td>
           <td>
             <p>fetch &lt;mod id&gt;</p>
@@ -123,7 +124,7 @@
         <tr>
           <td>
             <p>enable</p>
-            <p></p>
+            <p>e</p>
           </td>
           <td>
             <p>enable &lt;index&gt;</p>
@@ -139,7 +140,7 @@
         <tr>
           <td>
             <p>disable</p>
-            <p></p>
+            <p>x</p>
           </td>
           <td>
             <p>disable &lt;index&gt;</p>
@@ -155,7 +156,7 @@
         <tr>
           <td>
             <p>deploy</p>
-            <p></p>
+            <p>d</p>
           </td>
           <td>
             <p>deploy</p>
@@ -171,7 +172,7 @@
         <tr>
           <td>
             <p>order</p>
-            <p></p>
+            <p>or</p>
           </td>
           <td>
             <p>order 1</p>
@@ -219,7 +220,6 @@
         <tr>
           <td>
             <p>purge</p>
-            <p></p>
           </td>
           <td>
             <p>purge</p>
@@ -235,7 +235,8 @@
         <tr>
           <td>
             <p>profile</p>
-            <p></p>
+            <p>p</p>
+            <p>prof</p>
           </td>
           <td>
             <p>profile list</p>
@@ -255,7 +256,7 @@
         <tr>
           <td>
             <p>validate</p>
-            <p></p>
+            <p>v</p>
           </td>
           <td>
             <p>validate - defaults to validating enabled</p>
@@ -265,9 +266,13 @@
             <p>validate 1-3</p>
             <p>validate staged</p>
             <p>validate disabled</p>
+            <p>validate skip 1</p>
+            <p>validate check 1</p>
           </td>
           <td>
             <p>Examines mods for issues. Checks for duplicates, bad folder staging etc</p>
+            <p>Use validate skip 1 to add a tag so that mod at index 1 is skipped for validation</p>
+            <p>Use validate check 1 to remove the tag, so the mod is validated</p>
           </td>
         </tr>
       </table>
@@ -296,7 +301,7 @@
         <tr>
           <td>
             <p>detail</p>
-            <p></p>
+            <p>dd</p>
           </td>
           <td>
             <p>detail &lt;mod id&gt;</p>
@@ -308,7 +313,8 @@
         <tr>
           <td>
             <p>search</p>
-            <p>grep, awk</p>
+            <p>grep</p>
+            <p>awk</p>
           </td>
           <td>
             <p>search &lt;search text&gt; </p>
@@ -338,7 +344,7 @@
         <tr>
           <td>
             <p>find</p>
-            <p></p>
+            <p>ff</p>
           </td>
           <td>
             <p>Find files</p>
@@ -351,7 +357,7 @@
         <tr>
           <td>
             <p>filter</p>
-            <p></p>
+            <p>fl</p>
           </td>
           <td>
             <p>filter &lt;search text&gt;</p>
@@ -376,7 +382,7 @@
         <tr>
           <td>
             <p>sort</p>
-            <p></p>
+            <p>s</p>
           </td>
           <td>
             <p>sort name</p>
@@ -402,7 +408,7 @@
         <tr>
           <td>
             <p>endorse</p>
-            <p></p>
+            <p>en</p>
           </td>
           <td>
             <p>endorse &lt;index&gt;</p>
@@ -416,7 +422,6 @@
         <tr>
           <td>
             <p>abstain</p>
-            <p></p>
           </td>
           <td>
             <p>abstain &lt;index&gt;</p>
@@ -428,7 +433,7 @@
         <tr>
           <td>
             <p>mod</p>
-            <p></p>
+            <p>m</p>
           </td>
           <td>
             <p>mod &lt;index&gt; id &lt;new id&gt;</p>
@@ -444,7 +449,7 @@
         <tr>
           <td>
             <p>tag</p>
-            <p></p>
+            <p>t</p>
           </td>
           <td>
             <p>tag 1 add essential</p>
@@ -482,7 +487,7 @@
         <tr>
           <td>
             <p>open</p>
-            <p></p>
+            <p>o</p>
           </td>
           <td>
             <p>open &lt;index&gt;</p>
@@ -496,7 +501,7 @@
         <tr>
           <td>
             <p>local</p>
-            <p></p>
+            <p>l</p>
           </td>
           <td>
             <p>local &lt;index&gt; *&lt;cli&gt;</p>
@@ -510,7 +515,8 @@
         <tr>
           <td>
             <p>cli</p>
-            <p></p>
+            <p>terminal</p>
+            <p>term</p>
           </td>
           <td>
             <p>cli &lt;index&gt;</p>
@@ -525,9 +531,10 @@
           <td>
             <p>game-path</p>
             <p>gamepath</p>
+            <p>gg</p>
           </td>
           <td>
-            <p></p>
+            <p>Open game folder</p>
           </td>
           <td>
             <p>Open various folders and filepaths</p>
@@ -539,9 +546,10 @@
           <td>
             <p>appdata-path</p>
             <p>appdatapath</p>
+            <p>app</p>
           </td>
           <td>
-            <p></p>
+            <p>Open appdata path folder</p>
           </td>
           <td>
             <p>Open various folders and filepaths</p>
@@ -553,9 +561,10 @@
           <td>
             <p>ini-path</p>
             <p>inipath</p>
+            <p>ini</p>
           </td>
           <td>
-            <p></p>
+            <p>Open ini path folder</p>
           </td>
           <td>
             <p>Open various folders and filepaths</p>
@@ -569,7 +578,7 @@
             <p>plugin</p>
           </td>
           <td>
-            <p></p>
+            <p>Open plugins file</p>
           </td>
           <td>
             <p>Open various folders and filepaths</p>
@@ -581,9 +590,10 @@
           <td>
             <p>jar-path</p>
             <p>jarpath</p>
+            <p>jar</p>
           </td>
           <td>
-            <p></p>
+            <p>Open jar path folder</p>
           </td>
           <td>
             <p>Open various folders and filepaths</p>
@@ -594,10 +604,10 @@
         <tr>
           <td>
             <p>manual</p>
-            <p></p>
+            <p>man</p>
           </td>
           <td>
-            <p></p>
+            <p>Open website manual</p>
           </td>
           <td>
             <p>Open various folders and filepaths</p>
@@ -608,10 +618,9 @@
         <tr>
           <td>
             <p>site</p>
-            <p></p>
           </td>
           <td>
-            <p></p>
+            <p>Open website</p>
           </td>
           <td>
             <p>Open various folders and filepaths</p>
@@ -622,10 +631,11 @@
         <tr>
           <td>
             <p>source</p>
-            <p></p>
+            <p>git</p>
+            <p>github</p>
           </td>
           <td>
-            <p></p>
+            <p>Open app source</p>
           </td>
           <td>
             <p>Open various folders and filepaths</p>
@@ -636,10 +646,9 @@
         <tr>
           <td>
             <p>nexus</p>
-            <p></p>
           </td>
           <td>
-            <p></p>
+            <p>Open app nexus page</p>
           </td>
           <td>
             <p>Open various folders and filepaths</p>
@@ -658,7 +667,7 @@
         <tr>
           <td>
             <p>refresh</p>
-            <p></p>
+            <p>rr</p>
           </td>
           <td>
             <p>refresh &lt;index&gt;</p>
@@ -679,7 +688,7 @@
         <tr>
           <td>
             <p>update</p>
-            <p></p>
+            <p>up</p>
           </td>
           <td>
             <p>update &lt;index&gt;</p>
@@ -697,7 +706,7 @@
         <tr>
           <td>
             <p>version</p>
-            <p></p>
+            <p>vv</p>
           </td>
           <td>
             <p>version &lt;index&gt;</p>
@@ -713,7 +722,7 @@
         <tr>
           <td>
             <p>upgrade</p>
-            <p></p>
+            <p>ug</p>
           </td>
           <td>
             <p>upgrade &lt;index&gt;</p>
@@ -738,7 +747,7 @@
         <tr>
           <td>
             <p>config</p>
-            <p></p>
+            <p>c</p>
           </td>
           <td>
             <p>config game-path &lt;path-to-folder&gt;</p>
@@ -769,7 +778,7 @@
         <tr>
           <td>
             <p>help</p>
-            <p></p>
+            <p>h</p>
           </td>
           <td>
             <p>help</p>
@@ -794,7 +803,6 @@
         <tr>
           <td>
             <p>exit</p>
-            <p></p>
           </td>
           <td>
             <p>Exit the process</p>
