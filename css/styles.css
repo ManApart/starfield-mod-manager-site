@@ -1,0 +1,184 @@
+@font-face { font-family: Architekt; src: url('../fonts/Architekt-Light.ttf'),  url('/fonts/Architekt-Light.ttf'); }
+@font-face { font-family: Grotesk; src: url('../fonts/Grotesk-R-Semibold.ttf'),  url('/fonts/Grotesk-R-Semibold.ttf'); }
+
+
+:root {
+  --background-blue: #0d1727;
+  --red: #c82337;
+  --orange: #e06236;
+  --yellow: #d7ab61;
+  --blue: #2f4c79;
+  --menu-gray: #2d343c;
+}
+
+body {
+    position: relative;
+    color: white;
+    font-size: large;
+    background-color: var(--background-blue);
+    font-family: Grotesk;
+}
+
+section {
+    margin: auto;
+    margin-top: 20px;
+    max-width: 1200px;
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+
+::-webkit-scrollbar-corner {
+  background: var(--background-blue);
+}
+
+::-webkit-scrollbar-track {
+  background: var(--background-blue);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--blue);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: gray;
+}
+
+
+h1, h2, h3, h4 {
+    font-family: Architekt;
+    text-align: center;
+}
+
+h2 {
+    margin-top: 10px;
+}
+
+
+td {
+    vertical-align: top;
+}
+
+.a-button {
+    display: inline-block;
+    color: white;
+    background-size: 200% 100%;
+    background-image: linear-gradient(to right, var(--background-blue) 50%, var(--menu-gray) 50%);
+	border: 1px solid gray;
+	padding: 5px;
+	margin-right: 5px;
+	margin-top: 5px;
+	margin-bottom: 5px;
+	cursor: pointer;
+	font-family: Architekt;
+    transition: 1s;
+    text-decoration: none;
+}
+
+a {
+    color: white;
+}
+
+a:hover{
+    background-position: -100% 0%;
+}
+
+code {
+    background-color: var(--blue);
+}
+
+.button-pushed{
+    background-position: -100% 0%;
+}
+
+.hidden {
+    display: none !important;
+}
+
+.visible-block {
+    display: block;
+}
+
+.visible-inline-block {
+    display: inline-block;
+}
+
+.accent-line {
+    height: 30px;
+    background-image: linear-gradient(140deg, var(--blue) 10%, var(--red) 10%, var(--red) 13%, var(--orange) 13%, var(--orange) 15%, var(--yellow) 15%, var(--yellow) 16.5%, white 16.5%);
+    text-align: center;
+    color: black;
+    font-family: Architekt;
+    font-weight: bold;
+    padding-top: 5px;
+    margin-top: 40px;
+    margin-bottom: 10px;
+}
+
+.accent-line a {
+    text-align: center;
+    color: black;
+    font-family: Architekt;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+
+.links{
+    text-align: center;
+}
+
+.links a {
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+table{
+    width: 100%;
+}
+
+table, th, td {
+    border: 1px solid white;
+    border-collapse: collapse;
+    padding: 10px;
+}
+
+.asci-cast {
+    margin: auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.asci-cast div.ap-wrapper {
+    height: unset;
+}
+
+.home-button {
+    position: sticky;
+    top: 20px;
+    left: 20px;
+}
+
+#home-summary{
+    text-align: center;
+}
+
+.header-command{
+    width: 12%;
+    min-width: 50px;
+}
+
+.header-usage{
+    width: 20%;
+    min-width: 5s0px;
+}
+
+.header-description{
+    width: 60%;
+}
+
+.manual-table {
+    overflow-wrap: anywhere;
+}

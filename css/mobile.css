@@ -1,0 +1,15 @@
+@media (max-aspect-ratio: 3/4) {
+    code{
+        word-wrap: break-word;
+    }
+    .asci-cast {
+        width: 100%;
+    }
+    .links a {
+        margin-left: 1%;
+        margin-right: 1%;
+    }
+    .manual-table tbody tr td:last-child() {
+        overflow-wrap: anywhere;
+    }
+}
