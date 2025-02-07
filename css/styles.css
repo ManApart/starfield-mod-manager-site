@@ -145,40 +145,20 @@ table, th, td {
     padding: 10px;
 }
 
-.asci-cast {
-    margin: auto;
-    margin-top: 10px;
-    margin-bottom: 10px;
-}
-
-.asci-cast div.ap-wrapper {
-    height: unset;
-}
-
 .home-button {
     position: sticky;
     top: 20px;
     left: 20px;
 }
 
-#home-summary{
-    text-align: center;
+.statsRow{
+    padding: 5px;
+    margin-bottom: 10px;
 }
 
-.header-command{
-    width: 12%;
-    min-width: 50px;
-}
-
-.header-usage{
-    width: 20%;
-    min-width: 5s0px;
-}
-
-.header-description{
-    width: 60%;
-}
-
-.manual-table {
-    overflow-wrap: anywhere;
+.stat {
+    display: inline-block;
+    padding: 2px;
+    margin-right: 10px;
+    min-width: 60px;
 }
