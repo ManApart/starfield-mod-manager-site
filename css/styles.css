@@ -61,7 +61,7 @@ td {
     vertical-align: top;
 }
 
-.a-button {
+button, input::file-selector-button {
     display: inline-block;
     color: white;
     background-size: 200% 100%;
@@ -91,10 +91,6 @@ code {
 
 .button-pushed{
     background-position: -100% 0%;
-}
-
-.hidden {
-    display: none !important;
 }
 
 .visible-block {
@@ -151,8 +147,39 @@ table, th, td {
     left: 20px;
 }
 
+#upload-button {
+    display: inline-block;
+}
+
+.modRow {
+    max-width: 95vw;
+    overflow: hidden;
+}
+
+.modName {
+    display: inline-block;
+    max-width: 85vw;
+    text-wrap-mode: nowrap;
+    overflow: scroll;
+}
+
+.modName::-webkit-scrollbar {
+    display: none;
+}
+
+.modEmojis {
+    float: right;
+    margin-left: -50px;
+}
+
+
 .statsRow{
-    padding: 5px;
+    overflow: hidden;
+    max-height: 400px;
+    transition: max-height .3s;
+}
+
+.statsRowTable {
     margin-bottom: 10px;
 }
 
@@ -161,4 +188,17 @@ table, th, td {
     padding: 2px;
     margin-right: 10px;
     min-width: 60px;
+}
+
+.idRow:hover {
+    color: var(--orange);
+    text-decoration: underline
+}
+
+.hidden {
+    display: none !important;
+}
+
+.minimized {
+    max-height: 0px;
 }
