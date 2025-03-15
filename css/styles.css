@@ -167,7 +167,11 @@ input {
     display: inline-block;
 }
 
+#changes {
+}
+
 #controls {
+    z-index: 1;
     top: 0px;
     position: sticky;
     background-color: var(--background-blue);
@@ -242,9 +246,18 @@ input {
 
 #tag-modal {
     position: fixed;
-    z-index: 1;
-    left: 5%;
-    top: 30%;
-    width: 70%;
-    background-color: var(--background-color);
+    left: 0;
+    top: 45%;
+    width: 100%;
+}
+
+#tag-modal-content {
+    width: fit-content;
+    max-width: 80%;
+    margin: auto;
+    background-color: var(--background-blue);
+}
+
+.blur {
+    filter: blur(4px);
 }
