@@ -14,6 +14,7 @@ fun BODY.home() {
             a("features.html", classes = "a-button") { +"Features" }
             a("setup.html", classes = "a-button") { +"Setup" }
             a("manual.html", classes = "a-button") { +"Manual" }
+            a("./viewer.html", classes = "a-button") { +"Mod Viewer" }
             a(
                 "https://github.com/ManApart/starfield-mod-manager",
                 classes = "a-button",
