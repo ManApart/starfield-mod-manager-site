@@ -61,7 +61,7 @@ td {
     vertical-align: top;
 }
 
-button, input::file-selector-button {
+button, input::file-selector-button, .upload-button {
     display: inline-block;
     color: white;
     background-size: 200% 100%;
@@ -81,7 +81,7 @@ a {
     color: white;
 }
 
-a:hover{
+button:hover, input::file-selector-button:hover, .upload-button:hover {
     background-position: -100% 0%;
 }
 
