@@ -61,7 +61,7 @@ td {
     vertical-align: top;
 }
 
-button, input::file-selector-button, .upload-button {
+button, input::file-selector-button, .a-button, .upload-button {
     display: inline-block;
     color: white;
     background-size: 200% 100%;
@@ -81,7 +81,7 @@ a {
     color: white;
 }
 
-button:hover, input::file-selector-button:hover, .upload-button:hover {
+button:hover, input::file-selector-button:hover, .a-button:hover, .upload-button:hover {
     background-position: -100% 0%;
 }
 
@@ -154,8 +154,8 @@ input {
 }
 
 .home-button {
-    position: sticky;
-    top: 20px;
+    position: absolute;
+    top: 0px;
     left: 20px;
 }
 
