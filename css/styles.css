@@ -179,7 +179,8 @@ input {
 }
 
 .change-item {
-    margin: 5px;
+    display: inline-block;
+    margin-right: 5px;
 }
 
 .import-code{
