@@ -11,6 +11,11 @@
   --menu-gray: #2d343c;
 }
 
+::selection {
+    color: black;
+    background-color: var(--yellow);
+}
+
 body {
     position: relative;
     color: white;
@@ -86,7 +91,7 @@ button:hover, input::file-selector-button:hover, .a-button:hover, .upload-button
 }
 
 code {
-    background-color: var(--blue);
+    background-color: var(--menu-gray);
 }
 
 .button-pushed{
