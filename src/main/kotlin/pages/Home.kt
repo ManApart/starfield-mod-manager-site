@@ -8,7 +8,7 @@ import kotlinx.html.*
 
 fun BODY.home() {
     section {
-        h1 { +"Starfield Mod Manager" }
+        h1 { +"Manapart Mod Manager" }
 
         div("links") {
             a("features.html", classes = "a-button") { +"Features" }

@@ -39,9 +39,9 @@ fun BODY.setup() {
                 }
                 li {
                     +"Download "
-                    code { +"smm.desktop" }
+                    code { +"mmm.desktop" }
                     +" and "
-                    code { +"starfield-mod-manger.jar" }
+                    code { +"manapart-mod-manger.jar" }
                     +" from "
                     a(
                         href = "https://github.com/ManApart/starfield-mod-manager/releases",
@@ -71,7 +71,7 @@ fun BODY.setup() {
                     ul {
                         li {
                             +"Should look something like: "
-                            code { +"Exec=sh -c \"java -jar /home/<user>/games/programs/starfield-mod-manager/starfield-mod-manager.jar %U\"" }
+                            code { +"Exec=sh -c \"java -jar /home/<user>/games/programs/manapart-mod-manager/manapart-mod-manager.jar %U\"" }
                         }
                     }
                 }
@@ -80,7 +80,7 @@ fun BODY.setup() {
                     ul {
                         li {
                             +"Should look something like: "
-                            code { +"Path=/home/<user>/games/programs/starfield-mod-manager/" }
+                            code { +"Path=/home/<user>/games/programs/manapart-mod-manager/" }
                         }
                     }
                 }
@@ -96,7 +96,7 @@ fun BODY.setup() {
                 }
                 li {
                     +"Optional: If you want to run from an existing terminal, add something like "
-                    code { +"alias smm='pushd /home/<user>/games/programs/starfield-mod-manager && java -jar starfield-mod-manager.jar; popd'" }
+                    code { +"alias smm='pushd /home/<user>/games/programs/manapart-mod-manager && java -jar manapart-mod-manager.jar; popd'" }
                     +" to your bash aliases. This is how I run the manager in the demos on the site"
                 }
             }
