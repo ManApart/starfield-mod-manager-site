@@ -140,8 +140,7 @@ fun BODY.setup() {
                     }
                 }
             }
-            //TODO
-            asciCast("config", rows = 10, posterTime = "0:02")
+            asciCast("config", rows = 40, posterTime = "0:22")
         }
 
         div("section") {
