@@ -12,6 +12,7 @@ fun BODY.manual() {
     if (manualData.exists()) {
         val allCommands = jsonMapper.decodeFromString<List<CommandJson>>(manualData.readText())
         val tag = getLatestTag()
+        toc(allCommands)
         section {
             h1 { +"Commands Manual" }
             p {
@@ -21,7 +22,7 @@ fun BODY.manual() {
                 code { +tag }
                 +". Download the latest from "
                 a(
-                    href = "https://github.com/ManApart/starfield-mod-manager/releases",
+                    href = "https://github.com/ManApart/manapart-mod-manager/releases",
                     target = "_blank"
                 ) { +"github" }
                 +" or possibly "
@@ -45,11 +46,33 @@ fun BODY.manual() {
                     commands.forEach { command ->
                         tr {
                             td {
-                                p { +command.name }
+                                p {
+                                    id = "command-${command.name}"
+                                    +command.name
+                                }
                                 command.aliases.forEach { alias -> p { +alias } }
                             }
                             td { command.usage.split("\n").forEach { p { +it } } }
                             td { command.description.split("\n").forEach { p { +it } } }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+private fun BODY.toc(allCommands: List<CommandJson>) {
+    div {
+        id = "toc-wrapper"
+        div {
+            id = "toc"
+            allCommands.groupBy { it.category }.entries.sortedBy { it.key }.forEach { (category, commands) ->
+                div {
+                    a(href = "#${category.name.lowercase().capitalize()}") { +category.name }
+                    ul {
+                        commands.forEach { command ->
+                            li { a(href = "#command-${command.name}") { +command.name.capitalize() } }
                         }
                     }
                 }

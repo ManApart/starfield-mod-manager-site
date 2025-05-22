@@ -12,4 +12,8 @@
     .manual-table tbody tr td:last-child() {
         overflow-wrap: anywhere;
     }
+
+    #toc-wrapper {
+        display: none;
+    }
 }

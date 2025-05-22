@@ -16,7 +16,7 @@ fun BODY.home() {
             a("manual.html", classes = "a-button") { +"Manual" }
             a("./viewer.html", classes = "a-button") { +"Mod Viewer" }
             a(
-                "https://github.com/ManApart/starfield-mod-manager",
+                "https://github.com/ManApart/manapart-mod-manager",
                 classes = "a-button",
                 target = "_blank"
             ) { +"Source" }
@@ -27,8 +27,8 @@ fun BODY.home() {
             id = "home-summary"
             accentLine("Linux CLI Mod Manager")
             p { +"Flexible CLI commands support everything from Nexus download links to bulk updating mods, to maintaining and deploying local mod collections." }
-
             p { +"Check out the demo below and click Features above to discover more functionality." }
+            p { +"Supports Starfield and Oblivion Remastered." }
             asciCast("enable", posterTime = "0:02")
         }
 

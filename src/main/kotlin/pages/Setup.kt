@@ -10,7 +10,7 @@ fun BODY.setup() {
     section {
         h1 { +"Setup" }
         p { +"Setup is less intimidating than it seems, especially if you're familiar with BGS modding and linux. Half of these instructions exist simply because there are multiple ways you can set up your system." }
-        p { +"Note: This guide assumes a vanilla instance of Starfield is running. This is not a guide on how to run Starfield on linux." }
+        p { +"Note: This guide assumes a vanilla instance of Starfield/Oblivion Remastered is running. This is not a guide on how to run the games on linux." }
 
         p { +"Currently only fully supports premium members. Non Premium members should be able to add files by zip folder or nexus \"download with mod manager links\", but likely won't be able to download mods by pasting in a url or id." }
 
@@ -44,7 +44,7 @@ fun BODY.setup() {
                     code { +"manapart-mod-manger.jar" }
                     +" from "
                     a(
-                        href = "https://github.com/ManApart/starfield-mod-manager/releases",
+                        href = "https://github.com/ManApart/manapart-mod-manager/releases",
                         target = "_blank"
                     ) { +"github" }
                     +" or "
@@ -62,7 +62,7 @@ fun BODY.setup() {
             ul {
                 li {
                     +"Place "
-                    code { +"smm.desktop" }
+                    code { +"mmm.desktop" }
                     +" in "
                     code { +"~/.local/share/applications/" }
                 }
@@ -88,15 +88,15 @@ fun BODY.setup() {
                     +"Update "
                     code { +"~/.local/share/applications/mimeapps.list" }
                     +" by adding a line "
-                    code { +"x-scheme-handler/nxm=smm.desktop" }
+                    code { +"x-scheme-handler/nxm=mmm.desktop" }
                 }
                 li {
                     +"Make the desktop shortcut the default handler by running: "
-                    code { +"xdg-mime default smm.desktop x-scheme-handler/nxm" }
+                    code { +"xdg-mime default mmm.desktop x-scheme-handler/nxm" }
                 }
                 li {
                     +"Optional: If you want to run from an existing terminal, add something like "
-                    code { +"alias smm='pushd /home/<user>/games/programs/manapart-mod-manager && java -jar manapart-mod-manager.jar; popd'" }
+                    code { +"alias mmm='pushd /home/<user>/games/programs/manapart-mod-manager && java -jar manapart-mod-manager.jar; popd'" }
                     +" to your bash aliases. This is how I run the manager in the demos on the site"
                 }
             }
@@ -116,33 +116,36 @@ fun BODY.setup() {
                     +" using the api key you got from the prerequisites step"
                 }
                 li {
-                    code { +"config game-path <path>" }
+                    code { +"config path GAME <path>" }
                     +" to point to your game folder"
                     ul {
                         li {
                             +"Should look something like: "
-                            code { +"<...>/SteamLibrary/steamapps/common/Starfield/" }
+                            code { +"<...>/SteamLibrary/steamapps/common/Starfield" }
+                            + " or "
+                            code { +"<...>/SteamLibrary/steamapps/common/Oblivion Remastered/OblivionRemastered" }
                         }
                         li { +"This is used as the target to deploy mods to and for launching the game" }
                     }
                 }
                 li {
-                    code { +"config appdata-path <path>" }
-                    +" to point to your local appdata folder"
+                    code { +"config path COMPAT_DATA <path>" }
+                    +" to point to your compat_data folder"
                     ul {
                         li {
                             +"Should look something like: "
-                            code { +"<...>/SteamLibrary/steamapps/compatdata/1716740/pfx/drive_c/users/steamuser/AppData/Local/Starfield/" }
+                            code { +"<...>/SteamLibrary/steamapps/compatdata/2623190" }
                         }
-                        li { +"This is used to deploy the Plugins.txt in order to enable ESMs etc" }
+                        li { +"This is used to for various settings paths for the games" }
                     }
                 }
             }
+            //TODO
             asciCast("config", rows = 10, posterTime = "0:02")
         }
 
         div("section") {
-            accentLine("Deploy to Game Folder")
+            accentLine("Deploy to Game Folder (Starfield)")
             ul {
                 li { +"Uninstall any manually added mod files, or consider doing a clean install of the game" }
                 li {
@@ -186,19 +189,9 @@ fun BODY.setup() {
         }
 
         div("section") {
-            accentLine("Alternative Deploy to Docs Folder")
+            accentLine("Alternative Deploy to Docs Folder (Starfield)")
             p { +"If you're unable to install SFSE, you can deploy to the docs folder directly, but please note that this is not recommended as it's more error prone and can cause issues" }
             ul {
-                li {
-                    code { +"config ini-path <path>" }
-                    +" to point to your ini (my docs) folder"
-                    ul {
-                        li {
-                            +"Should look something like: "
-                            code { +"<...>/SteamLibrary/steamapps/compatdata/1716740/pfx/drive_c/users/steamuser/Documents/My Games/Starfield" }
-                        }
-                    }
-                }
                 li {
                     +"In the app run "
                     code { +"config use-my-docs true" }
@@ -224,7 +217,7 @@ fun BODY.setup() {
         }
         div("section") {
             accentLine("Usage")
-            p{+"SMM Works like most mod managers. Each mod is installed to its own private folder that mirrors the game's folder hierarchy. A load order is used to decide plugin precedence and resolve file conflicts. Once mods are enabled, a deployment creates symlinks in the game directory to the individual mod files."}
+            p { +"MMM Works like most mod managers. Each mod is installed to its own private folder that mirrors the game's folder hierarchy. A load order is used to decide plugin precedence and resolve file conflicts. Once mods are enabled, a deployment creates symlinks in the game directory to the individual mod files." }
             p {
                 +"Run the app and then use "
                 code { +"help" }
@@ -238,12 +231,12 @@ fun BODY.setup() {
             p {
                 +"Please report any issues with the "
                 a(
-                    href = "https://github.com/ManApart/starfield-mod-manager/issues",
+                    href = "https://github.com/ManApart/manapart-mod-manager/issues",
                     target = "_blank"
                 ) { +"manager" }
                 +" or "
                 a(
-                    href = "https://github.com/ManApart/starfield-mod-manager-site/issues",
+                    href = "https://github.com/ManApart/manapart-mod-manager-site/issues",
                     target = "_blank"
                 ) { +"this site" }
                 +" to their respective github issues page."
@@ -252,17 +245,22 @@ fun BODY.setup() {
         div("section") {
             accentLine("Creations")
             p {
-                +"Starfield Mod Manager now supports Creations and External Mods. (See the "
+                +"Manapart Mod Manager supports Creations and External Mods. (See the "
                 a(href = "manual.html#Add") { +"manual" }
                 +" for creations)."
             }
-            p { +"Creations are downloaded directly into your data folder by Starfield, and managed by the game through a ContentCatalog.txt. SMM can identify and manage Creations. This allows you to enable/disable and set the load order for creations." }
+            p { +"Creations are downloaded directly into your data folder by Starfield, and managed by the game through a ContentCatalog.txt. MMM can identify and manage Creations. This allows you to enable/disable and set the load order for creations." }
             p { +"External mods are simply plugin files that are in your data folder that you don't want to manage like other mods (get their own data folder), but that should still be managed in plugins.txt. You generally shouldn't need this feature." }
             p {
-                +"If you've been using SMM prior to the release of creations, you'll need to upgrade your setup. You should be able to run "
+                +"If you've been using MMM prior to the release of creations, you'll need to upgrade your setup. You should be able to run "
                 code { +"validate" }
-                +" to see what commands you'll need to run to get things working with the latest version of SMM."
+                +" to see what commands you'll need to run to get things working with the latest version of MMM."
             }
+        }
+        div("section") {
+            accentLine("Upgrade")
+            p { +"Manapart Mod Manager now supports multiple games (Starfield, Oblivion Remastered)." }
+            p { +"If you used the old Starfield-Only manager, the app will detect and attempt to upgrade you. If this fails, you'll need to go through the setup sections above again manually. This is due to splitting the config file into a main config file and a config file per game, as well as making the data json game specific." }
         }
     }
 }

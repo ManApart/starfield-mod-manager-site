@@ -1,6 +1,6 @@
-# Starfield Mod Manager Site
+# Manapart Mod Manager Site
 
-Site for Starfield Mod Manager
+Site for Manapart Mod Manager
 
 ## Running
 
