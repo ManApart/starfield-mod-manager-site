@@ -183,6 +183,30 @@ table, th, td {
     overflow-wrap: anywhere;
 }
 
+#toc-wrapper {
+    position: fixed;
+    min-width: 150px;
+    padding: 5px;
+    top: 70px;
+    background-color: var(--background-blue);
+    overflow: scroll;
+    overscroll-behavior: contain;
+}
+
+#toc-wrapper::-webkit-scrollbar {
+    display: none;
+}
+
+#toc {
+    height: 90vh;
+}
+
+#toc ul {
+    margin: 0px;
+    list-style-type: none;
+    font-size: medium;
+}
+
 @media (max-aspect-ratio: 3/4) {
     code{
         word-wrap: break-word;
@@ -196,5 +220,9 @@ table, th, td {
     }
     .manual-table tbody tr td:last-child() {
         overflow-wrap: anywhere;
+    }
+
+    #toc-wrapper {
+        display: none;
     }
 }

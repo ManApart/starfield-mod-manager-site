@@ -1,6 +1,6 @@
 <html lang="en">
   <head>
-    <title>Starfield Mod Manager</title>
+    <title>Manapart Mod Manager</title>
     <meta content="IE=edge" http-equiv="X-UA-Compatible">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="view-transition" content="same-origin">
@@ -13,7 +13,7 @@
     <section>
       <h1>Setup</h1>
       <p>Setup is less intimidating than it seems, especially if you're familiar with BGS modding and linux. Half of these instructions exist simply because there are multiple ways you can set up your system.</p>
-      <p>Note: This guide assumes a vanilla instance of Starfield is running. This is not a guide on how to run Starfield on linux.</p>
+      <p>Note: This guide assumes a vanilla instance of Starfield/Oblivion Remastered is running. This is not a guide on how to run the games on linux.</p>
       <p>Currently only fully supports premium members. Non Premium members should be able to add files by zip folder or nexus &quot;download with mod manager links&quot;, but likely won't be able to download mods by pasting in a url or id.</p>
       <p id="js-warning">Enable javascript to watch demos</p>
       <script src="assets/asciinema-player.min.js"></script>
@@ -29,27 +29,27 @@
               <li><code>libarchive-tools</code> for installing rar files</li>
             </ul>
           </li>
-          <li>Download <code>smm.desktop</code> and <code>starfield-mod-manger.jar</code> from <a href="https://github.com/ManApart/starfield-mod-manager/releases" target="_blank">github</a> or <a href="https://www.nexusmods.com/starfield/mods/6576" target="_blank">the nexus.</a> Place the jar in a folder where you want to run it from.</li>
+          <li>Download <code>mmm.desktop</code> and <code>manapart-mod-manger.jar</code> from <a href="https://github.com/ManApart/manapart-mod-manager/releases" target="_blank">github</a> or <a href="https://www.nexusmods.com/starfield/mods/6576" target="_blank">the nexus.</a> Place the jar in a folder where you want to run it from.</li>
         </ul>
       </div>
       <div class="section">
         <div class="accent-line" id="Shortcuts and Vortex Links"><a href="#Shortcuts and Vortex Links">Shortcuts and Vortex Links</a></div>
         <p>This section lets you more easily run the manager, and use the &quot;Download with Vortex&quot; buttons on Nexus.</p>
         <ul>
-          <li>Place <code>smm.desktop</code> in <code>~/.local/share/applications/</code></li>
+          <li>Place <code>mmm.desktop</code> in <code>~/.local/share/applications/</code></li>
           <li>Edit the Exec line so it points to your jar install location.
             <ul>
-              <li>Should look something like: <code>Exec=sh -c &quot;java -jar /home/&lt;user&gt;/games/programs/starfield-mod-manager/starfield-mod-manager.jar %U&quot;</code></li>
+              <li>Should look something like: <code>Exec=sh -c &quot;java -jar /home/&lt;user&gt;/games/programs/manapart-mod-manager/manapart-mod-manager.jar %U&quot;</code></li>
             </ul>
           </li>
           <li>Edit the Path line so it points at the folder of your jar
             <ul>
-              <li>Should look something like: <code>Path=/home/&lt;user&gt;/games/programs/starfield-mod-manager/</code></li>
+              <li>Should look something like: <code>Path=/home/&lt;user&gt;/games/programs/manapart-mod-manager/</code></li>
             </ul>
           </li>
-          <li>Update <code>~/.local/share/applications/mimeapps.list</code> by adding a line <code>x-scheme-handler/nxm=smm.desktop</code></li>
-          <li>Make the desktop shortcut the default handler by running: <code>xdg-mime default smm.desktop x-scheme-handler/nxm</code></li>
-          <li>Optional: If you want to run from an existing terminal, add something like <code>alias smm='pushd /home/&lt;user&gt;/games/programs/starfield-mod-manager &amp;&amp; java -jar starfield-mod-manager.jar; popd'</code> to your bash aliases. This is how I run the manager in the demos on the site</li>
+          <li>Update <code>~/.local/share/applications/mimeapps.list</code> by adding a line <code>x-scheme-handler/nxm=mmm.desktop</code></li>
+          <li>Make the desktop shortcut the default handler by running: <code>xdg-mime default mmm.desktop x-scheme-handler/nxm</code></li>
+          <li>Optional: If you want to run from an existing terminal, add something like <code>alias mmm='pushd /home/&lt;user&gt;/games/programs/manapart-mod-manager &amp;&amp; java -jar manapart-mod-manager.jar; popd'</code> to your bash aliases. This is how I run the manager in the demos on the site</li>
         </ul>
       </div>
       <div class="section">
@@ -58,24 +58,24 @@
         <ul>
           <li>Start the app using one of the methods from the Shortcuts section above</li>
           <li><code>config api-key &lt;key&gt;</code> using the api key you got from the prerequisites step</li>
-          <li><code>config game-path &lt;path&gt;</code> to point to your game folder
+          <li><code>config path GAME &lt;path&gt;</code> to point to your game folder
             <ul>
-              <li>Should look something like: <code>&lt;...&gt;/SteamLibrary/steamapps/common/Starfield/</code></li>
+              <li>Should look something like: <code>&lt;...&gt;/SteamLibrary/steamapps/common/Starfield</code> or <code>&lt;...&gt;/SteamLibrary/steamapps/common/Oblivion Remastered/OblivionRemastered</code></li>
               <li>This is used as the target to deploy mods to and for launching the game</li>
             </ul>
           </li>
-          <li><code>config appdata-path &lt;path&gt;</code> to point to your local appdata folder
+          <li><code>config path COMPAT_DATA &lt;path&gt;</code> to point to your compat_data folder
             <ul>
-              <li>Should look something like: <code>&lt;...&gt;/SteamLibrary/steamapps/compatdata/1716740/pfx/drive_c/users/steamuser/AppData/Local/Starfield/</code></li>
-              <li>This is used to deploy the Plugins.txt in order to enable ESMs etc</li>
+              <li>Should look something like: <code>&lt;...&gt;/SteamLibrary/steamapps/compatdata/2623190</code></li>
+              <li>This is used to for various settings paths for the games</li>
             </ul>
           </li>
         </ul>
         <div class="asci-cast" id="config"></div>
-        <script>AsciinemaPlayer.create('assets/casts/config.cast', document.getElementById('config'), {preload: true, startAt: 0.0, idleTimeLimit: 1.0, rows: 10, poster: 'npt:0:02'});</script>
+        <script>AsciinemaPlayer.create('assets/casts/config.cast', document.getElementById('config'), {preload: true, startAt: 0.0, idleTimeLimit: 1.0, rows: 40, poster: 'npt:0:22'});</script>
       </div>
       <div class="section">
-        <div class="accent-line" id="Deploy to Game Folder"><a href="#Deploy to Game Folder">Deploy to Game Folder</a></div>
+        <div class="accent-line" id="Deploy to Game Folder (Starfield)"><a href="#Deploy to Game Folder (Starfield)">Deploy to Game Folder (Starfield)</a></div>
         <ul>
           <li>Uninstall any manually added mod files, or consider doing a clean install of the game</li>
           <li>Using the app, install and enable <a href="https://www.nexusmods.com/starfield/mods/106" target="_blank">SFSE</a></li>
@@ -91,14 +91,9 @@ sResourceDataDirsFinal=</code></p>
         </ul>
       </div>
       <div class="section">
-        <div class="accent-line" id="Alternative Deploy to Docs Folder"><a href="#Alternative Deploy to Docs Folder">Alternative Deploy to Docs Folder</a></div>
+        <div class="accent-line" id="Alternative Deploy to Docs Folder (Starfield)"><a href="#Alternative Deploy to Docs Folder (Starfield)">Alternative Deploy to Docs Folder (Starfield)</a></div>
         <p>If you're unable to install SFSE, you can deploy to the docs folder directly, but please note that this is not recommended as it's more error prone and can cause issues</p>
         <ul>
-          <li><code>config ini-path &lt;path&gt;</code> to point to your ini (my docs) folder
-            <ul>
-              <li>Should look something like: <code>&lt;...&gt;/SteamLibrary/steamapps/compatdata/1716740/pfx/drive_c/users/steamuser/Documents/My Games/Starfield</code></li>
-            </ul>
-          </li>
           <li>In the app run <code>config use-my-docs true</code></li>
           <li>You can always revert the setting later (set it to false) once you have SFSE installed</li>
         </ul>
@@ -116,17 +111,22 @@ sResourceDataDirsFinal=</code></p>
       </div>
       <div class="section">
         <div class="accent-line" id="Usage"><a href="#Usage">Usage</a></div>
-        <p>SMM Works like most mod managers. Each mod is installed to its own private folder that mirrors the game's folder hierarchy. A load order is used to decide plugin precedence and resolve file conflicts. Once mods are enabled, a deployment creates symlinks in the game directory to the individual mod files.</p>
+        <p>MMM Works like most mod managers. Each mod is installed to its own private folder that mirrors the game's folder hierarchy. A load order is used to decide plugin precedence and resolve file conflicts. Once mods are enabled, a deployment creates symlinks in the game directory to the individual mod files.</p>
         <p>Run the app and then use <code>help</code> to see commands. Alternatively you can look at the <a href="manual.html">generated man page</a>. You can also look through <a href="features.html">examples.</a></p>
         <p>To reduce typing, most commands take the index of the mod, instead of mod id or name. This means the index of a mod can change as mods are added, deleted or sorted. Listing mods will always show their indices, and filtering will retain the index.</p>
-        <p>Please report any issues with the <a href="https://github.com/ManApart/starfield-mod-manager/issues" target="_blank">manager</a> or <a href="https://github.com/ManApart/starfield-mod-manager-site/issues" target="_blank">this site</a> to their respective github issues page.</p>
+        <p>Please report any issues with the <a href="https://github.com/ManApart/manapart-mod-manager/issues" target="_blank">manager</a> or <a href="https://github.com/ManApart/manapart-mod-manager-site/issues" target="_blank">this site</a> to their respective github issues page.</p>
       </div>
       <div class="section">
         <div class="accent-line" id="Creations"><a href="#Creations">Creations</a></div>
-        <p>Starfield Mod Manager now supports Creations and External Mods. (See the <a href="manual.html#Add">manual</a> for creations).</p>
-        <p>Creations are downloaded directly into your data folder by Starfield, and managed by the game through a ContentCatalog.txt. SMM can identify and manage Creations. This allows you to enable/disable and set the load order for creations.</p>
+        <p>Manapart Mod Manager supports Creations and External Mods. (See the <a href="manual.html#Add">manual</a> for creations).</p>
+        <p>Creations are downloaded directly into your data folder by Starfield, and managed by the game through a ContentCatalog.txt. MMM can identify and manage Creations. This allows you to enable/disable and set the load order for creations.</p>
         <p>External mods are simply plugin files that are in your data folder that you don't want to manage like other mods (get their own data folder), but that should still be managed in plugins.txt. You generally shouldn't need this feature.</p>
-        <p>If you've been using SMM prior to the release of creations, you'll need to upgrade your setup. You should be able to run <code>validate</code> to see what commands you'll need to run to get things working with the latest version of SMM.</p>
+        <p>If you've been using MMM prior to the release of creations, you'll need to upgrade your setup. You should be able to run <code>validate</code> to see what commands you'll need to run to get things working with the latest version of MMM.</p>
+      </div>
+      <div class="section">
+        <div class="accent-line" id="Upgrade"><a href="#Upgrade">Upgrade</a></div>
+        <p>Manapart Mod Manager now supports multiple games (Starfield, Oblivion Remastered).</p>
+        <p>If you used the old Starfield-Only manager, the app will detect and attempt to upgrade you. If this fails, you'll need to go through the setup sections above again manually. This is due to splitting the config file into a main config file and a config file per game, as well as making the data json game specific.</p>
       </div>
     </section>
     <footer></footer>
