@@ -176,9 +176,9 @@ input {
 }
 
 .home-button {
-    position: absolute;
+    position: fixed;
     top: 0px;
-    left: 0px;
+    left: 5px;
 }
 
 .control-row {
