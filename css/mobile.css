@@ -12,4 +12,7 @@
     .manual-table tbody tr td:last-child() {
         overflow-wrap: anywhere;
     }
+    .game-title {
+        display: block;
+    }
 }
