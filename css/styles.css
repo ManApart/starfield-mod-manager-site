@@ -194,18 +194,25 @@ input {
 #changes {
 }
 
+#changes-removed ul {
+    margin-top: 0;
+    list-style-position: inside;
+    padding-left: 5px;
+}
+
+#changes-removed button {
+    margin-top: 0;
+}
+
+
 #controls {
     z-index: 1;
-    top: 0px;
+    top: 0;
     position: sticky;
     background-color: var(--background-blue);
     padding-bottom: 5px;
 }
 
-.change-item {
-    display: inline-block;
-    margin-right: 5px;
-}
 
 .import-code{
     padding: 5px;
@@ -231,6 +238,10 @@ input {
 
 .modName::-webkit-scrollbar {
     display: none;
+}
+
+.modDeleted {
+    text-decoration: line-through;
 }
 
 .modEmojis {
