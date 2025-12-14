@@ -48,6 +48,7 @@
         <div><a href="#Edit">EDIT</a>
           <ul>
             <li><a href="#command-abstain">Abstain</a></li>
+            <li><a href="#command-category">Category</a></li>
             <li><a href="#command-endorse">Endorse</a></li>
             <li><a href="#command-mod">Mod</a></li>
             <li><a href="#command-rename">Rename</a></li>
@@ -75,7 +76,9 @@
             <li><a href="#command-config">Config</a></li>
             <li><a href="#command-help">Help</a></li>
             <li><a href="#command-mode">Mode</a></li>
+            <li><a href="#command-note">Note</a></li>
             <li><a href="#command-start">Start</a></li>
+            <li><a href="#command-creationkit">Creationkit</a></li>
             <li><a href="#command-exit">Exit</a></li>
           </ul>
         </div>
@@ -83,7 +86,7 @@
     </div>
     <section>
       <h1>Commands Manual</h1>
-      <p>This command reference can also be viewed in app by using the <code>help</code> command. This reference is is for version <code>2.0.0</code>. Download the latest from <a href="https://github.com/ManApart/manapart-mod-manager/releases" target="_blank">github</a> or possibly <a href="https://www.nexusmods.com/starfield/mods/6576" target="_blank">the Nexus</a>. (Nexus may not have bleeding edge versions).</p>
+      <p>This command reference can also be viewed in app by using the <code>help</code> command. This reference is is for version <code>2.1.0</code>. Download the latest from <a href="https://github.com/ManApart/manapart-mod-manager/releases" target="_blank">github</a> or possibly <a href="https://www.nexusmods.com/starfield/mods/6576" target="_blank">the Nexus</a>. (Nexus may not have bleeding edge versions).</p>
       <div class="accent-line" id="Add"><a href="#Add">Add</a></div>
       <table class="manual-table">
         <tr>
@@ -102,15 +105,17 @@
             <p>add 4183</p>
             <p>add 4183 4182 4181</p>
             <p>add &lt;path-to-mod-zip&gt; &lt;name-of-mod&gt;*</p>
+            <p>add new &lt;name-of-mod&gt;*</p>
           </td>
           <td>
             <p>Add a new mod, including downloading it</p>
             <p>You can add mods by nexus mod manager url, by mod url, by mod id, or even by path to a local zip</p>
             <p>For urls and ids, you can add multiple at once, space separated</p>
+            <p>You can also add a new blank mod with new</p>
             <p>Example nexus mod manager url: nxm://starfield/mods/4183/files/12955?key=abc&amp;expires=1697023374&amp;user_id=111</p>
             <p>Example mod url: https://www.nexusmods.com/starfield/mods/4183?tab=files</p>
             <p>Example adding a creation: add SFBGS003</p>
-            <p>See also creation</p>
+            <p>See also creation, external</p>
           </td>
         </tr>
         <tr>
@@ -200,13 +205,14 @@
           <td>
             <p>Nests all mod files under the given path and then opens the folder locally</p>
             <p>Used to make fixing mod installs to unrecognized paths</p>
-            <p>Paths: [GAME, JAR, DATA, APP_DATA, INI, DATA_INI, UNREAL_INI, PLUGINS, WIN64, WINGDK, UE4SS_Mods, PAKS, SAVES]</p>
+            <p>Paths: [GAME, JAR, DATA, APP_DATA, INI, DATA_INI, UNREAL_INI, PLUGINS, CATALOG, WIN64, WINGDK, UE4SS_Mods, PAKS, SAVES, STEAM_PICS, SCREENSHOTS]</p>
           </td>
         </tr>
         <tr>
           <td>
             <p id="command-remove">remove</p>
             <p>rm</p>
+            <p>delete</p>
           </td>
           <td>
             <p>remove &lt;index&gt;</p>
@@ -391,6 +397,7 @@
             <p id="command-detail">detail</p>
             <p>dd</p>
             <p>show</p>
+            <p>view</p>
           </td>
           <td>
             <p>detail &lt;mod id&gt;</p>
@@ -422,6 +429,7 @@
           <td>
             <p>Filter mods that contain the given text (name or category) or status, including missing ids</p>
             <p>Changes persist across future ls until filter clear or filter all is called</p>
+            <p>Filter is additive, meaning it further filters whatever is currently displayed</p>
             <p>To do a one time search, see search</p>
           </td>
         </tr>
@@ -433,9 +441,11 @@
           <td>
             <p>Find files</p>
             <p>find &lt;search text&gt; </p>
+            <p>find esp &lt;search text&gt;</p>
           </td>
           <td>
-            <p>Find all files that have the given text in their path </p>
+            <p>Find all files that have the given text in their path</p>
+            <p>If you use find esp, the search will only look at plugin names</p>
           </td>
         </tr>
         <tr>
@@ -474,6 +484,7 @@
             <p>search unendorsed</p>
             <p>search abstained</p>
             <p>search missing</p>
+            <p>search nocat</p>
             <p>search upgrade</p>
           </td>
           <td>
@@ -483,6 +494,8 @@
             <p>Searching a string will search name, category, and tags.</p>
             <p>To search ONLY tags, use search tag &lt;tagName&gt;.</p>
             <p>The same can be done to search by category or name as well</p>
+            <p>Missing searches for missing ids, nocat searches for mods without a category</p>
+            <p>When a filter is applied, search only looks within the filtered data</p>
           </td>
         </tr>
         <tr>
@@ -524,6 +537,25 @@
         </tr>
         <tr>
           <td>
+            <p id="command-category">category</p>
+            <p>cat</p>
+            <p>categories</p>
+          </td>
+          <td>
+            <p>category</p>
+            <p>category &lt;index&gt; &lt;category id&gt; </p>
+            <p>category &lt;index&gt; &lt;category name&gt; </p>
+          </td>
+          <td>
+            <p>List categories and set the category of a mod</p>
+            <p>Use category to list categories</p>
+            <p>Use category plus a mod index to update a mod's category</p>
+            <p>If you don't have categories, use config categories to fetch them</p>
+            <p>Also see mod command</p>
+          </td>
+        </tr>
+        <tr>
+          <td>
             <p id="command-endorse">endorse</p>
             <p>en</p>
           </td>
@@ -545,11 +577,13 @@
             <p>mod &lt;index&gt; id &lt;new id&gt;</p>
             <p>mod &lt;index&gt; file &lt;file-path&gt; </p>
             <p>mod &lt;index&gt; name &lt;new name&gt;</p>
+            <p>mod &lt;index&gt; category &lt;new category id&gt;</p>
           </td>
           <td>
             <p>Change various parts of a mod.</p>
             <p>Use id to set its nexus id</p>
             <p>Use file to delete a mods stage folder and restage it from zip</p>
+            <p>To see a list of category ids, see the category command</p>
           </td>
         </tr>
         <tr>
@@ -568,14 +602,18 @@
           <td>
             <p id="command-tag">tag</p>
             <p>t</p>
+            <p>tags</p>
           </td>
           <td>
             <p>tag 1 add essential</p>
             <p>tag 1 rm essential</p>
+            <p>tag 1 3 4 add cool</p>
             <p>tag 1 rm 0</p>
+            <p>tag ls</p>
           </td>
           <td>
             <p>Add and remove tags</p>
+            <p>tag ls - Lists all tags and number of mods using that tag</p>
           </td>
         </tr>
       </table>
@@ -656,11 +694,15 @@
             <p>data</p>
             <p>app</p>
             <p>appdatapath</p>
+            <p>catalog</p>
             <p>ini</p>
             <p>inipath</p>
             <p>plugins</p>
             <p>plugin</p>
             <p>saves</p>
+            <p>steampics</p>
+            <p>screenshots</p>
+            <p>photos</p>
             <p>unrealini</p>
             <p>engineini</p>
             <p>win64</p>
@@ -672,6 +714,7 @@
           <td>
             <p>paths</p>
             <p>app</p>
+            <p>catalog</p>
             <p>data</p>
             <p>gamepath</p>
             <p>ini</p>
@@ -679,6 +722,8 @@
             <p>paks</p>
             <p>plugins</p>
             <p>saves</p>
+            <p>screenshots</p>
+            <p>steampics</p>
             <p>ue4ss</p>
             <p>unrealini</p>
             <p>win64</p>
@@ -687,17 +732,24 @@
           <td>
             <p>List and open various common paths</p>
             <p>If you pass 'cli' it will open in terminal instead of local folder</p>
-            <p>See also: open, cli, and paths commandsapp (sf) - Appdata in windows. Contains Plugins and ContentCatalog for Starfield. Used for updating mod load order</p>
+            <p>paths list - list the values of all paths</p>
+            <p>You can override (or create new static) paths in the config (see config command)</p>
+            <p>See also: open, cli, and paths commands</p>
+            <p></p>
+            <p>app (sf), [appdatapath] - Appdata in windows. Contains Plugins and ContentCatalog for Starfield. Used for updating mod load order</p>
+            <p>catalog (sf) - The catalog file that tracks creations</p>
             <p>data (sf, or) - The data path that esps live in</p>
-            <p>gamepath (sf, or) - Where the game is installed</p>
-            <p>ini (or) - Ini files above the data folder</p>
-            <p>ini (sf) - My Documents in windows. Contains ini files and saves for Starfield. It's optionally used to deploy to your my docs folder instead of the game path</p>
-            <p>jarpath (sf, or) - Location the mod manager is running from</p>
-            <p>paks (or) - Where the unreal engine mods live</p>
-            <p>plugins (sf, or) - The plugins file that activates esps</p>
+            <p>gamepath (sf, or), [gg] - Where the game is installed</p>
+            <p>ini (or), [inipath] - Ini files above the data folder</p>
+            <p>ini (sf), [inipath] - My Documents in windows. Contains ini files and saves for Starfield. It's optionally used to deploy to your my docs folder instead of the game path</p>
+            <p>jarpath (sf, or), [jar] - Location the mod manager is running from</p>
+            <p>paks (or), [unreal-mods] - Where the unreal engine mods live</p>
+            <p>plugins (sf, or), [plugin] - The plugins file that activates esps</p>
             <p>saves (sf, or) - Where your save files are located</p>
+            <p>screenshots (sf), [photos] - Your game saved screenshots, like photo mode</p>
+            <p>steampics (sf) - Your steam screenshots for the game</p>
             <p>ue4ss (or) - Folder that UE4SS mods are deployed to</p>
-            <p>unrealini (or) - Ini files for unreal engine</p>
+            <p>unrealini (or), [engineini] - Ini files for unreal engine</p>
             <p>win64 (or) - Where the unreal engine binary lives</p>
             <p>wingdk (or) - Folder that UE4SS mods are deployed to for game pass (not used)</p>
           </td>
@@ -804,6 +856,7 @@
             <p>config verbose &lt;true/false&gt;</p>
             <p>config autodeploy &lt;true/false&gt;</p>
             <p>config use-my-docs &lt;true/false&gt; </p>
+            <p>config logging &lt;true/false&gt;</p>
             <p>config categories</p>
             <p>config version</p>
           </td>
@@ -813,9 +866,12 @@
             <p>verbose gives additional output (for debugging) if set to true</p>
             <p>autodeploy automatically runs deploy when enabling or disabling mods. Defaults to true</p>
             <p>use-my-docs optionally allows deploying mod files under Data to my documents instead of the game folder. (Defaults to false) </p>
-            <p>categories is used to download category names from nexus</p>
+            <p>logging - log events like launch (and load order) or first time fetching a mod etc, on by default</p>
+            <p>categories - download game specific category names from nexus</p>
             <p>config path is used to set game specific paths</p>
             <p>config paths tells you what paths are needed</p>
+            <p>config path can be used to override built in paths as well (also see paths command)</p>
+            <p>config path delete can be used to delete an overridden path</p>
             <p>If your paths have spaces, make sure to quote them</p>
             <p>version gives the commit that the app was built from</p>
           </td>
@@ -850,14 +906,41 @@
         </tr>
         <tr>
           <td>
+            <p id="command-note">note</p>
+          </td>
+          <td>
+            <p>note &lt;text&gt;</p>
+          </td>
+          <td>
+            <p>Make a note in your log (used for stats)</p>
+            <p>The note will be visible alongside other events in your log.jsonl</p>
+            <p>This is useful for providing a reason, say before a big update to your mod list or a new playthrough</p>
+          </td>
+        </tr>
+        <tr>
+          <td>
             <p id="command-start">start</p>
             <p>game</p>
+            <p>g</p>
           </td>
           <td>
             <p>start</p>
           </td>
           <td>
             <p>Run the steam game</p>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <p id="command-creationkit">creationkit</p>
+            <p>ck</p>
+            <p>startck</p>
+          </td>
+          <td>
+            <p>start</p>
+          </td>
+          <td>
+            <p>Run the Creation Kit Editor</p>
           </td>
         </tr>
         <tr>
