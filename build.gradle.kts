@@ -1,6 +1,6 @@
 plugins {
-    kotlin("jvm") version "2.0.0"
-    kotlin("plugin.serialization") version "2.0.0"
+    kotlin("jvm") version "2.2.20"
+    kotlin("plugin.serialization") version "2.2.20"
     application
 }
 
@@ -9,6 +9,10 @@ version = ""
 
 repositories {
     mavenCentral()
+}
+
+kotlin {
+    jvmToolchain(17)
 }
 
 dependencies {
@@ -23,9 +27,4 @@ application.mainClass.set("MainKt")
 
 tasks.withType<Test>().configureEach {
     useJUnitPlatform()
-}
-
-val compileKotlin: org.jetbrains.kotlin.gradle.tasks.KotlinCompile by tasks
-compileKotlin.kotlinOptions {
-    languageVersion = "1.8"
 }
