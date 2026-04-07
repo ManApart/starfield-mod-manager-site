@@ -54,7 +54,8 @@
       </div>
       <div class="section">
         <div class="accent-line" id="Configure the App"><a href="#Configure the App">Configure the App</a></div>
-        <p>Before you can download and deploy mods, you need to configure the app. This config will be saved in <code>config.json</code> in the folder the jar is in. (Mod data will be stored in another file in that folder).</p>
+        <p>Before you can download and deploy mods, you need to configure the app. This config will be saved in <code>config.json</code> in the one of several folders. (Mod data will be stored in another file in that folder).</p>
+        <p>By default, config files will be stored in <code>HOME/mmm/</code>. Specifically, <code>HOME</code> is set to env <code>MMM_HOME</code> if it exists, else it is set to the <code>user.home</code> system property or finally the current directory. The config paths first look for env <code>XDG_CONFIG_HOME</code> if it exists, else they use the <code>HOME</code> directory above, and then create a <code>mmm</code> folder inside it. Downloads are done inside <code>HOME/Downloads</code>.</p>
         <ul>
           <li>Start the app using one of the methods from the Shortcuts section above</li>
           <li><code>config api-key &lt;key&gt;</code> using the api key you got from the prerequisites step</li>
@@ -127,6 +128,8 @@ sResourceDataDirsFinal=</code></p>
         <div class="accent-line" id="Upgrade"><a href="#Upgrade">Upgrade</a></div>
         <p>Manapart Mod Manager now supports multiple games (Starfield, Oblivion Remastered).</p>
         <p>If you used the old Starfield-Only manager, the app will detect and attempt to upgrade you. If this fails, you'll need to go through the setup sections above again manually. This is due to splitting the config file into a main config file and a config file per game, as well as making the data json game specific.</p>
+        <p>Config files used to be placed in the directory of the jar, but haven now been moved to the home directory. (Mod staging stays in the same directory as the jar).</p>
+        <p>If you have config files still next to the jar, see <a href="setup.html#Configure%20the%20App">Configure the App</a> to move the config files to the new location.</p>
       </div>
     </section>
     <footer></footer>
