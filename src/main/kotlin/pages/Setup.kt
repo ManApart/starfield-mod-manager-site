@@ -107,7 +107,28 @@ fun BODY.setup() {
             p {
                 +"Before you can download and deploy mods, you need to configure the app. This config will be saved in "
                 code { +"config.json" }
-                +" in the folder the jar is in. (Mod data will be stored in another file in that folder)."
+                +" in the one of several folders. (Mod data will be stored in another file in that folder)."
+            }
+            p {
+                +"By default, config files will be stored in "
+                code { +"HOME/mmm/" }
+                + ". Specifically, "
+                code { +"HOME" }
+                +" is set to env "
+                code { +"MMM_HOME" }
+                +" if it exists, else it is set to the "
+                code { +"user.home" }
+                +" system property or finally the current directory. "
+
+                +"The config paths first look for env "
+                code { +"XDG_CONFIG_HOME" }
+                +" if it exists, else they use the "
+                code { +"HOME" }
+                +" directory above, and then create a "
+                code { +"mmm" }
+                +" folder inside it. Downloads are done inside "
+                code { +"HOME/Downloads" }
+                + "."
             }
             ul {
                 li { +"Start the app using one of the methods from the Shortcuts section above" }
@@ -260,6 +281,12 @@ fun BODY.setup() {
             accentLine("Upgrade")
             p { +"Manapart Mod Manager now supports multiple games (Starfield, Oblivion Remastered)." }
             p { +"If you used the old Starfield-Only manager, the app will detect and attempt to upgrade you. If this fails, you'll need to go through the setup sections above again manually. This is due to splitting the config file into a main config file and a config file per game, as well as making the data json game specific." }
+            p { +"Config files used to be placed in the directory of the jar, but haven now been moved to the home directory. (Mod staging stays in the same directory as the jar)." }
+            p {
+                +"If you have config files still next to the jar, see "
+                a("setup.html#Configure%20the%20App") { +"Configure the App" }
+                +" to move the config files to the new location."
+            }
         }
     }
 }
