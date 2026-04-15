@@ -52,6 +52,7 @@
             <li><a href="#command-endorse">Endorse</a></li>
             <li><a href="#command-mod">Mod</a></li>
             <li><a href="#command-rename">Rename</a></li>
+            <li><a href="#command-require">Require</a></li>
             <li><a href="#command-tag">Tag</a></li>
           </ul>
         </div>
@@ -86,7 +87,7 @@
     </div>
     <section>
       <h1>Commands Manual</h1>
-      <p>This command reference can also be viewed in app by using the <code>help</code> command. This reference is is for version <code>2.1.1</code>. Download the latest from <a href="https://github.com/ManApart/manapart-mod-manager/releases" target="_blank">github</a> or possibly <a href="https://www.nexusmods.com/starfield/mods/6576" target="_blank">the Nexus</a>. (Nexus may not have bleeding edge versions).</p>
+      <p>This command reference can also be viewed in app by using the <code>help</code> command. This reference is is for version <code>2.2.0</code>. Download the latest from <a href="https://github.com/ManApart/manapart-mod-manager/releases" target="_blank">github</a> or possibly <a href="https://www.nexusmods.com/starfield/mods/6576" target="_blank">the Nexus</a>. (Nexus may not have bleeding edge versions).</p>
       <div class="accent-line" id="Add"><a href="#Add">Add</a></div>
       <table class="manual-table">
         <tr>
@@ -205,7 +206,7 @@
           <td>
             <p>Nests all mod files under the given path and then opens the folder locally</p>
             <p>Used to make fixing mod installs to unrecognized paths</p>
-            <p>Paths: [GAME, JAR, DATA, APP_DATA, INI, DATA_INI, UNREAL_INI, PLUGINS, CATALOG, WIN64, WINGDK, UE4SS_Mods, PAKS, SAVES, STEAM_PICS, SCREENSHOTS]</p>
+            <p>Paths: [GAME, JAR, DATA, APP_DATA, INI, DATA_INI, UNREAL_INI, PLUGINS, CATALOG, WIN64, WINGDK, UE4SS_MODS, SCRIPT_EXTENDER_PLUGINS, PAKS, SAVES, STEAM_PICS, SCREENSHOTS]</p>
           </td>
         </tr>
         <tr>
@@ -425,6 +426,7 @@
             <p>filter abstained</p>
             <p>filter missing - show missing ids</p>
             <p>filter upgrade</p>
+            <p>filter fomod</p>
           </td>
           <td>
             <p>Filter mods that contain the given text (name or category) or status, including missing ids</p>
@@ -486,6 +488,7 @@
             <p>search missing</p>
             <p>search nocat</p>
             <p>search upgrade</p>
+            <p>search fomod</p>
           </td>
           <td>
             <p>Search for mods and list them once</p>
@@ -578,12 +581,16 @@
             <p>mod &lt;index&gt; file &lt;file-path&gt; </p>
             <p>mod &lt;index&gt; name &lt;new name&gt;</p>
             <p>mod &lt;index&gt; category &lt;new category id&gt;</p>
+            <p>mod &lt;index&gt; deploytarget &lt;new deploy target&gt;</p>
+            <p>mod &lt;index&gt; dt &lt;new deploy target&gt;</p>
           </td>
           <td>
             <p>Change various parts of a mod.</p>
             <p>Use id to set its nexus id</p>
             <p>Use file to delete a mods stage folder and restage it from zip</p>
             <p>To see a list of category ids, see the category command</p>
+            <p>Change deploytarget to set where this specific mod is deployed to. Useful for mods like SFSE that deploy outside the data folder</p>
+            <p>To see a list of deploy targets, run config deploytarget</p>
           </td>
         </tr>
         <tr>
@@ -596,6 +603,27 @@
           </td>
           <td>
             <p>Use name to rename a mod without changing its file paths</p>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <p id="command-require">require</p>
+            <p>req</p>
+          </td>
+          <td>
+            <p>require &lt;index&gt;</p>
+            <p>require &lt;index&gt; all</p>
+            <p>require &lt;index&gt; child</p>
+            <p>require &lt;index&gt; add 456</p>
+            <p>require &lt;index&gt; remove 456</p>
+          </td>
+          <td>
+            <p>Mark a mod as requiring another mod</p>
+            <p>When a mod is enabled, any required mods are also enabled</p>
+            <p>When a mod is disabled, any mods depending on that mod are also disabled</p>
+            <p>require lists direct requirements of this mod</p>
+            <p>require all lists requirements recursively so you can see the full tree</p>
+            <p>require child shows children who require this mod</p>
           </td>
         </tr>
         <tr>
@@ -699,6 +727,7 @@
             <p>inipath</p>
             <p>plugins</p>
             <p>plugin</p>
+            <p>sfse</p>
             <p>saves</p>
             <p>steampics</p>
             <p>screenshots</p>
@@ -707,6 +736,7 @@
             <p>engineini</p>
             <p>win64</p>
             <p>ue4ss</p>
+            <p>obse</p>
             <p>wingdk</p>
             <p>paks</p>
             <p>unreal-mods</p>
@@ -719,10 +749,12 @@
             <p>gamepath</p>
             <p>ini</p>
             <p>jarpath</p>
+            <p>obse</p>
             <p>paks</p>
             <p>plugins</p>
             <p>saves</p>
             <p>screenshots</p>
+            <p>sfse</p>
             <p>steampics</p>
             <p>ue4ss</p>
             <p>unrealini</p>
@@ -743,10 +775,12 @@
             <p>ini (or), [inipath] - Ini files above the data folder</p>
             <p>ini (sf), [inipath] - My Documents in windows. Contains ini files and saves for Starfield. It's optionally used to deploy to your my docs folder instead of the game path</p>
             <p>jarpath (sf, or), [jar] - Location the mod manager is running from</p>
+            <p>obse (or) - Folder that obse/sfse plugins are deployed to</p>
             <p>paks (or), [unreal-mods] - Where the unreal engine mods live</p>
             <p>plugins (sf, or), [plugin] - The plugins file that activates esps</p>
             <p>saves (sf, or) - Where your save files are located</p>
             <p>screenshots (sf), [photos] - Your game saved screenshots, like photo mode</p>
+            <p>sfse (sf) - Folder that obse/sfse plugins are deployed to</p>
             <p>steampics (sf) - Your steam screenshots for the game</p>
             <p>ue4ss (or) - Folder that UE4SS mods are deployed to</p>
             <p>unrealini (or), [engineini] - Ini files for unreal engine</p>
@@ -780,7 +814,9 @@
           <td>
             <p>For all mods with ids, attempt to redownload (or grab the file from the downloads folder if it exists) and restage.</p>
             <p>Refreshing can be done by ranges of indexs, or by mod status</p>
+            <p>Refreshing will re-download the existing fileId if it exists</p>
             <p>If you're looking to upgrade to a new version, see update and upgrade</p>
+            <p>Even if a version has not changed, the latest fileId may have (and is updated by update command). To get the latest, use upgrade</p>
           </td>
         </tr>
         <tr>
@@ -855,7 +891,7 @@
             <p>config open-in-terminal-command &lt;path-to-folder&gt; </p>
             <p>config verbose &lt;true/false&gt;</p>
             <p>config autodeploy &lt;true/false&gt;</p>
-            <p>config use-my-docs &lt;true/false&gt; </p>
+            <p>config deploytarget &lt;PATHTYPE&gt;</p>
             <p>config logging &lt;true/false&gt;</p>
             <p>config categories</p>
             <p>config version</p>
@@ -865,7 +901,7 @@
             <p>open-in-terminal-command is optional and only needed if you don't use `gnome-terminal`. This value will be used as the command when opening folders in the terminal. Will be run in the relevant folder, but if you need to specify the directory in the command, you can use `{pwd}` and it will be replaced by the relevant path.</p>
             <p>verbose gives additional output (for debugging) if set to true</p>
             <p>autodeploy automatically runs deploy when enabling or disabling mods. Defaults to true</p>
-            <p>use-my-docs optionally allows deploying mod files under Data to my documents instead of the game folder. (Defaults to false) </p>
+            <p>deploytarget - set the default path for mods to deploy to. Defaults to the Data directory but could be used to deploy to app data etc</p>
             <p>logging - log events like launch (and load order) or first time fetching a mod etc, on by default</p>
             <p>categories - download game specific category names from nexus</p>
             <p>config path is used to set game specific paths</p>
