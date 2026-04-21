@@ -186,6 +186,10 @@ input {
     margin-bottom: 5px;
 }
 
+.control-label {
+    margin-right: 10px;
+}
+
 #upload-button {
     display: inline-block;
     font-size: initial;
