@@ -165,7 +165,6 @@ table, th, td {
 .home-button {
     position: sticky;
     top: 20px;
-    left: 20px;
 }
 
 #home-summary{
@@ -192,10 +191,7 @@ table, th, td {
 
 #toc-wrapper {
     position: fixed;
-    min-width: 150px;
-    padding: 5px;
     top: 70px;
-    background-color: var(--background-blue);
     overflow: scroll;
     overscroll-behavior: contain;
 }
@@ -206,6 +202,9 @@ table, th, td {
 
 #toc {
     height: 90vh;
+    min-width: 150px;
+    padding: 5px;
+    background-color: var(--background-blue);
 }
 
 #toc ul {
