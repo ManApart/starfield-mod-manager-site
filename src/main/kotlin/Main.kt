@@ -47,6 +47,11 @@ private fun HTML.htmlWrapper(customizer: BODY.() -> Unit) {
         link("assets/styles.css", "stylesheet")
         link("assets/styles.css", "stylesheet")
         link("assets/asciinema-player.css", "stylesheet", type = "text/css")
+        script { unsafe { raw("""
+            function isMobile() {
+                return window.screen.width / window.screen.height < 3/4
+            }
+        """.trimIndent()) } }
     }
     body {
         customizer()

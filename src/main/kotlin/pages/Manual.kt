@@ -29,31 +29,48 @@ fun BODY.manual() {
                 a(href = "https://www.nexusmods.com/starfield/mods/6576", target = "_blank") { +"the Nexus" }
                 +". (Nexus may not have bleeding edge versions)."
             }
+            p { +"Expand or collapse sections by clicking their header." }
             allCommands.groupBy { it.category }.entries.sortedBy { it.key }.forEach { (category, commands) ->
-                accentLine(category.name.lowercase().capitalize())
-                table("manual-table") {
-                    tr {
-                        td("header-command") {
-                            +"Command"
-                        }
-                        td("header-usage") {
-                            +"Usage"
-                        }
-                        td("header-description") {
-                            +"Description"
+                details {
+                    id = "$category-details"
+                    open = true
+                    script {
+                        unsafe {
+                            raw(
+                                """
+                document.addEventListener('DOMContentLoaded', function() {
+                    console.log(document.getElementById("$category-details"))
+                    document.getElementById("$category-details").open = !isMobile()
+                });
+            """.trimIndent()
+                            )
                         }
                     }
-                    commands.forEach { command ->
+                    summary { accentLine(category.name.lowercase().capitalize()) }
+                    table("manual-table") {
                         tr {
-                            td {
-                                p {
-                                    id = "command-${command.name}"
-                                    +command.name
-                                }
-                                command.aliases.forEach { alias -> p { +alias } }
+                            td("header-command") {
+                                +"Command"
                             }
-                            td { command.usage.split("\n").forEach { p { +it } } }
-                            td { command.description.split("\n").forEach { p { +it } } }
+                            td("header-usage") {
+                                +"Usage"
+                            }
+                            td("header-description") {
+                                +"Description"
+                            }
+                        }
+                        commands.forEach { command ->
+                            tr {
+                                td {
+                                    p {
+                                        id = "command-${command.name}"
+                                        +command.name
+                                    }
+                                    command.aliases.forEach { alias -> p { +alias } }
+                                }
+                                td { command.usage.split("\n").forEach { p { +it } } }
+                                td { command.description.split("\n").forEach { p { +it } } }
+                            }
                         }
                     }
                 }
@@ -65,14 +82,17 @@ fun BODY.manual() {
 private fun BODY.toc(allCommands: List<CommandJson>) {
     div {
         id = "toc-wrapper"
-        div {
-            id = "toc"
-            allCommands.groupBy { it.category }.entries.sortedBy { it.key }.forEach { (category, commands) ->
-                div {
-                    a(href = "#${category.name.lowercase().capitalize()}") { +category.name }
-                    ul {
-                        commands.forEach { command ->
-                            li { a(href = "#command-${command.name}") { +command.name.capitalize() } }
+        details {
+            summary("a-button") { +"TOC" }
+            div {
+                id = "toc"
+                allCommands.groupBy { it.category }.entries.sortedBy { it.key }.forEach { (category, commands) ->
+                    div {
+                        a(href = "#${category.name.lowercase().capitalize()}") { +category.name }
+                        ul {
+                            commands.forEach { command ->
+                                li { a(href = "#command-${command.name}") { +command.name.capitalize() } }
+                            }
                         }
                     }
                 }

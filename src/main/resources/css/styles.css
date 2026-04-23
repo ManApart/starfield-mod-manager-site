@@ -61,6 +61,13 @@ td {
     vertical-align: top;
 }
 
+summary {
+    list-style: none;
+}
+summary::-webkit-details-marker {
+    display: none;
+}
+
 .a-button {
     display: inline-block;
     color: white;
