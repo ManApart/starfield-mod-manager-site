@@ -8,989 +8,1059 @@
     <link href="assets/styles.css" rel="stylesheet">
     <link href="assets/styles.css" rel="stylesheet">
     <link href="assets/asciinema-player.css" rel="stylesheet" type="text/css">
+    <script>function isMobile() {
+    return window.screen.width / window.screen.height < 3/4
+}</script>
   </head>
   <body><a href="index.html" class="a-button home-button">Home</a>
     <div id="toc-wrapper">
-      <div id="toc">
-        <div><a href="#Add">ADD</a>
-          <ul>
-            <li><a href="#command-add">Add</a></li>
-            <li><a href="#command-creation">Creation</a></li>
-            <li><a href="#command-external">External</a></li>
-            <li><a href="#command-fetch">Fetch</a></li>
-            <li><a href="#command-import">Import</a></li>
-            <li><a href="#command-nest">Nest</a></li>
-            <li><a href="#command-remove">Remove</a></li>
-          </ul>
+      <details><summary class="a-button">TOC</summary>
+        <div id="toc">
+          <div><a href="#Add">ADD</a>
+            <ul>
+              <li><a href="#command-add">Add</a></li>
+              <li><a href="#command-creation">Creation</a></li>
+              <li><a href="#command-external">External</a></li>
+              <li><a href="#command-fetch">Fetch</a></li>
+              <li><a href="#command-import">Import</a></li>
+              <li><a href="#command-nest">Nest</a></li>
+              <li><a href="#command-remove">Remove</a></li>
+            </ul>
+          </div>
+          <div><a href="#Deploy">DEPLOY</a>
+            <ul>
+              <li><a href="#command-deploy">Deploy</a></li>
+              <li><a href="#command-disable">Disable</a></li>
+              <li><a href="#command-enable">Enable</a></li>
+              <li><a href="#command-esp">Esp</a></li>
+              <li><a href="#command-order">Order</a></li>
+              <li><a href="#command-purge">Purge</a></li>
+              <li><a href="#command-profile">Profile</a></li>
+              <li><a href="#command-validate">Validate</a></li>
+            </ul>
+          </div>
+          <div><a href="#View">VIEW</a>
+            <ul>
+              <li><a href="#command-detail">Detail</a></li>
+              <li><a href="#command-filter">Filter</a></li>
+              <li><a href="#command-find">Find</a></li>
+              <li><a href="#command-list">List</a></li>
+              <li><a href="#command-search">Search</a></li>
+              <li><a href="#command-sort">Sort</a></li>
+            </ul>
+          </div>
+          <div><a href="#Edit">EDIT</a>
+            <ul>
+              <li><a href="#command-abstain">Abstain</a></li>
+              <li><a href="#command-category">Category</a></li>
+              <li><a href="#command-endorse">Endorse</a></li>
+              <li><a href="#command-mod">Mod</a></li>
+              <li><a href="#command-rename">Rename</a></li>
+              <li><a href="#command-require">Require</a></li>
+              <li><a href="#command-tag">Tag</a></li>
+            </ul>
+          </div>
+          <div><a href="#Open">OPEN</a>
+            <ul>
+              <li><a href="#command-cli">Cli</a></li>
+              <li><a href="#command-local">Local</a></li>
+              <li><a href="#command-open">Open</a></li>
+              <li><a href="#command-paths">Paths</a></li>
+            </ul>
+          </div>
+          <div><a href="#Update">UPDATE</a>
+            <ul>
+              <li><a href="#command-refresh">Refresh</a></li>
+              <li><a href="#command-update">Update</a></li>
+              <li><a href="#command-upgrade">Upgrade</a></li>
+              <li><a href="#command-version">Version</a></li>
+            </ul>
+          </div>
+          <div><a href="#Config">CONFIG</a>
+            <ul>
+              <li><a href="#command-config">Config</a></li>
+              <li><a href="#command-help">Help</a></li>
+              <li><a href="#command-mode">Mode</a></li>
+              <li><a href="#command-note">Note</a></li>
+              <li><a href="#command-start">Start</a></li>
+              <li><a href="#command-creationkit">Creationkit</a></li>
+              <li><a href="#command-exit">Exit</a></li>
+            </ul>
+          </div>
         </div>
-        <div><a href="#Deploy">DEPLOY</a>
-          <ul>
-            <li><a href="#command-deploy">Deploy</a></li>
-            <li><a href="#command-disable">Disable</a></li>
-            <li><a href="#command-enable">Enable</a></li>
-            <li><a href="#command-esp">Esp</a></li>
-            <li><a href="#command-order">Order</a></li>
-            <li><a href="#command-purge">Purge</a></li>
-            <li><a href="#command-profile">Profile</a></li>
-            <li><a href="#command-validate">Validate</a></li>
-          </ul>
-        </div>
-        <div><a href="#View">VIEW</a>
-          <ul>
-            <li><a href="#command-detail">Detail</a></li>
-            <li><a href="#command-filter">Filter</a></li>
-            <li><a href="#command-find">Find</a></li>
-            <li><a href="#command-list">List</a></li>
-            <li><a href="#command-search">Search</a></li>
-            <li><a href="#command-sort">Sort</a></li>
-          </ul>
-        </div>
-        <div><a href="#Edit">EDIT</a>
-          <ul>
-            <li><a href="#command-abstain">Abstain</a></li>
-            <li><a href="#command-category">Category</a></li>
-            <li><a href="#command-endorse">Endorse</a></li>
-            <li><a href="#command-mod">Mod</a></li>
-            <li><a href="#command-rename">Rename</a></li>
-            <li><a href="#command-require">Require</a></li>
-            <li><a href="#command-tag">Tag</a></li>
-          </ul>
-        </div>
-        <div><a href="#Open">OPEN</a>
-          <ul>
-            <li><a href="#command-cli">Cli</a></li>
-            <li><a href="#command-local">Local</a></li>
-            <li><a href="#command-open">Open</a></li>
-            <li><a href="#command-paths">Paths</a></li>
-          </ul>
-        </div>
-        <div><a href="#Update">UPDATE</a>
-          <ul>
-            <li><a href="#command-refresh">Refresh</a></li>
-            <li><a href="#command-update">Update</a></li>
-            <li><a href="#command-upgrade">Upgrade</a></li>
-            <li><a href="#command-version">Version</a></li>
-          </ul>
-        </div>
-        <div><a href="#Config">CONFIG</a>
-          <ul>
-            <li><a href="#command-config">Config</a></li>
-            <li><a href="#command-help">Help</a></li>
-            <li><a href="#command-mode">Mode</a></li>
-            <li><a href="#command-note">Note</a></li>
-            <li><a href="#command-start">Start</a></li>
-            <li><a href="#command-creationkit">Creationkit</a></li>
-            <li><a href="#command-exit">Exit</a></li>
-          </ul>
-        </div>
-      </div>
+      </details>
     </div>
     <section>
       <h1>Commands Manual</h1>
-      <p>This command reference can also be viewed in app by using the <code>help</code> command. This reference is is for version <code>2.2.0</code>. Download the latest from <a href="https://github.com/ManApart/manapart-mod-manager/releases" target="_blank">github</a> or possibly <a href="https://www.nexusmods.com/starfield/mods/6576" target="_blank">the Nexus</a>. (Nexus may not have bleeding edge versions).</p>
-      <div class="accent-line" id="Add"><a href="#Add">Add</a></div>
-      <table class="manual-table">
-        <tr>
-          <td class="header-command">Command</td>
-          <td class="header-usage">Usage</td>
-          <td class="header-description">Description</td>
-        </tr>
-        <tr>
-          <td>
-            <p id="command-add">add</p>
-            <p>a</p>
-          </td>
-          <td>
-            <p>add &lt;nxm://starfield/...&gt;</p>
-            <p>add &lt;creation-id&gt;</p>
-            <p>add 4183</p>
-            <p>add 4183 4182 4181</p>
-            <p>add &lt;path-to-mod-zip&gt; &lt;name-of-mod&gt;*</p>
-            <p>add new &lt;name-of-mod&gt;*</p>
-          </td>
-          <td>
-            <p>Add a new mod, including downloading it</p>
-            <p>You can add mods by nexus mod manager url, by mod url, by mod id, or even by path to a local zip</p>
-            <p>For urls and ids, you can add multiple at once, space separated</p>
-            <p>You can also add a new blank mod with new</p>
-            <p>Example nexus mod manager url: nxm://starfield/mods/4183/files/12955?key=abc&amp;expires=1697023374&amp;user_id=111</p>
-            <p>Example mod url: https://www.nexusmods.com/starfield/mods/4183?tab=files</p>
-            <p>Example adding a creation: add SFBGS003</p>
-            <p>See also creation, external</p>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <p id="command-creation">creation</p>
-            <p>creations</p>
-            <p>cr</p>
-          </td>
-          <td>
-            <p>creation ls</p>
-            <p>creation add &lt;id&gt;</p>
-            <p>creation add all</p>
-            <p>creation rm &lt;index&gt;</p>
-            <p>creation rm all</p>
-            <p>cration forget &lt;id&gt;</p>
-            <p>creation refresh &lt;index&gt;</p>
-            <p>creation refresh all</p>
-            <p></p>
-          </td>
-          <td>
-            <p>Tools for managing creations just like other mods</p>
-            <p>creation ls - lists unmanaged creations by examining your game content catalog</p>
-            <p>creation add - adds a single creation by its mod file id (like SFBGS021) or content id (like TM_31ccf130-4852-417b-842a-9d82672028e4). Also see add mod</p>
-            <p>creation add all - Attempts to add _all_ unmanaged creations found in the content catalog</p>
-            <p>creation rm - unmanage this creation, dumping the files back into the data directory (deletes the &quot;mod&quot; but unmanages the files)</p>
-            <p>creation forget - delete the creation's entry in your content catalog, so it doesn't show up as unmanaged (remove the creation before forgetting it)</p>
-            <p>creation refresh - copy any creation related files from the data directory, overriding existing mod files. Used to update a creation if there are new files</p>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <p id="command-external">external</p>
-            <p>ex</p>
-          </td>
-          <td>
-            <p>external ls</p>
-            <p>external add &lt;id&gt;</p>
-            <p>external add all</p>
-          </td>
-          <td>
-            <p>Tools for managing external plugins</p>
-            <p>external ls - lists unmanaged plugins by examining your game data folder</p>
-            <p>external add - adds a single plugin by its id (like SFBGS003). Also see add mod</p>
-            <p>external add all - Attempts to add _all_ unmanaged plugins found in the data folder</p>
-            <p>To remove an external plugin, just use the normal remove commands. The empty mod folder will be deleted but since there are no mod files there won't be other changes</p>
-            <p></p>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <p id="command-fetch">fetch</p>
-            <p>f</p>
-          </td>
-          <td>
-            <p>fetch &lt;mod id&gt;</p>
-            <p>fetch 111 222 333</p>
-          </td>
-          <td>
-            <p>Add mod metadata without downloading files</p>
-            <p>Useful for adding NEW mods. To check for updates on existing mods, see update</p>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <p id="command-import">import</p>
-            <p>i</p>
-          </td>
-          <td>
-            <p>import &lt;json&gt;</p>
-          </td>
-          <td>
-            <p>Import Data from Mod Viewer</p>
-            <p>Viewer found at https://manapart.github.io/starfield-mod-manager-site/viewer.html</p>
-            <p>Imports json and applies the changes</p>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <p id="command-nest">nest</p>
-            <p>n</p>
-          </td>
-          <td>
-            <p>nest &lt;index&gt; &lt;PathType&gt;</p>
-            <p>nest 1 DATA</p>
-            <p>nest 2 paks</p>
-          </td>
-          <td>
-            <p>Nests all mod files under the given path and then opens the folder locally</p>
-            <p>Used to make fixing mod installs to unrecognized paths</p>
-            <p>Paths: [GAME, JAR, DATA, APP_DATA, INI, DATA_INI, UNREAL_INI, PLUGINS, CATALOG, WIN64, WINGDK, UE4SS_MODS, SCRIPT_EXTENDER_PLUGINS, PAKS, SAVES, STEAM_PICS, SCREENSHOTS]</p>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <p id="command-remove">remove</p>
-            <p>rm</p>
-            <p>delete</p>
-          </td>
-          <td>
-            <p>remove &lt;index&gt;</p>
-            <p>rm &lt;index&gt;</p>
-          </td>
-          <td>
-            <p>Remove a mod from being managed</p>
-          </td>
-        </tr>
-      </table>
-      <div class="accent-line" id="Deploy"><a href="#Deploy">Deploy</a></div>
-      <table class="manual-table">
-        <tr>
-          <td class="header-command">Command</td>
-          <td class="header-usage">Usage</td>
-          <td class="header-description">Description</td>
-        </tr>
-        <tr>
-          <td>
-            <p id="command-deploy">deploy</p>
-            <p>d</p>
-          </td>
-          <td>
-            <p>deploy</p>
-            <p>deploy overrides</p>
-            <p>deploy dryrun</p>
-          </td>
-          <td>
-            <p>Applies all enabled mods to the game folder by creating the appropriate symlinks</p>
-            <p>Overrides shows any mods that conflict with other mods and gives their load order in parenthesis and then the index of the mod</p>
-            <p>Dryrun shows a detailed view of how files will be deployed, without deploying them</p>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <p id="command-disable">disable</p>
-            <p>x</p>
-          </td>
-          <td>
-            <p>disable &lt;index&gt;</p>
-            <p>disable 1 2 4</p>
-            <p>disable 1-4</p>
-            <p>disable all</p>
-          </td>
-          <td>
-            <p>Enable or disable a mod.</p>
-            <p>Enabled mods are symlinked into the game folder the next time the deploy command is run</p>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <p id="command-enable">enable</p>
-            <p>e</p>
-          </td>
-          <td>
-            <p>enable &lt;index&gt;</p>
-            <p>enable 1 2 4</p>
-            <p>enable 1-4</p>
-            <p>enable all</p>
-          </td>
-          <td>
-            <p>Enable or disable a mod.</p>
-            <p>Enabled mods are symlinked into the game folder the next time the deploy command is run</p>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <p id="command-esp">esp</p>
-            <p>esps</p>
-          </td>
-          <td>
-            <p>esp ls</p>
-            <p>esp refresh</p>
-            <p>esp refresh 1</p>
-            <p>esp 1 first</p>
-            <p>esp 1 last</p>
-            <p>esp 1 sooner 5</p>
-            <p>esp 1 later</p>
-            <p>esp 1 set 4</p>
-            <p>esp 1 sub 1 set 0</p>
-          </td>
-          <td>
-            <p>Plugins with a higher load order are loaded later, and override plugins loaded earlier. Given plugin A has an order 5 and plugin B has an order of 1, then A will load AFTER B, and A's records will be used instead of B's in any conflicts. </p>
-            <p>In these examples the first number is the mod index and the second is the sort order you want</p>
-            <p>esp ls - view load order of plugins</p>
-            <p>esp 1 set 4 - sets mod with index 1 to load order 4. Any plugins with a higher number for load order have their number increased</p>
-            <p>esp 1 later - sets the plugin to load after the next plugin (may shift the order number more than one as it shifts until it's after the next plugin).</p>
-            <p>esp 1 later 2 - same as above but shifts down by two plugins</p>
-            <p>esp 1 sub 2 set 0 - Used to re-order plugins within a single mod. Finds the plugin of mod 1 that is in sub load order 2 and sets it to sub load order 0.</p>
-            <p>For general mod order, see order command. The same order number is used for both commands.</p>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <p id="command-order">order</p>
-            <p>or</p>
-          </td>
-          <td>
-            <p>order 1</p>
-            <p>order 1 first</p>
-            <p>order 1 last</p>
-            <p>order 1 sooner 5</p>
-            <p>order 1 later</p>
-            <p>order 1 set 4</p>
-          </td>
-          <td>
-            <p>Mods with a higher load order are loaded later, and override mods loaded earlier. Given mod A has an order 5 and mod B has an order of 1, then A will load AFTER B, and A's files will be used instead of B's in any file conflicts. </p>
-            <p>In these examples the first number is the mod index and the second is the sort order you want</p>
-            <p>order 1 set 4 - sets mod with index 1 to load order 4. Any mods with a higher number for load order have their number increased</p>
-            <p>order 1 - view any conflicts mod index 1 has with any other mods</p>
-            <p>To manage load order specifically for plugins, see esps command. The same order number is used for both commands.</p>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <p id="command-purge">purge</p>
-          </td>
-          <td>
-            <p>purge</p>
-            <p>purge dryrun</p>
-          </td>
-          <td>
-            <p>Purge your game data folder and delete all symlinks and rename override files.</p>
-            <p>This should set you back to vanilla, and can catch files missed by disabling mods and deploying.</p>
-            <p>Specifically, if you manually delete a mod outside the manager, a deploy may not delete its deployed files, but a purge should clean them up.</p>
-            <p>Use dryrun to view what a purge would do without actually doing it.</p>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <p id="command-profile">profile</p>
-            <p>p</p>
-            <p>prof</p>
-          </td>
-          <td>
-            <p>profile list</p>
-            <p>profile save &lt;name&gt; </p>
-            <p>profile save &lt;index&gt;</p>
-            <p>profile view &lt;index&gt;</p>
-            <p>profile load &lt;index&gt;</p>
-            <p>profile compare &lt;index&gt;</p>
-          </td>
-          <td>
-            <p>Allows you to create new profiles, and then view, save, or load them by index.</p>
-            <p>Profiles are like local mod collections and save all of the enabled / disabled mods.</p>
-            <p>This should let you quickly bulk enable / disable mods for different scenarios.</p>
-            <p>Compare profile allows you to see what the difference is between your currently enabled mods and the profile's mods</p>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <p id="command-validate">validate</p>
-            <p>v</p>
-          </td>
-          <td>
-            <p>validate - defaults to validating enabled</p>
-            <p>validate all</p>
-            <p>validate &lt;index&gt;</p>
-            <p>validate 1 2 4</p>
-            <p>validate 1-3</p>
-            <p>validate staged</p>
-            <p>validate disabled</p>
-            <p>validate skip 1</p>
-            <p>validate check 1</p>
-          </td>
-          <td>
-            <p>Examines mods for issues. Checks for duplicates, bad folder staging etc</p>
-            <p>Use validate skip 1 to add a tag so that mod at index 1 is skipped for validation</p>
-            <p>Use validate check 1 to remove the tag, so the mod is validated</p>
-          </td>
-        </tr>
-      </table>
-      <div class="accent-line" id="View"><a href="#View">View</a></div>
-      <table class="manual-table">
-        <tr>
-          <td class="header-command">Command</td>
-          <td class="header-usage">Usage</td>
-          <td class="header-description">Description</td>
-        </tr>
-        <tr>
-          <td>
-            <p id="command-detail">detail</p>
-            <p>dd</p>
-            <p>show</p>
-            <p>view</p>
-          </td>
-          <td>
-            <p>detail &lt;mod id&gt;</p>
-          </td>
-          <td>
-            <p>View all mod detail</p>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <p id="command-filter">filter</p>
-            <p>fl</p>
-          </td>
-          <td>
-            <p>filter &lt;search text&gt;</p>
-            <p>filter tag</p>
-            <p>filter tag &lt;tag&gt;</p>
-            <p>filter 123</p>
-            <p>filter enabled</p>
-            <p>filter disabled</p>
-            <p>filter staged</p>
-            <p>filter unstaged</p>
-            <p>filter endorsed</p>
-            <p>filter unendorsed</p>
-            <p>filter abstained</p>
-            <p>filter missing - show missing ids</p>
-            <p>filter upgrade</p>
-            <p>filter fomod</p>
-          </td>
-          <td>
-            <p>Filter mods that contain the given text (name or category) or status, including missing ids</p>
-            <p>Changes persist across future ls until filter clear or filter all is called</p>
-            <p>Filter is additive, meaning it further filters whatever is currently displayed</p>
-            <p>To do a one time search, see search</p>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <p id="command-find">find</p>
-            <p>ff</p>
-          </td>
-          <td>
-            <p>Find files</p>
-            <p>find &lt;search text&gt; </p>
-            <p>find esp &lt;search text&gt;</p>
-          </td>
-          <td>
-            <p>Find all files that have the given text in their path</p>
-            <p>If you use find esp, the search will only look at plugin names</p>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <p id="command-list">list</p>
-            <p>ls</p>
-          </td>
-          <td>
-            <p>List</p>
-            <p>list &lt;start&gt; &lt;amount&gt;</p>
-          </td>
-          <td>
-            <p>List Mod details</p>
-            <p>You can give a start and amount if you want to list just a subsection</p>
-            <p>list 10 30 would list 30 mods, starting with the 10th mod</p>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <p id="command-search">search</p>
-            <p>grep</p>
-            <p>awk</p>
-          </td>
-          <td>
-            <p>search &lt;search text&gt; </p>
-            <p>search &lt;tag&gt;</p>
-            <p>search tag &lt;tag&gt; </p>
-            <p>search name &lt;name&gt;</p>
-            <p>search category &lt;category&gt;</p>
-            <p>search &lt;mod id&gt;</p>
-            <p>search enabled</p>
-            <p>search disabled</p>
-            <p>search staged</p>
-            <p>search unstaged</p>
-            <p>search endorsed</p>
-            <p>search unendorsed</p>
-            <p>search abstained</p>
-            <p>search missing</p>
-            <p>search nocat</p>
-            <p>search upgrade</p>
-            <p>search fomod</p>
-          </td>
-          <td>
-            <p>Search for mods and list them once</p>
-            <p>To apply a filter to future lists, see filter</p>
-            <p>Search the given text (name or category), by ids, by mods missing ids, and by status</p>
-            <p>Searching a string will search name, category, and tags.</p>
-            <p>To search ONLY tags, use search tag &lt;tagName&gt;.</p>
-            <p>The same can be done to search by category or name as well</p>
-            <p>Missing searches for missing ids, nocat searches for mods without a category</p>
-            <p>When a filter is applied, search only looks within the filtered data</p>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <p id="command-sort">sort</p>
-            <p>s</p>
-          </td>
-          <td>
-            <p>sort name</p>
-            <p>sort name reverse</p>
-            <p>sort id</p>
-            <p>sort enabled</p>
-            <p>sort category</p>
-            <p>sort order</p>
-            <p>sort staged</p>
-          </td>
-          <td>
-            <p>Sort the list in various ways. Add reverse to invert the sort</p>
-          </td>
-        </tr>
-      </table>
-      <div class="accent-line" id="Edit"><a href="#Edit">Edit</a></div>
-      <table class="manual-table">
-        <tr>
-          <td class="header-command">Command</td>
-          <td class="header-usage">Usage</td>
-          <td class="header-description">Description</td>
-        </tr>
-        <tr>
-          <td>
-            <p id="command-abstain">abstain</p>
-          </td>
-          <td>
-            <p>abstain &lt;index&gt;</p>
-          </td>
-          <td>
-            <p>Endorse a mod on nexus, or abstain from endorsing it</p>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <p id="command-category">category</p>
-            <p>cat</p>
-            <p>categories</p>
-          </td>
-          <td>
-            <p>category</p>
-            <p>category &lt;index&gt; &lt;category id&gt; </p>
-            <p>category &lt;index&gt; &lt;category name&gt; </p>
-          </td>
-          <td>
-            <p>List categories and set the category of a mod</p>
-            <p>Use category to list categories</p>
-            <p>Use category plus a mod index to update a mod's category</p>
-            <p>If you don't have categories, use config categories to fetch them</p>
-            <p>Also see mod command</p>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <p id="command-endorse">endorse</p>
-            <p>en</p>
-          </td>
-          <td>
-            <p>endorse &lt;index&gt;</p>
-            <p>endorse 1 2 4</p>
-            <p>endorse 1-4</p>
-          </td>
-          <td>
-            <p>Endorse a mod on nexus, or abstain from endorsing it</p>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <p id="command-mod">mod</p>
-            <p>m</p>
-          </td>
-          <td>
-            <p>mod &lt;index&gt; id &lt;new id&gt;</p>
-            <p>mod &lt;index&gt; file &lt;file-path&gt; </p>
-            <p>mod &lt;index&gt; name &lt;new name&gt;</p>
-            <p>mod &lt;index&gt; category &lt;new category id&gt;</p>
-            <p>mod &lt;index&gt; deploytarget &lt;new deploy target&gt;</p>
-            <p>mod &lt;index&gt; dt &lt;new deploy target&gt;</p>
-          </td>
-          <td>
-            <p>Change various parts of a mod.</p>
-            <p>Use id to set its nexus id</p>
-            <p>Use file to delete a mods stage folder and restage it from zip</p>
-            <p>To see a list of category ids, see the category command</p>
-            <p>Change deploytarget to set where this specific mod is deployed to. Useful for mods like SFSE that deploy outside the data folder</p>
-            <p>To see a list of deploy targets, run config deploytarget</p>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <p id="command-rename">rename</p>
-            <p>mv</p>
-          </td>
-          <td>
-            <p>rename &lt;index&gt; &lt;new name&gt;</p>
-          </td>
-          <td>
-            <p>Use name to rename a mod without changing its file paths</p>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <p id="command-require">require</p>
-            <p>req</p>
-          </td>
-          <td>
-            <p>require &lt;index&gt;</p>
-            <p>require &lt;index&gt; all</p>
-            <p>require &lt;index&gt; child</p>
-            <p>require &lt;index&gt; add 456</p>
-            <p>require &lt;index&gt; remove 456</p>
-          </td>
-          <td>
-            <p>Mark a mod as requiring another mod</p>
-            <p>When a mod is enabled, any required mods are also enabled</p>
-            <p>When a mod is disabled, any mods depending on that mod are also disabled</p>
-            <p>require lists direct requirements of this mod</p>
-            <p>require all lists requirements recursively so you can see the full tree</p>
-            <p>require child shows children who require this mod</p>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <p id="command-tag">tag</p>
-            <p>t</p>
-            <p>tags</p>
-          </td>
-          <td>
-            <p>tag 1 add essential</p>
-            <p>tag 1 rm essential</p>
-            <p>tag 1 3 4 add cool</p>
-            <p>tag 1 rm 0</p>
-            <p>tag ls</p>
-          </td>
-          <td>
-            <p>Add and remove tags</p>
-            <p>tag ls - Lists all tags and number of mods using that tag</p>
-          </td>
-        </tr>
-      </table>
-      <div class="accent-line" id="Open"><a href="#Open">Open</a></div>
-      <table class="manual-table">
-        <tr>
-          <td class="header-command">Command</td>
-          <td class="header-usage">Usage</td>
-          <td class="header-description">Description</td>
-        </tr>
-        <tr>
-          <td>
-            <p id="command-cli">cli</p>
-            <p>terminal</p>
-            <p>term</p>
-          </td>
-          <td>
-            <p>cli &lt;index&gt; </p>
-            <p>cli &lt;path&gt;</p>
-          </td>
-          <td>
-            <p>Open various folders and filepaths as well as mods</p>
-            <p>Use paths command to see paths you can open</p>
-            <p>See also: local, open, and paths commands</p>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <p id="command-local">local</p>
-            <p>l</p>
-          </td>
-          <td>
-            <p>local &lt;index&gt; *cli</p>
-            <p>local &lt;path&gt;</p>
-          </td>
-          <td>
-            <p>Open various folders and filepaths as well as mods</p>
-            <p>If you pass 'cli' it will open in terminal instead of local folder</p>
-            <p>Use paths command to see paths you can open</p>
-            <p>See also: open, cli, and paths commands</p>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <p id="command-open">open</p>
-            <p>o</p>
-            <p>manual</p>
-            <p>man</p>
-            <p>site</p>
-            <p>git</p>
-            <p>github</p>
-            <p>source</p>
-            <p>nexus</p>
-          </td>
-          <td>
-            <p>open &lt;index&gt;</p>
-            <p>git</p>
-            <p>manual</p>
-            <p>nexus</p>
-            <p>site</p>
-          </td>
-          <td>
-            <p>Open a mod on nexus or visit several other sites</p>
-            <p>See also: local, cli, and paths commandsgit - Open source for mod manager</p>
-            <p>manual - Online Manual of commands</p>
-            <p>nexus - Open the mod on nexus mods</p>
-            <p>site - Open manager's main site</p>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <p id="command-paths">paths</p>
-            <p>path</p>
-            <p>gamepath</p>
-            <p>gg</p>
-            <p>jarpath</p>
-            <p>jar</p>
-            <p>data</p>
-            <p>app</p>
-            <p>appdatapath</p>
-            <p>catalog</p>
-            <p>ini</p>
-            <p>inipath</p>
-            <p>plugins</p>
-            <p>plugin</p>
-            <p>sfse</p>
-            <p>saves</p>
-            <p>steampics</p>
-            <p>screenshots</p>
-            <p>photos</p>
-            <p>unrealini</p>
-            <p>engineini</p>
-            <p>win64</p>
-            <p>ue4ss</p>
-            <p>obse</p>
-            <p>wingdk</p>
-            <p>paks</p>
-            <p>unreal-mods</p>
-          </td>
-          <td>
-            <p>paths</p>
-            <p>app</p>
-            <p>catalog</p>
-            <p>data</p>
-            <p>gamepath</p>
-            <p>ini</p>
-            <p>jarpath</p>
-            <p>obse</p>
-            <p>paks</p>
-            <p>plugins</p>
-            <p>saves</p>
-            <p>screenshots</p>
-            <p>sfse</p>
-            <p>steampics</p>
-            <p>ue4ss</p>
-            <p>unrealini</p>
-            <p>win64</p>
-            <p>wingdk</p>
-          </td>
-          <td>
-            <p>List and open various common paths</p>
-            <p>If you pass 'cli' it will open in terminal instead of local folder</p>
-            <p>paths list - list the values of all paths</p>
-            <p>You can override (or create new static) paths in the config (see config command)</p>
-            <p>See also: open, cli, and paths commands</p>
-            <p></p>
-            <p>app (sf), [appdatapath] - Appdata in windows. Contains Plugins and ContentCatalog for Starfield. Used for updating mod load order</p>
-            <p>catalog (sf) - The catalog file that tracks creations</p>
-            <p>data (sf, or) - The data path that esps live in</p>
-            <p>gamepath (sf, or), [gg] - Where the game is installed</p>
-            <p>ini (or), [inipath] - Ini files above the data folder</p>
-            <p>ini (sf), [inipath] - My Documents in windows. Contains ini files and saves for Starfield. It's optionally used to deploy to your my docs folder instead of the game path</p>
-            <p>jarpath (sf, or), [jar] - Location the mod manager is running from</p>
-            <p>obse (or) - Folder that obse/sfse plugins are deployed to</p>
-            <p>paks (or), [unreal-mods] - Where the unreal engine mods live</p>
-            <p>plugins (sf, or), [plugin] - The plugins file that activates esps</p>
-            <p>saves (sf, or) - Where your save files are located</p>
-            <p>screenshots (sf), [photos] - Your game saved screenshots, like photo mode</p>
-            <p>sfse (sf) - Folder that obse/sfse plugins are deployed to</p>
-            <p>steampics (sf) - Your steam screenshots for the game</p>
-            <p>ue4ss (or) - Folder that UE4SS mods are deployed to</p>
-            <p>unrealini (or), [engineini] - Ini files for unreal engine</p>
-            <p>win64 (or) - Where the unreal engine binary lives</p>
-            <p>wingdk (or) - Folder that UE4SS mods are deployed to for game pass (not used)</p>
-          </td>
-        </tr>
-      </table>
-      <div class="accent-line" id="Update"><a href="#Update">Update</a></div>
-      <table class="manual-table">
-        <tr>
-          <td class="header-command">Command</td>
-          <td class="header-usage">Usage</td>
-          <td class="header-description">Description</td>
-        </tr>
-        <tr>
-          <td>
-            <p id="command-refresh">refresh</p>
-            <p>rr</p>
-          </td>
-          <td>
-            <p>refresh &lt;index&gt;</p>
-            <p>refresh 1 2 4</p>
-            <p>refresh 1-3</p>
-            <p>refresh all</p>
-            <p>refresh empty</p>
-            <p>refresh staged</p>
-            <p>refresh enabled</p>
-            <p>refresh disabled</p>
-          </td>
-          <td>
-            <p>For all mods with ids, attempt to redownload (or grab the file from the downloads folder if it exists) and restage.</p>
-            <p>Refreshing can be done by ranges of indexs, or by mod status</p>
-            <p>Refreshing will re-download the existing fileId if it exists</p>
-            <p>If you're looking to upgrade to a new version, see update and upgrade</p>
-            <p>Even if a version has not changed, the latest fileId may have (and is updated by update command). To get the latest, use upgrade</p>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <p id="command-update">update</p>
-            <p>up</p>
-          </td>
-          <td>
-            <p>update &lt;index&gt;</p>
-            <p>update 1 2 4</p>
-            <p>update 1-3</p>
-            <p>update staged</p>
-            <p>update enabled</p>
-          </td>
-          <td>
-            <p>fetches latest metadata for mods, including new versions and endorsement data</p>
-            <p>Useful for checking for updates existing mods. To check add new mods, see fetch or add.</p>
-            <p>To download updates, see upgrade</p>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <p id="command-upgrade">upgrade</p>
-            <p>ug</p>
-          </td>
-          <td>
-            <p>upgrade &lt;index&gt;</p>
-            <p>upgrade 1 2 4</p>
-            <p>upgrade 1-3</p>
-            <p>upgrade all</p>
-          </td>
-          <td>
-            <p>For all mods with newer versions, attempt to stage the latest version.</p>
-            <p>If you want to check for new versions, see update</p>
-            <p>If you're looking to just redownload or restage a file at the current version, see refresh</p>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <p id="command-version">version</p>
-            <p>vv</p>
-          </td>
-          <td>
-            <p>version &lt;index&gt;</p>
-            <p>version 1 2 4</p>
-            <p>version 1-3</p>
-            <p>version &lt;index&gt; set &lt;new-version&gt;</p>
-          </td>
-          <td>
-            <p>View the current and latest version of a mod</p>
-            <p>Use version set to manually tell the manager that mode is at a given version</p>
-          </td>
-        </tr>
-      </table>
-      <div class="accent-line" id="Config"><a href="#Config">Config</a></div>
-      <table class="manual-table">
-        <tr>
-          <td class="header-command">Command</td>
-          <td class="header-usage">Usage</td>
-          <td class="header-description">Description</td>
-        </tr>
-        <tr>
-          <td>
-            <p id="command-config">config</p>
-            <p>c</p>
-          </td>
-          <td>
-            <p>config paths</p>
-            <p>config path GAME &lt;path-to-folder&gt;</p>
-            <p>config path COMPAT_DATA &lt;path-to-folder&gt;</p>
-            <p>config api-key &lt;key-from-nexus&gt;</p>
-            <p>config open-in-terminal-command &lt;path-to-folder&gt; </p>
-            <p>config verbose &lt;true/false&gt;</p>
-            <p>config autodeploy &lt;true/false&gt;</p>
-            <p>config deploytarget &lt;PATHTYPE&gt;</p>
-            <p>config logging &lt;true/false&gt;</p>
-            <p>config categories</p>
-            <p>config version</p>
-          </td>
-          <td>
-            <p>Used to configure the mod manager itself. Saved in the config.json (and game specific starfield-config.json etc) files located next to the jar</p>
-            <p>open-in-terminal-command is optional and only needed if you don't use `gnome-terminal`. This value will be used as the command when opening folders in the terminal. Will be run in the relevant folder, but if you need to specify the directory in the command, you can use `{pwd}` and it will be replaced by the relevant path.</p>
-            <p>verbose gives additional output (for debugging) if set to true</p>
-            <p>autodeploy automatically runs deploy when enabling or disabling mods. Defaults to true</p>
-            <p>deploytarget - set the default path for mods to deploy to. Defaults to the Data directory but could be used to deploy to app data etc</p>
-            <p>logging - log events like launch (and load order) or first time fetching a mod etc, on by default</p>
-            <p>categories - download game specific category names from nexus</p>
-            <p>config path is used to set game specific paths</p>
-            <p>config paths tells you what paths are needed</p>
-            <p>config path can be used to override built in paths as well (also see paths command)</p>
-            <p>config path delete can be used to delete an overridden path</p>
-            <p>If your paths have spaces, make sure to quote them</p>
-            <p>version gives the commit that the app was built from</p>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <p id="command-help">help</p>
-            <p>h</p>
-          </td>
-          <td>
-            <p>help</p>
-            <p>help &lt;command&gt;</p>
-          </td>
-          <td>
-            <p>List the commands for view a specific command in detail</p>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <p id="command-mode">mode</p>
-          </td>
-          <td>
-            <p>mode starfield</p>
-            <p>mode sf</p>
-            <p>mode oblivionremastered</p>
-            <p>mode or</p>
-          </td>
-          <td>
-            <p>Switch which game you're managing</p>
-            <p>Used so you can mod multiple games</p>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <p id="command-note">note</p>
-          </td>
-          <td>
-            <p>note &lt;text&gt;</p>
-          </td>
-          <td>
-            <p>Make a note in your log (used for stats)</p>
-            <p>The note will be visible alongside other events in your log.jsonl</p>
-            <p>This is useful for providing a reason, say before a big update to your mod list or a new playthrough</p>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <p id="command-start">start</p>
-            <p>game</p>
-            <p>g</p>
-          </td>
-          <td>
-            <p>start</p>
-          </td>
-          <td>
-            <p>Run the steam game</p>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <p id="command-creationkit">creationkit</p>
-            <p>ck</p>
-            <p>startck</p>
-          </td>
-          <td>
-            <p>start</p>
-          </td>
-          <td>
-            <p>Run the Creation Kit Editor</p>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <p id="command-exit">exit</p>
-          </td>
-          <td>
-            <p>Exit the process</p>
-          </td>
-          <td>
-            <p>Exit the process</p>
-          </td>
-        </tr>
-      </table>
+      <p>This command reference can also be viewed in app by using the <code>help</code> command. This reference is is for version <code>2.3.1</code>. Download the latest from <a href="https://github.com/ManApart/manapart-mod-manager/releases" target="_blank">github</a> or possibly <a href="https://www.nexusmods.com/starfield/mods/6576" target="_blank">the Nexus</a>. (Nexus may not have bleeding edge versions).</p>
+      <p>Expand or collapse sections by clicking their header.</p>
+      <details id="ADD-details" open="open">
+        <script>document.addEventListener('DOMContentLoaded', function() {
+    console.log(document.getElementById("ADD-details"))
+    document.getElementById("ADD-details").open = !isMobile()
+});</script>
+<summary>
+          <div class="accent-line" id="Add"><a href="#Add">Add</a></div>
+        </summary>
+        <table class="manual-table">
+          <tr>
+            <td class="header-command">Command</td>
+            <td class="header-usage">Usage</td>
+            <td class="header-description">Description</td>
+          </tr>
+          <tr>
+            <td>
+              <p id="command-add">add</p>
+              <p>a</p>
+            </td>
+            <td>
+              <p>add &lt;nxm://starfield/...&gt;</p>
+              <p>add &lt;creation-id&gt;</p>
+              <p>add 4183</p>
+              <p>add 4183 4182 4181</p>
+              <p>add &lt;path-to-mod-zip&gt; &lt;name-of-mod&gt;*</p>
+              <p>add new &lt;name-of-mod&gt;*</p>
+            </td>
+            <td>
+              <p>Add a new mod, including downloading it</p>
+              <p>You can add mods by nexus mod manager url, by mod url, by mod id, or even by path to a local zip</p>
+              <p>For urls and ids, you can add multiple at once, space separated</p>
+              <p>You can also add a new blank mod with new</p>
+              <p>Example nexus mod manager url: nxm://starfield/mods/4183/files/12955?key=abc&amp;expires=1697023374&amp;user_id=111</p>
+              <p>Example mod url: https://www.nexusmods.com/starfield/mods/4183?tab=files</p>
+              <p>Example adding a creation: add SFBGS003</p>
+              <p>See also creation, external</p>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <p id="command-creation">creation</p>
+              <p>creations</p>
+              <p>cr</p>
+            </td>
+            <td>
+              <p>creation ls</p>
+              <p>creation add &lt;id&gt;</p>
+              <p>creation add all</p>
+              <p>creation rm &lt;index&gt;</p>
+              <p>creation rm all</p>
+              <p>cration forget &lt;id&gt;</p>
+              <p>creation refresh &lt;index&gt;</p>
+              <p>creation refresh all</p>
+              <p></p>
+            </td>
+            <td>
+              <p>Tools for managing creations just like other mods</p>
+              <p>creation ls - lists unmanaged creations by examining your game content catalog</p>
+              <p>creation add - adds a single creation by its mod file id (like SFBGS021) or content id (like TM_31ccf130-4852-417b-842a-9d82672028e4). Also see add mod</p>
+              <p>creation add all - Attempts to add _all_ unmanaged creations found in the content catalog</p>
+              <p>creation rm - unmanage this creation, dumping the files back into the data directory (deletes the &quot;mod&quot; but unmanages the files)</p>
+              <p>creation forget - delete the creation's entry in your content catalog, so it doesn't show up as unmanaged (remove the creation before forgetting it)</p>
+              <p>creation refresh - copy any creation related files from the data directory, overriding existing mod files. Used to update a creation if there are new files</p>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <p id="command-external">external</p>
+              <p>ex</p>
+            </td>
+            <td>
+              <p>external ls</p>
+              <p>external add &lt;id&gt;</p>
+              <p>external add all</p>
+            </td>
+            <td>
+              <p>Tools for managing external plugins</p>
+              <p>external ls - lists unmanaged plugins by examining your game data folder</p>
+              <p>external add - adds a single plugin by its id (like SFBGS003). Also see add mod</p>
+              <p>external add all - Attempts to add _all_ unmanaged plugins found in the data folder</p>
+              <p>To remove an external plugin, just use the normal remove commands. The empty mod folder will be deleted but since there are no mod files there won't be other changes</p>
+              <p></p>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <p id="command-fetch">fetch</p>
+              <p>f</p>
+            </td>
+            <td>
+              <p>fetch &lt;mod id&gt;</p>
+              <p>fetch 111 222 333</p>
+            </td>
+            <td>
+              <p>Add mod metadata without downloading files</p>
+              <p>Useful for adding NEW mods. To check for updates on existing mods, see update</p>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <p id="command-import">import</p>
+              <p>i</p>
+            </td>
+            <td>
+              <p>import &lt;json&gt;</p>
+            </td>
+            <td>
+              <p>Import Data from Mod Viewer</p>
+              <p>Viewer found at https://manapart.github.io/starfield-mod-manager-site/viewer.html</p>
+              <p>Imports json and applies the changes</p>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <p id="command-nest">nest</p>
+              <p>n</p>
+            </td>
+            <td>
+              <p>nest &lt;index&gt; &lt;PathType&gt;</p>
+              <p>nest 1 DATA</p>
+              <p>nest 2 paks</p>
+            </td>
+            <td>
+              <p>Nests all mod files under the given path and then opens the folder locally</p>
+              <p>Used to make fixing mod installs to unrecognized paths</p>
+              <p>Paths: [GAME, JAR, DATA, APP_DATA, INI, DATA_INI, UNREAL_INI, PLUGINS, CATALOG, WIN64, WINGDK, UE4SS_MODS, SCRIPT_EXTENDER_PLUGINS, PAKS, SAVES, STEAM_PICS, SCREENSHOTS]</p>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <p id="command-remove">remove</p>
+              <p>rm</p>
+              <p>delete</p>
+            </td>
+            <td>
+              <p>remove &lt;index&gt;</p>
+              <p>rm &lt;index&gt;</p>
+            </td>
+            <td>
+              <p>Remove a mod from being managed</p>
+            </td>
+          </tr>
+        </table>
+      </details>
+      <details id="DEPLOY-details" open="open">
+        <script>document.addEventListener('DOMContentLoaded', function() {
+    console.log(document.getElementById("DEPLOY-details"))
+    document.getElementById("DEPLOY-details").open = !isMobile()
+});</script>
+<summary>
+          <div class="accent-line" id="Deploy"><a href="#Deploy">Deploy</a></div>
+        </summary>
+        <table class="manual-table">
+          <tr>
+            <td class="header-command">Command</td>
+            <td class="header-usage">Usage</td>
+            <td class="header-description">Description</td>
+          </tr>
+          <tr>
+            <td>
+              <p id="command-deploy">deploy</p>
+              <p>d</p>
+            </td>
+            <td>
+              <p>deploy</p>
+              <p>deploy overrides</p>
+              <p>deploy dryrun</p>
+            </td>
+            <td>
+              <p>Applies all enabled mods to the game folder by creating the appropriate symlinks</p>
+              <p>Overrides shows any mods that conflict with other mods and gives their load order in parenthesis and then the index of the mod</p>
+              <p>Dryrun shows a detailed view of how files will be deployed, without deploying them</p>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <p id="command-disable">disable</p>
+              <p>x</p>
+            </td>
+            <td>
+              <p>disable &lt;index&gt;</p>
+              <p>disable 1 2 4</p>
+              <p>disable 1-4</p>
+              <p>disable all</p>
+            </td>
+            <td>
+              <p>Enable or disable a mod.</p>
+              <p>Enabled mods are symlinked into the game folder the next time the deploy command is run</p>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <p id="command-enable">enable</p>
+              <p>e</p>
+            </td>
+            <td>
+              <p>enable &lt;index&gt;</p>
+              <p>enable 1 2 4</p>
+              <p>enable 1-4</p>
+              <p>enable all</p>
+            </td>
+            <td>
+              <p>Enable or disable a mod.</p>
+              <p>Enabled mods are symlinked into the game folder the next time the deploy command is run</p>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <p id="command-esp">esp</p>
+              <p>esps</p>
+            </td>
+            <td>
+              <p>esp ls</p>
+              <p>esp refresh</p>
+              <p>esp refresh 1</p>
+              <p>esp 1 first</p>
+              <p>esp 1 last</p>
+              <p>esp 1 sooner 5</p>
+              <p>esp 1 later</p>
+              <p>esp 1 set 4</p>
+              <p>esp 1 sub 1 set 0</p>
+            </td>
+            <td>
+              <p>Plugins with a higher load order are loaded later, and override plugins loaded earlier. Given plugin A has an order 5 and plugin B has an order of 1, then A will load AFTER B, and A's records will be used instead of B's in any conflicts. </p>
+              <p>In these examples the first number is the mod index and the second is the sort order you want</p>
+              <p>esp ls - view load order of plugins</p>
+              <p>esp 1 set 4 - sets mod with index 1 to load order 4. Any plugins with a higher number for load order have their number increased</p>
+              <p>esp 1 later - sets the plugin to load after the next plugin (may shift the order number more than one as it shifts until it's after the next plugin).</p>
+              <p>esp 1 later 2 - same as above but shifts down by two plugins</p>
+              <p>esp 1 sub 2 set 0 - Used to re-order plugins within a single mod. Finds the plugin of mod 1 that is in sub load order 2 and sets it to sub load order 0.</p>
+              <p>For general mod order, see order command. The same order number is used for both commands.</p>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <p id="command-order">order</p>
+              <p>or</p>
+            </td>
+            <td>
+              <p>order 1</p>
+              <p>order 1 first</p>
+              <p>order 1 last</p>
+              <p>order 1 sooner 5</p>
+              <p>order 1 later</p>
+              <p>order 1 set 4</p>
+              <p>order 1 optimize</p>
+              <p>order 1 optimize dry</p>
+            </td>
+            <td>
+              <p>Mods with a higher load order are loaded later, and override mods loaded earlier. Given mod A has an order 5 and mod B has an order of 1, then A will load AFTER B, and A's files will be used instead of B's in any file conflicts. </p>
+              <p>In these examples the first number is the mod index and the second is the sort order you want</p>
+              <p>order 1 set 4 - sets mod with index 1 to load order 4. Any mods with a higher number for load order have their number increased</p>
+              <p>order 1 - view any conflicts mod index 1 has with any other mods</p>
+              <p>To manage load order specifically for plugins, see esps command. The same order number is used for both commands.</p>
+              <p>order 1 optimize - Moves every mod to load after their latest requirement. Dry run gives you a preview. You may want to backup your data first in case you don't like the new order.</p>
+              <p>Optimize is best effort and may need manual correction</p>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <p id="command-purge">purge</p>
+            </td>
+            <td>
+              <p>purge</p>
+              <p>purge dryrun</p>
+            </td>
+            <td>
+              <p>Purge your game data folder and delete all symlinks and rename override files.</p>
+              <p>This should set you back to vanilla, and can catch files missed by disabling mods and deploying.</p>
+              <p>Specifically, if you manually delete a mod outside the manager, a deploy may not delete its deployed files, but a purge should clean them up.</p>
+              <p>Use dryrun to view what a purge would do without actually doing it.</p>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <p id="command-profile">profile</p>
+              <p>p</p>
+              <p>prof</p>
+            </td>
+            <td>
+              <p>profile list</p>
+              <p>profile save &lt;name&gt; </p>
+              <p>profile save &lt;index&gt;</p>
+              <p>profile view &lt;index&gt;</p>
+              <p>profile load &lt;index&gt;</p>
+              <p>profile compare &lt;index&gt;</p>
+            </td>
+            <td>
+              <p>Allows you to create new profiles, and then view, save, or load them by index.</p>
+              <p>Profiles are like local mod collections and save all of the enabled / disabled mods.</p>
+              <p>This should let you quickly bulk enable / disable mods for different scenarios.</p>
+              <p>Compare profile allows you to see what the difference is between your currently enabled mods and the profile's mods</p>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <p id="command-validate">validate</p>
+              <p>v</p>
+            </td>
+            <td>
+              <p>validate - defaults to validating enabled</p>
+              <p>validate all</p>
+              <p>validate &lt;index&gt;</p>
+              <p>validate 1 2 4</p>
+              <p>validate 1-3</p>
+              <p>validate staged</p>
+              <p>validate disabled</p>
+              <p>validate skip 1</p>
+              <p>validate check 1</p>
+            </td>
+            <td>
+              <p>Examines mods for issues. Checks for duplicates, bad folder staging etc</p>
+              <p>Use validate skip 1 to add a tag so that mod at index 1 is skipped for validation</p>
+              <p>Use validate check 1 to remove the tag, so the mod is validated</p>
+            </td>
+          </tr>
+        </table>
+      </details>
+      <details id="VIEW-details" open="open">
+        <script>document.addEventListener('DOMContentLoaded', function() {
+    console.log(document.getElementById("VIEW-details"))
+    document.getElementById("VIEW-details").open = !isMobile()
+});</script>
+<summary>
+          <div class="accent-line" id="View"><a href="#View">View</a></div>
+        </summary>
+        <table class="manual-table">
+          <tr>
+            <td class="header-command">Command</td>
+            <td class="header-usage">Usage</td>
+            <td class="header-description">Description</td>
+          </tr>
+          <tr>
+            <td>
+              <p id="command-detail">detail</p>
+              <p>dd</p>
+              <p>show</p>
+              <p>view</p>
+            </td>
+            <td>
+              <p>detail &lt;mod id&gt;</p>
+            </td>
+            <td>
+              <p>View all mod detail</p>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <p id="command-filter">filter</p>
+              <p>fl</p>
+            </td>
+            <td>
+              <p>filter &lt;search text&gt;</p>
+              <p>filter tag</p>
+              <p>filter tag &lt;tag&gt;</p>
+              <p>filter 123</p>
+              <p>filter enabled</p>
+              <p>filter disabled</p>
+              <p>filter staged</p>
+              <p>filter unstaged</p>
+              <p>filter endorsed</p>
+              <p>filter unendorsed</p>
+              <p>filter abstained</p>
+              <p>filter missing - show missing ids</p>
+              <p>filter upgrade</p>
+              <p>filter fomod</p>
+            </td>
+            <td>
+              <p>Filter mods that contain the given text (name or category) or status, including missing ids</p>
+              <p>Changes persist across future ls until filter clear or filter all is called</p>
+              <p>Filter is additive, meaning it further filters whatever is currently displayed</p>
+              <p>To do a one time search, see search</p>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <p id="command-find">find</p>
+              <p>ff</p>
+            </td>
+            <td>
+              <p>Find files</p>
+              <p>find &lt;search text&gt; </p>
+              <p>find esp &lt;search text&gt;</p>
+            </td>
+            <td>
+              <p>Find all files that have the given text in their path</p>
+              <p>If you use find esp, the search will only look at plugin names</p>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <p id="command-list">list</p>
+              <p>ls</p>
+            </td>
+            <td>
+              <p>List</p>
+              <p>list &lt;start&gt; &lt;amount&gt;</p>
+              <p>List load</p>
+            </td>
+            <td>
+              <p>List Mod details</p>
+              <p>You can give a start and amount if you want to list just a subsection</p>
+              <p>list 10 30 would list 30 mods, starting with the 10th mod</p>
+              <p>list load will sort mods by load order instead of index</p>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <p id="command-search">search</p>
+              <p>grep</p>
+              <p>awk</p>
+            </td>
+            <td>
+              <p>search &lt;search text&gt; </p>
+              <p>search &lt;tag&gt;</p>
+              <p>search tag &lt;tag&gt; </p>
+              <p>search name &lt;name&gt;</p>
+              <p>search category &lt;category&gt;</p>
+              <p>search &lt;mod id&gt;</p>
+              <p>search enabled</p>
+              <p>search disabled</p>
+              <p>search staged</p>
+              <p>search unstaged</p>
+              <p>search endorsed</p>
+              <p>search unendorsed</p>
+              <p>search abstained</p>
+              <p>search missing</p>
+              <p>search nocat</p>
+              <p>search upgrade</p>
+              <p>search fomod</p>
+            </td>
+            <td>
+              <p>Search for mods and list them once</p>
+              <p>To apply a filter to future lists, see filter</p>
+              <p>Search the given text (name or category), by ids, by mods missing ids, and by status</p>
+              <p>Searching a string will search name, category, and tags.</p>
+              <p>To search ONLY tags, use search tag &lt;tagName&gt;.</p>
+              <p>The same can be done to search by category or name as well</p>
+              <p>Missing searches for missing ids, nocat searches for mods without a category</p>
+              <p>When a filter is applied, search only looks within the filtered data</p>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <p id="command-sort">sort</p>
+              <p>s</p>
+            </td>
+            <td>
+              <p>sort name</p>
+              <p>sort name reverse</p>
+              <p>sort id</p>
+              <p>sort enabled</p>
+              <p>sort category</p>
+              <p>sort order</p>
+              <p>sort staged</p>
+            </td>
+            <td>
+              <p>Sort the list in various ways. Add reverse to invert the sort</p>
+            </td>
+          </tr>
+        </table>
+      </details>
+      <details id="EDIT-details" open="open">
+        <script>document.addEventListener('DOMContentLoaded', function() {
+    console.log(document.getElementById("EDIT-details"))
+    document.getElementById("EDIT-details").open = !isMobile()
+});</script>
+<summary>
+          <div class="accent-line" id="Edit"><a href="#Edit">Edit</a></div>
+        </summary>
+        <table class="manual-table">
+          <tr>
+            <td class="header-command">Command</td>
+            <td class="header-usage">Usage</td>
+            <td class="header-description">Description</td>
+          </tr>
+          <tr>
+            <td>
+              <p id="command-abstain">abstain</p>
+            </td>
+            <td>
+              <p>abstain &lt;index&gt;</p>
+            </td>
+            <td>
+              <p>Endorse a mod on nexus, or abstain from endorsing it</p>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <p id="command-category">category</p>
+              <p>cat</p>
+              <p>categories</p>
+            </td>
+            <td>
+              <p>category</p>
+              <p>category &lt;index&gt; &lt;category id&gt; </p>
+              <p>category &lt;index&gt; &lt;category name&gt; </p>
+            </td>
+            <td>
+              <p>List categories and set the category of a mod</p>
+              <p>Use category to list categories</p>
+              <p>Use category plus a mod index to update a mod's category</p>
+              <p>If you don't have categories, use config categories to fetch them</p>
+              <p>Also see mod command</p>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <p id="command-endorse">endorse</p>
+              <p>en</p>
+            </td>
+            <td>
+              <p>endorse &lt;index&gt;</p>
+              <p>endorse 1 2 4</p>
+              <p>endorse 1-4</p>
+            </td>
+            <td>
+              <p>Endorse a mod on nexus, or abstain from endorsing it</p>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <p id="command-mod">mod</p>
+              <p>m</p>
+            </td>
+            <td>
+              <p>mod &lt;index&gt; id &lt;new id&gt;</p>
+              <p>mod &lt;index&gt; file &lt;file-path&gt; </p>
+              <p>mod &lt;index&gt; name &lt;new name&gt;</p>
+              <p>mod &lt;index&gt; category &lt;new category id&gt;</p>
+              <p>mod &lt;index&gt; deploytarget &lt;new deploy target&gt;</p>
+              <p>mod &lt;index&gt; dt &lt;new deploy target&gt;</p>
+            </td>
+            <td>
+              <p>Change various parts of a mod.</p>
+              <p>Use id to set its nexus id</p>
+              <p>Use file to delete a mods stage folder and restage it from zip</p>
+              <p>To see a list of category ids, see the category command</p>
+              <p>Change deploytarget to set where this specific mod is deployed to. Useful for mods like SFSE that deploy outside the data folder</p>
+              <p>To see a list of deploy targets, run config deploytarget</p>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <p id="command-rename">rename</p>
+              <p>mv</p>
+            </td>
+            <td>
+              <p>rename &lt;index&gt; &lt;new name&gt;</p>
+            </td>
+            <td>
+              <p>Use name to rename a mod without changing its file paths</p>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <p id="command-require">require</p>
+              <p>req</p>
+            </td>
+            <td>
+              <p>require all</p>
+              <p>require &lt;index&gt;</p>
+              <p>require &lt;index&gt; all</p>
+              <p>require &lt;index&gt; child</p>
+              <p>require &lt;index&gt; add 456</p>
+              <p>require &lt;index&gt; remove 456</p>
+            </td>
+            <td>
+              <p>Mark a mod as requiring another mod</p>
+              <p>When a mod is enabled, any required mods are also enabled</p>
+              <p>When a mod is disabled, any mods depending on that mod are also disabled</p>
+              <p>require lists direct requirements of this mod</p>
+              <p>require all lists all mods that have requirements and their first level required</p>
+              <p>require &lt;index&gt; all lists requirements recursively so you can see the full tree</p>
+              <p>require child shows children who require this mod</p>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <p id="command-tag">tag</p>
+              <p>t</p>
+              <p>tags</p>
+            </td>
+            <td>
+              <p>tag 1 add essential</p>
+              <p>tag 1 rm essential</p>
+              <p>tag 1 3 4 add cool</p>
+              <p>tag 1 rm 0</p>
+              <p>tag ls</p>
+            </td>
+            <td>
+              <p>Add and remove tags</p>
+              <p>tag ls - Lists all tags and number of mods using that tag</p>
+            </td>
+          </tr>
+        </table>
+      </details>
+      <details id="OPEN-details" open="open">
+        <script>document.addEventListener('DOMContentLoaded', function() {
+    console.log(document.getElementById("OPEN-details"))
+    document.getElementById("OPEN-details").open = !isMobile()
+});</script>
+<summary>
+          <div class="accent-line" id="Open"><a href="#Open">Open</a></div>
+        </summary>
+        <table class="manual-table">
+          <tr>
+            <td class="header-command">Command</td>
+            <td class="header-usage">Usage</td>
+            <td class="header-description">Description</td>
+          </tr>
+          <tr>
+            <td>
+              <p id="command-cli">cli</p>
+              <p>terminal</p>
+              <p>term</p>
+            </td>
+            <td>
+              <p>cli &lt;index&gt; </p>
+              <p>cli &lt;path&gt;</p>
+            </td>
+            <td>
+              <p>Open various folders and filepaths as well as mods</p>
+              <p>Use paths command to see paths you can open</p>
+              <p>See also: local, open, and paths commands</p>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <p id="command-local">local</p>
+              <p>l</p>
+            </td>
+            <td>
+              <p>local &lt;index&gt; *cli</p>
+              <p>local &lt;path&gt;</p>
+            </td>
+            <td>
+              <p>Open various folders and filepaths as well as mods</p>
+              <p>If you pass 'cli' it will open in terminal instead of local folder</p>
+              <p>Use paths command to see paths you can open</p>
+              <p>See also: open, cli, and paths commands</p>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <p id="command-open">open</p>
+              <p>o</p>
+              <p>manual</p>
+              <p>man</p>
+              <p>site</p>
+              <p>git</p>
+              <p>github</p>
+              <p>source</p>
+              <p>nexus</p>
+            </td>
+            <td>
+              <p>open &lt;index&gt;</p>
+              <p>git</p>
+              <p>manual</p>
+              <p>nexus</p>
+              <p>site</p>
+            </td>
+            <td>
+              <p>Open a mod on nexus or visit several other sites</p>
+              <p>See also: local, cli, and paths commandsgit - Open source for mod manager</p>
+              <p>manual - Online Manual of commands</p>
+              <p>nexus - Open the mod on nexus mods</p>
+              <p>site - Open manager's main site</p>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <p id="command-paths">paths</p>
+              <p>path</p>
+              <p>gamepath</p>
+              <p>gg</p>
+              <p>jarpath</p>
+              <p>jar</p>
+              <p>data</p>
+              <p>app</p>
+              <p>appdatapath</p>
+              <p>catalog</p>
+              <p>ini</p>
+              <p>inipath</p>
+              <p>plugins</p>
+              <p>plugin</p>
+              <p>sfse</p>
+              <p>saves</p>
+              <p>steampics</p>
+              <p>screenshots</p>
+              <p>photos</p>
+              <p>unrealini</p>
+              <p>engineini</p>
+              <p>win64</p>
+              <p>ue4ss</p>
+              <p>obse</p>
+              <p>wingdk</p>
+              <p>paks</p>
+              <p>unreal-mods</p>
+            </td>
+            <td>
+              <p>paths</p>
+              <p>app</p>
+              <p>catalog</p>
+              <p>data</p>
+              <p>gamepath</p>
+              <p>ini</p>
+              <p>jarpath</p>
+              <p>obse</p>
+              <p>paks</p>
+              <p>plugins</p>
+              <p>saves</p>
+              <p>screenshots</p>
+              <p>sfse</p>
+              <p>steampics</p>
+              <p>ue4ss</p>
+              <p>unrealini</p>
+              <p>win64</p>
+              <p>wingdk</p>
+            </td>
+            <td>
+              <p>List and open various common paths</p>
+              <p>If you pass 'cli' it will open in terminal instead of local folder</p>
+              <p>paths list - list the values of all paths</p>
+              <p>You can override (or create new static) paths in the config (see config command)</p>
+              <p>See also: open, cli, and paths commands</p>
+              <p></p>
+              <p>app (sf), [appdatapath] - Appdata in windows. Contains Plugins and ContentCatalog for Starfield. Used for updating mod load order</p>
+              <p>catalog (sf) - The catalog file that tracks creations</p>
+              <p>data (sf, or) - The data path that esps live in</p>
+              <p>gamepath (sf, or), [gg] - Where the game is installed</p>
+              <p>ini (or), [inipath] - Ini files above the data folder</p>
+              <p>ini (sf), [inipath] - My Documents in windows. Contains ini files and saves for Starfield. It's optionally used to deploy to your my docs folder instead of the game path</p>
+              <p>jarpath (sf, or), [jar] - Location the mod manager is running from</p>
+              <p>obse (or) - Folder that obse/sfse plugins are deployed to</p>
+              <p>paks (or), [unreal-mods] - Where the unreal engine mods live</p>
+              <p>plugins (sf, or), [plugin] - The plugins file that activates esps</p>
+              <p>saves (sf, or) - Where your save files are located</p>
+              <p>screenshots (sf), [photos] - Your game saved screenshots, like photo mode</p>
+              <p>sfse (sf) - Folder that obse/sfse plugins are deployed to</p>
+              <p>steampics (sf) - Your steam screenshots for the game</p>
+              <p>ue4ss (or) - Folder that UE4SS mods are deployed to</p>
+              <p>unrealini (or), [engineini] - Ini files for unreal engine</p>
+              <p>win64 (or) - Where the unreal engine binary lives</p>
+              <p>wingdk (or) - Folder that UE4SS mods are deployed to for game pass (not used)</p>
+            </td>
+          </tr>
+        </table>
+      </details>
+      <details id="UPDATE-details" open="open">
+        <script>document.addEventListener('DOMContentLoaded', function() {
+    console.log(document.getElementById("UPDATE-details"))
+    document.getElementById("UPDATE-details").open = !isMobile()
+});</script>
+<summary>
+          <div class="accent-line" id="Update"><a href="#Update">Update</a></div>
+        </summary>
+        <table class="manual-table">
+          <tr>
+            <td class="header-command">Command</td>
+            <td class="header-usage">Usage</td>
+            <td class="header-description">Description</td>
+          </tr>
+          <tr>
+            <td>
+              <p id="command-refresh">refresh</p>
+              <p>rr</p>
+            </td>
+            <td>
+              <p>refresh &lt;index&gt;</p>
+              <p>refresh 1 2 4</p>
+              <p>refresh 1-3</p>
+              <p>refresh all</p>
+              <p>refresh empty</p>
+              <p>refresh staged</p>
+              <p>refresh enabled</p>
+              <p>refresh disabled</p>
+            </td>
+            <td>
+              <p>For all mods with ids, attempt to redownload (or grab the file from the downloads folder if it exists) and restage.</p>
+              <p>Refreshing can be done by ranges of indexs, or by mod status</p>
+              <p>Refreshing will re-download the existing fileId if it exists</p>
+              <p>If you're looking to upgrade to a new version, see update and upgrade</p>
+              <p>Even if a version has not changed, the latest fileId may have (and is updated by update command). To get the latest, use upgrade</p>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <p id="command-update">update</p>
+              <p>up</p>
+            </td>
+            <td>
+              <p>update &lt;index&gt;</p>
+              <p>update 1 2 4</p>
+              <p>update 1-3</p>
+              <p>update staged</p>
+              <p>update enabled</p>
+            </td>
+            <td>
+              <p>fetches latest metadata for mods, including new versions and endorsement data</p>
+              <p>Useful for checking for updates existing mods. To check add new mods, see fetch or add.</p>
+              <p>To download updates, see upgrade</p>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <p id="command-upgrade">upgrade</p>
+              <p>ug</p>
+            </td>
+            <td>
+              <p>upgrade &lt;index&gt;</p>
+              <p>upgrade 1 2 4</p>
+              <p>upgrade 1-3</p>
+              <p>upgrade all</p>
+            </td>
+            <td>
+              <p>For all mods with newer versions, attempt to stage the latest version.</p>
+              <p>If you want to check for new versions, see update</p>
+              <p>If you're looking to just redownload or restage a file at the current version, see refresh</p>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <p id="command-version">version</p>
+              <p>vv</p>
+            </td>
+            <td>
+              <p>version &lt;index&gt;</p>
+              <p>version 1 2 4</p>
+              <p>version 1-3</p>
+              <p>version &lt;index&gt; set &lt;new-version&gt;</p>
+            </td>
+            <td>
+              <p>View the current and latest version of a mod</p>
+              <p>Use version set to manually tell the manager that mode is at a given version</p>
+            </td>
+          </tr>
+        </table>
+      </details>
+      <details id="CONFIG-details" open="open">
+        <script>document.addEventListener('DOMContentLoaded', function() {
+    console.log(document.getElementById("CONFIG-details"))
+    document.getElementById("CONFIG-details").open = !isMobile()
+});</script>
+<summary>
+          <div class="accent-line" id="Config"><a href="#Config">Config</a></div>
+        </summary>
+        <table class="manual-table">
+          <tr>
+            <td class="header-command">Command</td>
+            <td class="header-usage">Usage</td>
+            <td class="header-description">Description</td>
+          </tr>
+          <tr>
+            <td>
+              <p id="command-config">config</p>
+              <p>c</p>
+            </td>
+            <td>
+              <p>config paths</p>
+              <p>config path GAME &lt;path-to-folder&gt;</p>
+              <p>config path COMPAT_DATA &lt;path-to-folder&gt;</p>
+              <p>config api-key &lt;key-from-nexus&gt;</p>
+              <p>config open-in-terminal-command &lt;path-to-folder&gt; </p>
+              <p>config verbose &lt;true/false&gt;</p>
+              <p>config autodeploy &lt;true/false&gt;</p>
+              <p>config deploytarget &lt;PATHTYPE&gt;</p>
+              <p>config logging &lt;true/false&gt;</p>
+              <p>config categories</p>
+              <p>config version</p>
+            </td>
+            <td>
+              <p>Used to configure the mod manager itself. Saved in the config.json (and game specific starfield-config.json etc) files located next to the jar</p>
+              <p>open-in-terminal-command is optional and only needed if you don't use `gnome-terminal`. This value will be used as the command when opening folders in the terminal. Will be run in the relevant folder, but if you need to specify the directory in the command, you can use `{pwd}` and it will be replaced by the relevant path.</p>
+              <p>verbose gives additional output (for debugging) if set to true</p>
+              <p>autodeploy automatically runs deploy when enabling or disabling mods. Defaults to true</p>
+              <p>deploytarget - set the default path for mods to deploy to. Defaults to the Data directory but could be used to deploy to app data etc</p>
+              <p>logging - log events like launch (and load order) or first time fetching a mod etc, on by default</p>
+              <p>categories - download game specific category names from nexus</p>
+              <p>config path is used to set game specific paths</p>
+              <p>config paths tells you what paths are needed</p>
+              <p>config path can be used to override built in paths as well (also see paths command)</p>
+              <p>config path delete can be used to delete an overridden path</p>
+              <p>If your paths have spaces, make sure to quote them</p>
+              <p>version gives the commit that the app was built from</p>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <p id="command-help">help</p>
+              <p>h</p>
+            </td>
+            <td>
+              <p>help</p>
+              <p>help &lt;command&gt;</p>
+            </td>
+            <td>
+              <p>List the commands for view a specific command in detail</p>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <p id="command-mode">mode</p>
+            </td>
+            <td>
+              <p>mode starfield</p>
+              <p>mode sf</p>
+              <p>mode oblivionremastered</p>
+              <p>mode or</p>
+            </td>
+            <td>
+              <p>Switch which game you're managing</p>
+              <p>Used so you can mod multiple games</p>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <p id="command-note">note</p>
+            </td>
+            <td>
+              <p>note &lt;text&gt;</p>
+            </td>
+            <td>
+              <p>Make a note in your log (used for stats)</p>
+              <p>The note will be visible alongside other events in your log.jsonl</p>
+              <p>This is useful for providing a reason, say before a big update to your mod list or a new playthrough</p>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <p id="command-start">start</p>
+              <p>game</p>
+              <p>g</p>
+            </td>
+            <td>
+              <p>start</p>
+            </td>
+            <td>
+              <p>Run the steam game</p>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <p id="command-creationkit">creationkit</p>
+              <p>ck</p>
+              <p>startck</p>
+            </td>
+            <td>
+              <p>start</p>
+            </td>
+            <td>
+              <p>Run the Creation Kit Editor</p>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <p id="command-exit">exit</p>
+            </td>
+            <td>
+              <p>Exit the process</p>
+            </td>
+            <td>
+              <p>Exit the process</p>
+            </td>
+          </tr>
+        </table>
+      </details>
     </section>
     <footer></footer>
   </body>
