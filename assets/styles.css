@@ -1,6 +1,12 @@
-@font-face { font-family: Architekt; src: url('../fonts/Architekt-Light.ttf'),  url('/fonts/Architekt-Light.ttf'); }
-@font-face { font-family: Grotesk; src: url('../fonts/Grotesk-R-Semibold.ttf'),  url('/fonts/Grotesk-R-Semibold.ttf'); }
+@font-face {
+    font-family: Orbitron;
+    src: url('../fonts/Orbitron-Thin.ttf'), url('/fonts/Orbitron-Thin.ttf');
+}
 
+@font-face {
+    font-family: Montserrat;
+    src: url('../fonts/Montserrat-Regular.ttf'), url('/fonts/Montserrat-Regular.ttf');
+}
 
 :root {
   --background-blue: #0d1727;
@@ -16,7 +22,7 @@ body {
     color: white;
     font-size: large;
     background-color: var(--background-blue);
-    font-family: Grotesk;
+    font-family: Montserrat;
 }
 
 section {
@@ -48,8 +54,10 @@ section {
 
 
 h1, h2, h3, h4 {
-    font-family: Architekt;
     text-align: center;
+    font-family: Orbitron;
+    text-transform: uppercase;
+    word-spacing: 5px;
 }
 
 h2 {
@@ -79,7 +87,9 @@ summary::-webkit-details-marker {
 	margin-top: 5px;
 	margin-bottom: 5px;
 	cursor: pointer;
-	font-family: Architekt;
+	font-family: Orbitron;
+    text-transform: uppercase;
+    word-spacing: 5px;
     transition: 1s;
     text-decoration: none;
 }
@@ -117,7 +127,9 @@ code {
     background-image: linear-gradient(140deg, var(--blue) 10%, var(--red) 10%, var(--red) 13%, var(--orange) 13%, var(--orange) 15%, var(--yellow) 15%, var(--yellow) 16.5%, white 16.5%);
     text-align: center;
     color: black;
-    font-family: Architekt;
+    font-family: Orbitron;
+    text-transform: uppercase;
+    word-spacing: 5px;
     font-weight: bold;
     padding-top: 5px;
     margin-top: 40px;
@@ -127,7 +139,9 @@ code {
 .accent-line a {
     text-align: center;
     color: black;
-    font-family: Architekt;
+    font-family: Orbitron;
+    text-transform: uppercase;
+    word-spacing: 5px;
     font-weight: bold;
     text-decoration: none;
 }

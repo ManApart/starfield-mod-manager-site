@@ -29,6 +29,7 @@
           </div>
           <div><a href="#Deploy">DEPLOY</a>
             <ul>
+              <li><a href="#command-bisect">Bisect</a></li>
               <li><a href="#command-deploy">Deploy</a></li>
               <li><a href="#command-disable">Disable</a></li>
               <li><a href="#command-enable">Enable</a></li>
@@ -41,6 +42,7 @@
           </div>
           <div><a href="#View">VIEW</a>
             <ul>
+              <li><a href="#command-buffer">Buffer</a></li>
               <li><a href="#command-detail">Detail</a></li>
               <li><a href="#command-filter">Filter</a></li>
               <li><a href="#command-find">Find</a></li>
@@ -92,7 +94,7 @@
     </div>
     <section>
       <h1>Commands Manual</h1>
-      <p>This command reference can also be viewed in app by using the <code>help</code> command. This reference is is for version <code>2.3.1</code>. Download the latest from <a href="https://github.com/ManApart/manapart-mod-manager/releases" target="_blank">github</a> or possibly <a href="https://www.nexusmods.com/starfield/mods/6576" target="_blank">the Nexus</a>. (Nexus may not have bleeding edge versions).</p>
+      <p>This command reference can also be viewed in app by using the <code>help</code> command. This reference is is for version <code>2.3.2</code>. Download the latest from <a href="https://github.com/ManApart/manapart-mod-manager/releases" target="_blank">github</a> or possibly <a href="https://www.nexusmods.com/starfield/mods/6576" target="_blank">the Nexus</a>. (Nexus may not have bleeding edge versions).</p>
       <p>Expand or collapse sections by clicking their header.</p>
       <details id="ADD-details" open="open">
         <script>document.addEventListener('DOMContentLoaded', function() {
@@ -251,6 +253,28 @@
             <td class="header-command">Command</td>
             <td class="header-usage">Usage</td>
             <td class="header-description">Description</td>
+          </tr>
+          <tr>
+            <td>
+              <p id="command-bisect">bisect</p>
+              <p>bi</p>
+            </td>
+            <td>
+              <p>bisect new</p>
+              <p>bisect hit (h)</p>
+              <p>bisect miss (m)</p>
+              <p>bisect back (b)</p>
+              <p>bisect list (ls)</p>
+              <p>bisect example</p>
+            </td>
+            <td>
+              <p>Allows you to bisect your enabled mods (do a binary search)</p>
+              <p>Use this to find a single mod causing a crash, mod conflicts, or which mod is running slow etc</p>
+              <p>It's recommended to save mods to a profile before running bisect so you can go back to before the bisect</p>
+              <p>Bisect will auto deploy if you have that config setting on</p>
+              <p>Bisect enable/disable should take requirements into account, so it may not always be 50% each step</p>
+              <p>Bisect itself is in memory only and doesn't save changes to disk</p>
+            </td>
           </tr>
           <tr>
             <td>
@@ -425,6 +449,30 @@
             <td class="header-command">Command</td>
             <td class="header-usage">Usage</td>
             <td class="header-description">Description</td>
+          </tr>
+          <tr>
+            <td>
+              <p id="command-buffer">buffer</p>
+              <p>bf</p>
+            </td>
+            <td>
+              <p>buffer ls</p>
+              <p>buffer ls id</p>
+              <p>buffer ls all</p>
+              <p>buffer add 1</p>
+              <p>buffer add id 1</p>
+              <p>buffer rm 2</p>
+              <p>buffer rm id 2</p>
+              <p>buffer set 1 2 3</p>
+              <p>buffer set id 1 2 3</p>
+            </td>
+            <td>
+              <p>Manipulate a buffer that other commands can use.</p>
+              <p>The buffer is in memory only and does not persist across restarts</p>
+              <p>buffer ls shows just the mod indices. You can use ls id or ls all to see the ids of the mods or the whole mod</p>
+              <p>You can add or remove a mod to the buffer using it's index</p>
+              <p>You can set the buffer to a list of indicies, or use buffer set id to set it to a list based on id</p>
+            </td>
           </tr>
           <tr>
             <td>
