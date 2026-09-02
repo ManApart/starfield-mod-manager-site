@@ -243,12 +243,16 @@ input {
 }
 
 .modRow {
-    max-width: 95vw;
+    max-width: 100vw;
     overflow: hidden;
 }
 
+.nameRow {
+    position: relative;
+}
+
 .modName {
-    display: inline-block;
+    display: block;
     max-width: 85vw;
     text-wrap-mode: nowrap;
     overflow: scroll;
@@ -262,9 +266,15 @@ input {
     text-decoration: line-through;
 }
 
+.modDisabled {
+    color: darkgray;
+}
+
 .modEmojis {
-    float: right;
-    margin-left: -50px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: var(--background-blue);
 }
 
 
